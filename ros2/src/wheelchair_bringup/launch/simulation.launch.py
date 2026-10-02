@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, OpaqueFunction, SetEnvironmentVariable, TimerAction
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
@@ -12,7 +12,7 @@ import os
 SUPPORTED_ENVIRONMENTS = {"apartment", "home"}
 
 
-def _simulation_actions(context, gazebo_pkg, model):
+def _simulation_actions(context, gazebo_pkg, wheelchair_model):
     environment = LaunchConfiguration("environment").perform(context)
     if environment not in SUPPORTED_ENVIRONMENTS:
         raise RuntimeError(
@@ -40,25 +40,55 @@ def _simulation_actions(context, gazebo_pkg, model):
         output="screen",
         condition=IfCondition(LaunchConfiguration("gui")),
     )
-    spawn = Node(
-        package="ros_gz_sim",
-        executable="create",
-        output="screen",
-        arguments=[
-            "-name", "wheelchair", "-file", model,
-            "-x", initial_x, "-y", initial_y, "-z", initial_z,
-            "-Y", initial_yaw,
-        ],
+
+    actions = [gazebo_server, gazebo_gui]
+
+    # Home is loaded from its SDF file instead of model://home.  On Linux,
+    # Gazebo / sdformat can interpret the authority "home" as the POSIX /home
+    # path before consulting the model resource path.  Explicit spawning also
+    # keeps the environment model independent of Fuel / URI resolution.
+    if environment == "home":
+        home_model = os.path.join(gazebo_pkg, "models", "home", "model.sdf")
+        if not os.path.isfile(home_model):
+            raise RuntimeError(f"Home model not found: {home_model}")
+        actions.append(
+            TimerAction(
+                period=1.0,
+                actions=[Node(
+                    package="ros_gz_sim",
+                    executable="create",
+                    name="spawn_home",
+                    output="screen",
+                    arguments=["-name", "home", "-file", home_model],
+                )],
+            )
+        )
+
+    # Spawn the wheelchair after the static environment has been inserted.
+    actions.append(
+        TimerAction(
+            period=2.0,
+            actions=[Node(
+                package="ros_gz_sim",
+                executable="create",
+                name="spawn_wheelchair",
+                output="screen",
+                arguments=[
+                    "-name", "wheelchair", "-file", wheelchair_model,
+                    "-x", initial_x, "-y", initial_y, "-z", initial_z,
+                    "-Y", initial_yaw,
+                ],
+            )],
+        )
     )
-    return [gazebo_server, gazebo_gui, spawn]
+    return actions
 
 
 def generate_launch_description():
     gazebo_pkg = get_package_share_directory("wheelchair_gazebo")
-    model = os.path.join(gazebo_pkg, "models", "wheelchair", "model.sdf")
+    wheelchair_model = os.path.join(gazebo_pkg, "models", "wheelchair", "model.sdf")
 
-    # For model://home Gazebo must search a directory whose direct child is
-    # home/model.config. In the installed package that directory is models/.
+    # Keep the normal model search path for any nested resources used by models.
     models_dir = os.path.join(gazebo_pkg, "models")
     existing_resource_path = os.environ.get("GZ_SIM_RESOURCE_PATH", "")
     resource_roots = [models_dir]
@@ -81,5 +111,5 @@ def generate_launch_description():
         DeclareLaunchArgument("initial_z", default_value="0.11"),
         DeclareLaunchArgument("initial_yaw", default_value="0.0"),
         resource_path,
-        OpaqueFunction(function=_simulation_actions, args=[gazebo_pkg, model]),
+        OpaqueFunction(function=_simulation_actions, args=[gazebo_pkg, wheelchair_model]),
     ])
