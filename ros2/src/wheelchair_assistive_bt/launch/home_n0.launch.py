@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, EmitEvent, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import DeclareLaunchArgument, EmitEvent, IncludeLaunchDescription, RegisterEventHandler, TimerAction
 from launch.event_handlers import OnProcessExit
 from launch.events import Shutdown
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -14,15 +14,13 @@ def generate_launch_description():
     description = get_package_share_directory('wheelchair_description')
     navigation = get_package_share_directory('wheelchair_navigation')
 
-    # HOME-01 candidate geometry. These coordinates are deliberately launch arguments
-    # so route feasibility can be calibrated without changing the experiment code.
     defaults = [
         ('result_csv', '/tmp/home_01_n0.csv'),
         ('experiment_id', 'home_01'), ('scenario_id', 'HOME_01_clearance_preference'),
         ('run_id', 'home_01_n0_001'),
         ('initial_x', '2.0'), ('initial_y', '-3.0'), ('initial_z', '0.11'), ('initial_yaw', '0.0'),
         ('goal_x', '6.0'), ('goal_y', '5.5'), ('goal_yaw', '0.0'),
-        ('wait_for_nav2_timeout_s', '60.0'), ('navigation_timeout_s', '240.0'),
+        ('wait_for_nav2_timeout_s', '120.0'), ('navigation_timeout_s', '240.0'),
         ('gui', 'true'),
     ]
     declared = [DeclareLaunchArgument(name, default_value=value) for name, value in defaults]
@@ -59,7 +57,9 @@ def generate_launch_description():
     ]
     nav_ready = Node(
         package='wheelchair_assistive_bt', executable='wait_for_smoke_ready.py',
-        parameters=[{'mode': 'nav2'}], output='screen')
+        parameters=[{'mode': 'nav2', 'readiness_timeout_s': value['wait_for_nav2_timeout_s']}],
+        output='screen')
+    delayed_nav_ready = TimerAction(period=10.0, actions=[nav_ready])
 
     def after_ready(event, context):
         if context.is_shutdown:
@@ -74,4 +74,4 @@ def generate_launch_description():
             target_action=orchestrator,
             on_exit=[EmitEvent(event=Shutdown(reason='HOME-01 N0 completed'))])),
     ]
-    return LaunchDescription(declared + handlers + stack + [nav_ready])
+    return LaunchDescription(declared + handlers + stack + [delayed_nav_ready])
