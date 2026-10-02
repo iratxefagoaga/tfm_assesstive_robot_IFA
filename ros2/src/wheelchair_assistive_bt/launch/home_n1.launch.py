@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, EmitEvent, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import DeclareLaunchArgument, EmitEvent, IncludeLaunchDescription, RegisterEventHandler, TimerAction
 from launch.event_handlers import OnProcessExit
 from launch.events import Shutdown
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -55,7 +55,8 @@ def generate_launch_description():
     ]
     nav_ready = Node(
         package='wheelchair_assistive_bt', executable='wait_for_smoke_ready.py',
-        parameters=[{'mode': 'nav2'}], output='screen')
+        parameters=[{'mode': 'nav2', 'readiness_timeout_s': value['wait_for_nav2_timeout_s']}],
+        output='screen')
 
     def after_ready(actions):
         def callback(event, context):
@@ -66,10 +67,9 @@ def generate_launch_description():
             return actions
         return callback
 
-    # The core `memory` package lives at the repository root rather than inside the
-    # ROS package.  managed_memory_process imports it transitively from MemoryNode,
-    # so expose the repository root explicitly instead of relying on the shell cwd.
-    ros2_dir = os.path.abspath(os.path.join(bringup, '..', '..', '..', '..', '..'))
+    # get_package_share_directory points to ros2/install/<pkg>/share/<pkg>.
+    # Four parents reach ros2/, then one more reaches the repository root.
+    ros2_dir = os.path.abspath(os.path.join(bringup, '..', '..', '..', '..'))
     repo_root = os.path.abspath(os.path.join(ros2_dir, '..'))
     existing_pythonpath = os.environ.get('PYTHONPATH', '')
     memory_pythonpath = repo_root + (os.pathsep + existing_pythonpath if existing_pythonpath else '')
@@ -95,13 +95,18 @@ def generate_launch_description():
         package='wheelchair_assistive_bt', executable='wait_for_smoke_ready.py',
         parameters=[{'mode': 'recommendation'}], output='screen')
 
+    # Give the freshly launched simulator/Nav2 graph a short discovery/lifecycle
+    # settling window before the strict readiness probe starts.  The probe still
+    # requires all canonical lifecycle nodes, actions and fresh sensor topics.
+    delayed_nav_ready = TimerAction(period=10.0, actions=[nav_ready])
+
     handlers = [
         RegisterEventHandler(OnProcessExit(
             target_action=memory_ready,
             on_exit=after_ready([recommendation, recommendation_ready]))),
         RegisterEventHandler(OnProcessExit(
             target_action=recommendation_ready,
-            on_exit=after_ready(stack + [nav_ready]))),
+            on_exit=after_ready(stack + [delayed_nav_ready]))),
         RegisterEventHandler(OnProcessExit(
             target_action=nav_ready,
             on_exit=after_ready([orchestrator]))),
