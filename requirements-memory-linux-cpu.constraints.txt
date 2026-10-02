@@ -1,4 +1,8 @@
-# Validated G2a Linux CPU environment; backend installed separately.
+# Linux CPU constraints for the memory environment.
+# PyTorch is intentionally not pinned here: sentence-transformers declares
+# torch>=2.2 and pip must select a CPU-compatible wheel available for the
+# current Python/Linux platform. Pinning a non-existent future +cpu build made
+# fresh environments impossible to resolve.
 annotated-doc==0.0.5
 anyio==4.15.1
 certifi==2026.7.22
@@ -41,7 +45,6 @@ SQLAlchemy==2.0.52
 sympy==1.14.0
 threadpoolctl==3.7.0
 tokenizers==0.23.2
-torch==2.14.1+cpu
 tqdm==4.70.1
 transformers==5.18.0
 typer==0.27.2
