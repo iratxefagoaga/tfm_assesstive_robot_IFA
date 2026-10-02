@@ -57,12 +57,11 @@ def generate_launch_description():
     gazebo_pkg = get_package_share_directory("wheelchair_gazebo")
     model = os.path.join(gazebo_pkg, "models", "wheelchair", "model.sdf")
 
-    # Gazebo resolves model://<name> by looking for <resource-root>/<name>/model.config.
-    # Therefore the resource root must be the parent of the package's models directory,
-    # not the models directory itself.  With the ament install layout this is the
-    # wheelchair_gazebo package share directory, where models/home/model.config lives.
+    # For model://home Gazebo must search a directory whose direct child is
+    # home/model.config. In the installed package that directory is models/.
+    models_dir = os.path.join(gazebo_pkg, "models")
     existing_resource_path = os.environ.get("GZ_SIM_RESOURCE_PATH", "")
-    resource_roots = [gazebo_pkg]
+    resource_roots = [models_dir]
     if existing_resource_path:
         resource_roots.append(existing_resource_path)
     resource_path = SetEnvironmentVariable(
