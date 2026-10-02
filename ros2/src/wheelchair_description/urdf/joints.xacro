@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0.02 0.31 -0.04" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0.02 -0.31 -0.04" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="caster_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_left"/>
+    <origin xyz="-0.30 0.23 -0.15"/>
+  </joint>
+
+  <joint name="caster_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_right"/>
+    <origin xyz="-0.30 -0.23 -0.15"/>
+  </joint>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.08"/>
+  </joint>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.28 0 0.72"/>
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.32 0 0.68"/>
+  </joint>
+
+</robot>

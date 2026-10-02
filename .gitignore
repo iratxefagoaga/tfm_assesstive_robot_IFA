@@ -1,0 +1,95 @@
+.env
+# Publish only the active memory documentation linked by README
+/docs/*
+!/docs/memory/
+/docs/memory/*
+!/docs/memory/linux-runtime.md
+!/docs/memory/database.md
+!/docs/memory/02_current_state.md
+dataset*/
+venv_jazzy/
+.python-version
+__pycache__/
+
+# Models
+app/backend/models_training/visual/face_recognition/models
+*.keras
+*.dat
+build/
+log/
+install/
+*.gv
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Phase C generated artifacts and OS metadata
+.ros/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.idea/
+.DS_Store
+*Zone.Identifier*
+*Zone - copia.Identifier*
+node_modules/
+
+# Linux memory runtime (G2a)
+.venv-memory/
+
+# Explicit private/archive publication exclusions (J1)
+/.vscode/
+/papers/
+/outputs/
+/ros2_backup_navigation_20260826_145914/
+/ros2/src/wheelchair_bringup.zip
+/base_link_super_novo.stl
+/lidar_link:
+/experiments/evaluate_user_filtering.pytouch
+/app/backend/models_training/visual/emotions_detection/models/best.pt
+/app/backend/models_training/visual/face_detection/models/best.pt
+/app/backend/modules/vision/models/emotions_detection_model.pt
+/app/backend/modules/vision/models/face_detection_model.pt
+/app/backend/modules/vision/models/hand_landmarker.task
+/ros2/src/wheelchair_bringup/launch/bringup.launch.py.bak
+/ros2/src/wheelchair_gazebo/models/apartment/model - copia.sdf
+/ros2/src/wheelchair_gazebo/models/wheelchair/model copy.sdf
+/ros2/src/wheelchair_memory/setup.py.save
+/ros2/src/wheelchair_memory/wheelchair_memory/memory_node.py.bak
+/ros2/src/wheelchair_memory/wheelchair_memory/navigation_adapter.py.bak
+/ros2/src/wheelchair_memory/wheelchair_memory/navigation_adapter.py.before_waypoint
+/ros2/src/wheelchair_memory/wheelchair_memory/navigation_memory_node.py.bak
+/ros2/src/wheelchair_navigation/config/nav2_params.yaml.bak
+/ros2_backup_navigation_20260826_145914/src/wheelchair_bringup/launch/bringup.launch.py.bak
+/ros2_backup_navigation_20260826_145914/src/wheelchair_gazebo/models/apartment/model - copia.sdf
+/ros2_backup_navigation_20260826_145914/src/wheelchair_gazebo/models/wheelchair/model copy.sdf
+/ros2_backup_navigation_20260826_145914/src/wheelchair_memory/setup.py.save
+/ros2_backup_navigation_20260826_145914/src/wheelchair_memory/wheelchair_memory/memory_node.py.bak
+/ros2_backup_navigation_20260826_145914/src/wheelchair_memory/wheelchair_memory/navigation_adapter.py.bak
+/ros2_backup_navigation_20260826_145914/src/wheelchair_memory/wheelchair_memory/navigation_adapter.py.before_waypoint
+/wheelchair_gazebo/log/latest_build
+
+# J3 private evidence and optional publication exclusions
+/app/
+/input_diagram.txt
+/input_diagram_db.txt
+/input_diagram_tools.txt
+/package-lock.json
+/reports/github_readiness_audit.md
+/reports/monorepo_file_migration_manifest.tsv
+/reports/monorepo_migration_plan.md
+/reports/monorepo_migration_plan.md.memory-collision
+/requirements_ros_tfm.txt
+/requirements_tfm.txt
+/ros2/AGENTS.md
+/ros2/src/wheelchair_gazebo/models/apartment/materials/textures/apartment_diffuse.jpg
+/ros2/src/wheelchair_gazebo/models/apartment/materials/textures/apartment_spec.jpg
+/ros2/src/wheelchair_gazebo/models/apartment/meshes/apartment.dae
+/ros2/src/wheelchair_gazebo/models/wheelchair/meshes/sensors/lds.stl
+/run_stack.sh
+
+# Asset attribution must be included in the public candidate
+!/docs/ASSETS.md

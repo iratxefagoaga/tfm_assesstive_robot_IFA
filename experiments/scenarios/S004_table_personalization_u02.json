@@ -1,0 +1,68 @@
+{
+  "scenario_id": "S004_table_personalization_u02",
+  "description": "Misma geometría de mesa que S003 con preferencia U02 por mínimo desvío.",
+  "hypothesis": [
+    "H1"
+  ],
+  "initial_pose": {
+    "x": -4,
+    "y": 0.8,
+    "z": 0.11,
+    "yaw": 0
+  },
+  "goal": {
+    "label": "cocina",
+    "x": 2.5,
+    "y": 0
+  },
+  "user_id": "U02",
+  "location": "salon",
+  "task": "navegacion",
+  "query": "U02 quiere ir del salon a la cocina por la ruta mas directa y minimizando desvios.",
+  "obstacle_configuration": "apartment_default_static_table",
+  "obstacle_context_description": "Misma mesa, misma pose inicial y misma meta que S003; cambia sólo la identidad y solicitud contextual.",
+  "expected_relevant_memories": [
+    "M017",
+    "M023",
+    "M028"
+  ],
+  "expected_preference": "prefiere minimizar desvios",
+  "expected_strategy": "direct",
+  "available_strategies": [
+    "direct",
+    "central",
+    "west",
+    "alternative"
+  ],
+  "strategy_waypoint_offsets": {
+    "direct": [
+      0,
+      0
+    ],
+    "central": [
+      0,
+      0
+    ],
+    "west": [
+      -4.5,
+      -0.7
+    ],
+    "alternative": [
+      -4.5,
+      3
+    ]
+  },
+  "waypoint_geometry": {
+    "direct": null,
+    "central": null,
+    "west": {
+      "x": -2,
+      "y": -0.7
+    },
+    "alternative": {
+      "x": -2,
+      "y": 3
+    }
+  },
+  "validation_basis": "PGM libre y footprint estático libre; validación Nav2 pendiente."
+}

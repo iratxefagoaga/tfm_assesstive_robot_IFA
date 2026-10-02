@@ -1,0 +1,63 @@
+{
+  "scenario_id": "S005_table_alternative_u03",
+  "description": "Ruta alternativa episódica de U03 alrededor de la mesa.",
+  "hypothesis": [
+    "H1",
+    "H3"
+  ],
+  "initial_pose": {
+    "x": -4,
+    "y": 0.8,
+    "z": 0.11,
+    "yaw": 0
+  },
+  "goal": {
+    "label": "baño",
+    "x": 2.5,
+    "y": 0
+  },
+  "user_id": "U03",
+  "location": "salon",
+  "task": "navegacion",
+  "query": "U03 quiere ir del salon al baño evitando pasar cerca de la mesa por una ruta alternativa.",
+  "obstacle_configuration": "apartment_default_static_table",
+  "obstacle_context_description": "Misma geometría que S003/S004. La alternativa seleccionada si procede discurre por el norte-oeste de la mesa; no representa una habitación física.",
+  "expected_relevant_memories": [
+    "M037",
+    "M041",
+    "M043"
+  ],
+  "expected_preference": "prefiere rutas que pasan lejos de mesa",
+  "expected_strategy": "alternative",
+  "available_strategies": [
+    "direct",
+    "west",
+    "alternative"
+  ],
+  "strategy_waypoint_offsets": {
+    "direct": [
+      0,
+      0
+    ],
+    "west": [
+      -4.5,
+      -0.7
+    ],
+    "alternative": [
+      -4.5,
+      3
+    ]
+  },
+  "waypoint_geometry": {
+    "west": {
+      "x": -2,
+      "y": -0.7
+    },
+    "alternative": {
+      "x": -2,
+      "y": 3,
+      "derivation": "goal + (-4.5, 3.0); libre en PGM y fuera del footprint estático; pasa al norte-oeste de mesa."
+    }
+  },
+  "validation_basis": "PGM libre y footprint estático libre; validación Nav2 pendiente."
+}

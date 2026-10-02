@@ -1,0 +1,24 @@
+<root BTCPP_format="4" main_tree_to_execute="N1MemoryStrategyNavigation">
+  <BehaviorTree ID="N1MemoryStrategyNavigation">
+    <Sequence name="MemoryStrategyNavigation">
+      <QueryMemory/>
+      <GetNavigationRecommendation/>
+      <ResolveStrategyWaypoint/>
+      <Fallback name="WaypointOrDirectFinalGoal">
+        <Sequence name="WaypointThenFinalGoal">
+          <WaypointApplicable/>
+          <WaitForNav2Active/>
+          <NavigateNav2 goal="{selected_waypoint}" stage="waypoint"/>
+          <WaitForNav2Active/>
+          <NavigateNav2 goal="{final_goal}" stage="final_goal"/>
+        </Sequence>
+        <Sequence name="DirectFinalGoalOnly">
+          <WaypointNotApplicable/>
+          <WaitForNav2Active/>
+          <NavigateNav2 goal="{final_goal}" stage="final_goal"/>
+        </Sequence>
+      </Fallback>
+      <FinalizeExperiment/>
+    </Sequence>
+  </BehaviorTree>
+</root>

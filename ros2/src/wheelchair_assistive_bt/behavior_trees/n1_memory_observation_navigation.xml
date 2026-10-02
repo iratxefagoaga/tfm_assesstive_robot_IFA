@@ -1,0 +1,11 @@
+<root BTCPP_format="4" main_tree_to_execute="N1MemoryObservationNavigation">
+  <BehaviorTree ID="N1MemoryObservationNavigation">
+    <Sequence name="MemoryObservationNavigation">
+      <QueryMemory/>
+      <GetNavigationRecommendation/>
+      <WaitForNav2Active/>
+      <NavigateNav2 goal="{final_goal}"/>
+      <FinalizeExperiment/>
+    </Sequence>
+  </BehaviorTree>
+</root>

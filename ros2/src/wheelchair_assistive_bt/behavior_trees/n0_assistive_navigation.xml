@@ -1,0 +1,9 @@
+<root BTCPP_format="4" main_tree_to_execute="N0AssistiveNavigation">
+  <BehaviorTree ID="N0AssistiveNavigation">
+    <Sequence name="MemoryOffNavigation">
+      <WaitForNav2Active/>
+      <NavigateNav2 goal="{final_goal}"/>
+      <FinalizeExperiment/>
+    </Sequence>
+  </BehaviorTree>
+</root>

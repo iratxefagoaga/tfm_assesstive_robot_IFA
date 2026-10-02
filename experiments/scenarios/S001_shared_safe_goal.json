@@ -1,0 +1,12 @@
+{
+  "scenario_id": "S001_shared_safe_goal",
+  "description": "Trayecto compartido de aceptación en el apartamento por defecto.",
+  "user_id": "U01",
+  "initial_pose": {"x": 2.0, "y": -3.0, "z": 0.11, "yaw": 0.0},
+  "goal": {"label": "dormitorio", "x": 2.5, "y": -3.0},
+  "location": "salon",
+  "task": "navegacion",
+  "query": "U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.",
+  "obstacle_configuration": "apartment_default",
+  "expected_preference": "mayor_espacio_lateral"
+}

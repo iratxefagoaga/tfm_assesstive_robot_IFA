@@ -1,0 +1,2 @@
+timestamp_utc,experiment_id,scenario_id,condition,run_id,user_id,location,task,goal_label,initial_x,initial_y,initial_yaw,goal_x,goal_y,nav2_status,success,elapsed_time_s,distance_m,replanning_events
+2026-09-22T14:48:01.445618+00:00,phase4_comparable_navigation,S001_shared_safe_goal,MEMORY_OFF,phase4_acceptance_002,U01,salon,navegacion,dormitorio,2.0,-3.0,0.0,2.5,-3.0,SUCCEEDED,true,2.914,0.263,2

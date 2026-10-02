@@ -1,0 +1,2 @@
+timestamp_utc,experiment_id,scenario_id,condition,run_id,user_id,location,task,goal_label,initial_x,initial_y,initial_yaw,goal_x,goal_y,nav2_result,success,time_s,distance_m,replanning_events,memory_ids,semantic_score,context_score,final_score,strategy,waypoint_x,waypoint_y
+2026-09-22T15:34:50.987249+00:00,phase5_automated_navigation,S001_shared_safe_goal,MEMORY_ON,phase5_final_001,U01,salon,navegacion,dormitorio,2.0,-3.0,0.0,2.5,-3.0,SUCCEEDED,true,3.654,0.266,3,M001|M046|M015|M007|M009,0.7510414032,1.0000000000,0.7759372629,west,2.500,-3.000

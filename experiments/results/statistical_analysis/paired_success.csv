@@ -1,0 +1,2 @@
+complete_pairs,off_success_on_failure,off_failure_on_success,mcnemar_exact_two_sided_p,missing_memory_on_records,quantitative_paired_tests
+4,0,3,0.250000,1,not_run: only one pair has success=true in both conditions

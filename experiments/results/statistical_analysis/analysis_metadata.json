@@ -1,0 +1,7 @@
+{
+  "source": "/home/iratxefagoaga/workspace/tfm-robot-memory/experiments/results/phase5/acceptance_final/navigation_results.csv",
+  "run_prefix": "protocol_20260928",
+  "rows_analyzed": 9,
+  "manifest_rows_analyzed": 10,
+  "outlier_policy": "No observations removed."
+}

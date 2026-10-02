@@ -1,0 +1,5 @@
+timestamp_utc,condition,query,user_id,location,task,goal,memory_ids,semantic_score,context_score,final_score,strategy,waypoint_x,waypoint_y,nav2_result
+2026-09-22T09:28:12.600254+00:00,MEMORY_ON,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,U01,salon,navegacion,dormitorio,M001|M046|M015|M007|M009,0.7508675148,1.0000000000,0.7757807633,west,1.500,-3.000,ABORTED
+2026-09-22T09:53:55.002182+00:00,MEMORY_ON,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,U01,salon,navegacion,dormitorio,M001|M046|M015|M007|M009,0.7510414032,1.0000000000,0.7759372629,west,2.500,-3.000,NAV2_REJECTED
+2026-09-22T10:00:55.685164+00:00,MEMORY_ON,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,U01,salon,navegacion,dormitorio,M001|M046|M015|M007|M009,0.7510414032,1.0000000000,0.7759372629,west,2.500,-3.000,SUCCEEDED
+2026-09-22T14:28:39.529587+00:00,MEMORY_ON,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,U01,salon,navegacion,dormitorio,M001|M046|M015|M007|M009,0.7510414032,1.0000000000,0.7759372629,west,2.500,-3.000,SUCCEEDED

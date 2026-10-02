@@ -1,0 +1,310 @@
+[INFO] [launch]: All log files can be found below /home/iratxefagoaga/.ros/log/2026-09-28-14-33-40-644594-DESKTOP-8R9E2KA-104592
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [104617]
+[INFO] [create-2]: process started with pid [104618]
+[INFO] [parameter_bridge-3]: process started with pid [104619]
+[INFO] [robot_state_publisher-4]: process started with pid [104620]
+[INFO] [scan_frame_fixer.py-5]: process started with pid [104621]
+[create-2] [INFO] [1790598822.216631482] [ros_gz_sim]: Requesting list of world names.
+[parameter_bridge-3] [INFO] [1790598822.220836066] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790598822.239639366] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cmd_vel (gz.msgs.Twist) -> /cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790598822.263427086] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790598822.273580143] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790598822.322338487] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790598822.446633451] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790598822.525267869] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/scan (gz.msgs.LaserScan) -> /scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[robot_state_publisher-4] [INFO] [1790598822.633194230] [robot_state_publisher]: Robot initialized
+[scan_frame_fixer.py-5] [INFO] [1790598826.705388443] [scan_frame_fixer]: Scan Frame Fixer iniciado
+[INFO] [map_server-6]: process started with pid [104692]
+[INFO] [amcl-7]: process started with pid [104693]
+[INFO] [planner_server-8]: process started with pid [104694]
+[INFO] [controller_server-9]: process started with pid [104695]
+[INFO] [behavior_server-10]: process started with pid [104696]
+[INFO] [bt_navigator-11]: process started with pid [104697]
+[INFO] [waypoint_follower-12]: process started with pid [104698]
+[INFO] [velocity_smoother-13]: process started with pid [104699]
+[INFO] [lifecycle_manager-14]: process started with pid [104700]
+[create-2] [INFO] [1790598827.217718906] [ros_gz_sim]: Requesting list of world names.
+[velocity_smoother-13] [INFO] [1790598827.305865671] [velocity_smoother]: 
+[velocity_smoother-13] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-13] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-13] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-9] [INFO] [1790598827.350880022] [controller_server]: 
+[controller_server-9] 	controller_server lifecycle node launched. 
+[controller_server-9] 	Waiting on external lifecycle transitions to activate
+[controller_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-9] [INFO] [1790598827.368060082] [controller_server]: Creating controller server
+[controller_server-9] [INFO] [1790598827.417658039] [local_costmap.local_costmap]: 
+[controller_server-9] 	local_costmap lifecycle node launched. 
+[controller_server-9] 	Waiting on external lifecycle transitions to activate
+[controller_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-9] [INFO] [1790598827.419228788] [local_costmap.local_costmap]: Creating Costmap
+[behavior_server-10] [INFO] [1790598827.663038921] [behavior_server]: 
+[behavior_server-10] 	behavior_server lifecycle node launched. 
+[behavior_server-10] 	Waiting on external lifecycle transitions to activate
+[behavior_server-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-7] [INFO] [1790598828.257946414] [amcl]: 
+[amcl-7] 	amcl lifecycle node launched. 
+[amcl-7] 	Waiting on external lifecycle transitions to activate
+[amcl-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-12] [INFO] [1790598828.343220273] [waypoint_follower]: 
+[waypoint_follower-12] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-12] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-7] [INFO] [1790598829.512612658] [amcl]: Creating
+[waypoint_follower-12] [INFO] [1790598829.747862012] [waypoint_follower]: Creating
+[create-2] [INFO] [1790598832.228915785] [ros_gz_sim]: Requesting list of world names.
+[create-2] [INFO] [1790598837.549043106] [ros_gz_sim]: Requesting list of world names.
+[INFO] [baseline_runner.py-15]: process started with pid [104852]
+[lifecycle_manager-14] [INFO] [1790598840.087523597] [lifecycle_manager_navigation]: Creating
+[lifecycle_manager-14] [INFO] [1790598840.149581654] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[planner_server-8] [INFO] [1790598840.209430439] [planner_server]: 
+[planner_server-8] 	planner_server lifecycle node launched. 
+[planner_server-8] 	Waiting on external lifecycle transitions to activate
+[planner_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-8] [INFO] [1790598840.217781354] [planner_server]: Creating
+[map_server-6] [INFO] [1790598840.258268928] [map_server]: 
+[map_server-6] 	map_server lifecycle node launched. 
+[map_server-6] 	Waiting on external lifecycle transitions to activate
+[map_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-6] [INFO] [1790598840.258657533] [map_server]: Creating
+[planner_server-8] [INFO] [1790598840.370532422] [global_costmap.global_costmap]: 
+[planner_server-8] 	global_costmap lifecycle node launched. 
+[planner_server-8] 	Waiting on external lifecycle transitions to activate
+[planner_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-8] [INFO] [1790598840.371853424] [global_costmap.global_costmap]: Creating Costmap
+[bt_navigator-11] [INFO] [1790598840.417189068] [bt_navigator]: 
+[bt_navigator-11] 	bt_navigator lifecycle node launched. 
+[bt_navigator-11] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-11] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-11] [INFO] [1790598840.419335614] [bt_navigator]: Creating
+[lifecycle_manager-14] [INFO] [1790598840.461366396] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-14] [INFO] [1790598840.461752676] [lifecycle_manager_navigation]: [34m[1mConfiguring map_server[0m[0m
+[map_server-6] [INFO] [1790598840.463190991] [map_server]: Configuring
+[map_server-6] [INFO] [1790598840.463531504] [map_io]: Loading yaml file: /home/iratxefagoaga/workspace/tfm/ros2/install/wheelchair_navigation/share/wheelchair_navigation/maps/apartment.yaml
+[map_server-6] [INFO] [1790598840.466207686] [map_io]: resolution: 0.05
+[map_server-6] [INFO] [1790598840.466241705] [map_io]: origin[0]: -6
+[map_server-6] [INFO] [1790598840.466604579] [map_io]: origin[1]: -5
+[map_server-6] [INFO] [1790598840.466619968] [map_io]: origin[2]: 0
+[map_server-6] [INFO] [1790598840.466623946] [map_io]: free_thresh: 0.25
+[map_server-6] [INFO] [1790598840.466626234] [map_io]: occupied_thresh: 0.65
+[map_server-6] [INFO] [1790598840.466630312] [map_io]: mode: trinary
+[map_server-6] [INFO] [1790598840.466633443] [map_io]: negate: 0
+[map_server-6] [INFO] [1790598840.467926675] [map_io]: Loading image_file: /home/iratxefagoaga/workspace/tfm/ros2/install/wheelchair_navigation/share/wheelchair_navigation/maps/apartment.pgm
+[map_server-6] [INFO] [1790598840.484785345] [map_io]: Read map /home/iratxefagoaga/workspace/tfm/ros2/install/wheelchair_navigation/share/wheelchair_navigation/maps/apartment.pgm: 240 X 200 map @ 0.05 m/cell
+[lifecycle_manager-14] [INFO] [1790598840.495112447] [lifecycle_manager_navigation]: [34m[1mConfiguring amcl[0m[0m
+[amcl-7] [INFO] [1790598840.495551005] [amcl]: Configuring
+[amcl-7] [INFO] [1790598840.497943276] [amcl]: initTransforms
+[amcl-7] [INFO] [1790598840.533987199] [amcl]: initPubSub
+[amcl-7] [INFO] [1790598840.586428189] [amcl]: Subscribed to map topic.
+[lifecycle_manager-14] [INFO] [1790598840.616772634] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-8] [INFO] [1790598840.617327559] [planner_server]: Configuring
+[planner_server-8] [INFO] [1790598840.617376291] [global_costmap.global_costmap]: Configuring
+[planner_server-8] [INFO] [1790598840.641333953] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-8] [INFO] [1790598840.707138604] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-8] [INFO] [1790598840.714373270] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-8] [INFO] [1790598840.714471313] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-8] [INFO] [1790598840.715162864] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-8] [INFO] [1790598840.726441431] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-8] [INFO] [1790598840.726506577] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-8] [INFO] [1790598840.726933471] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-8] [INFO] [1790598840.818272312] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner::NavfnPlanner
+[planner_server-8] [INFO] [1790598840.818368300] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-8] [INFO] [1790598840.820871124] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-14] [INFO] [1790598840.892779703] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-9] [INFO] [1790598840.893315260] [controller_server]: Configuring controller interface
+[controller_server-9] [INFO] [1790598840.893377377] [controller_server]: getting progress checker plugins..
+[controller_server-9] [INFO] [1790598840.893679383] [controller_server]: getting goal checker plugins..
+[controller_server-9] [INFO] [1790598840.893885804] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-9] [INFO] [1790598840.893938168] [local_costmap.local_costmap]: Configuring
+[controller_server-9] [INFO] [1790598840.922858318] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[controller_server-9] [INFO] [1790598840.931867175] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-9] [INFO] [1790598840.972297738] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[controller_server-9] [INFO] [1790598840.972365027] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-9] [INFO] [1790598840.975340167] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-9] [INFO] [1790598840.975419400] [local_costmap.local_costmap]: Using plugin "static_layer"
+[controller_server-9] [INFO] [1790598840.986767130] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[controller_server-9] [INFO] [1790598841.026913209] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[controller_server-9] [INFO] [1790598841.193691436] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-9] [INFO] [1790598841.194129457] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[controller_server-9] [INFO] [1790598841.197458376] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-9] [INFO] [1790598841.199075899] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-9] [INFO] [1790598841.215176069] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-9] [INFO] [1790598841.229895943] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-14] [INFO] [1790598841.283977610] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-10] [INFO] [1790598841.284476723] [behavior_server]: Configuring
+[behavior_server-10] [INFO] [1790598841.305191741] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors::Spin
+[behavior_server-10] [INFO] [1790598841.314907298] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors::BackUp
+[behavior_server-10] [INFO] [1790598841.322388226] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors::DriveOnHeading
+[behavior_server-10] [INFO] [1790598841.331597328] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors::Wait
+[behavior_server-10] [INFO] [1790598841.362459312] [behavior_server]: Configuring spin
+[behavior_server-10] [INFO] [1790598841.392371731] [behavior_server]: Configuring backup
+[behavior_server-10] [INFO] [1790598841.410871184] [behavior_server]: Configuring drive_on_heading
+[behavior_server-10] [INFO] [1790598841.430278026] [behavior_server]: Configuring wait
+[lifecycle_manager-14] [INFO] [1790598841.493397728] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-11] [INFO] [1790598841.494035873] [bt_navigator]: Configuring
+[bt_navigator-11] [INFO] [1790598841.543766289] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[bt_navigator-11] [INFO] [1790598842.323882391] [bt_navigator]: Creating navigator id navigate_through_poses of type nav2_bt_navigator::NavigateThroughPosesNavigator
+[lifecycle_manager-14] [INFO] [1790598842.390989334] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-12] [INFO] [1790598842.391652620] [waypoint_follower]: Configuring
+[waypoint_follower-12] [INFO] [1790598842.463728890] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[waypoint_follower-12] [INFO] [1790598842.464151467] [waypoint_follower]: Waypoint pause duration is set to zero, disabling task executor plugin.
+[lifecycle_manager-14] [INFO] [1790598842.465097724] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-13] [INFO] [1790598842.465632247] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-14] [INFO] [1790598842.489948826] [lifecycle_manager_navigation]: [34m[1mActivating map_server[0m[0m
+[map_server-6] [INFO] [1790598842.490378367] [map_server]: Activating
+[map_server-6] [INFO] [1790598842.494092513] [map_server]: Creating bond (map_server) to lifecycle manager.
+[planner_server-8] [INFO] [1790598842.494431493] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 240 X 200 at 0.050000 m/pix
+[amcl-7] [INFO] [1790598842.495476079] [amcl]: Received a 240 X 200 map @ 0.050 m/pix
+[controller_server-9] [INFO] [1790598842.497352568] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 240 X 200 at 0.050000 m/pix
+[create-2] [INFO] [1790598842.550142191] [ros_gz_sim]: Requesting list of world names.
+[lifecycle_manager-14] [INFO] [1790598842.610085172] [lifecycle_manager_navigation]: Server map_server connected with bond.
+[lifecycle_manager-14] [INFO] [1790598842.684237815] [lifecycle_manager_navigation]: [34m[1mActivating amcl[0m[0m
+[amcl-7] [INFO] [1790598842.685727687] [amcl]: Activating
+[amcl-7] [INFO] [1790598842.685860538] [amcl]: initialPoseReceived
+[amcl-7] [INFO] [1790598842.685980977] [amcl]: Setting pose (0.000000): 2.000 -3.000 0.000
+[amcl-7] [INFO] [1790598842.687239310] [amcl]: Creating bond (amcl) to lifecycle manager.
+[lifecycle_manager-14] [INFO] [1790598842.917772232] [lifecycle_manager_navigation]: Server amcl connected with bond.
+[lifecycle_manager-14] [INFO] [1790598842.917859922] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-8] [INFO] [1790598842.918814817] [planner_server]: Activating
+[planner_server-8] [INFO] [1790598842.918895329] [global_costmap.global_costmap]: Activating
+[planner_server-8] [INFO] [1790598842.918903164] [global_costmap.global_costmap]: Checking transform
+[planner_server-8] [INFO] [1790598842.918946388] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598843.419071982] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598843.534427828] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[create-2] [INFO] [1790598843.885599811] [ros_gz_sim]: Entity creation successful.
+[planner_server-8] [INFO] [1790598843.919019701] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[INFO] [create-2]: process has finished cleanly [pid 104618]
+[planner_server-8] [INFO] [1790598844.419102818] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598844.502106574] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598844.919126906] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598845.419258020] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598845.501910241] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598845.919092553] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598846.419030061] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598846.524082746] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598846.919188954] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598847.419056223] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598847.791859334] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598847.969895386] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598848.704547298] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598848.804802555] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598849.112494276] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598849.425006318] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598849.526397153] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598849.938652030] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598850.468729698] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598850.803883145] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598850.923649136] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598851.718629073] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598851.720804641] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598856.891387850] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598856.891509336] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598857.448530571] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598857.949033190] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598858.449199689] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598858.613893132] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598858.949536447] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598859.449754067] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598859.501951842] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598859.950265320] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598860.450571681] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598860.501796432] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598860.950836927] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598861.451359537] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598861.501983612] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598861.951574680] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598862.451872068] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598862.502159960] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598862.952186657] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598863.452485610] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598863.502323010] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598863.952698902] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598864.452938023] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598864.502185085] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598864.953146233] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598865.453364720] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598865.502173322] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598865.953628073] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[planner_server-8] [INFO] [1790598866.453906073] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[baseline_runner.py-15] [INFO] [1790598866.502340043] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[amcl-7] [INFO] [1790598866.541804016] [amcl]: createLaserObject
+[planner_server-8] [INFO] [1790598866.954876415] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 0.460000 but the earliest data is at time 1.066000, when looking up transform from frame [base_link] to frame [map]
+[planner_server-8] [INFO] [1790598867.455623480] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 0.940000 but the earliest data is at time 1.066000, when looking up transform from frame [base_link] to frame [map]
+[baseline_runner.py-15] [INFO] [1790598867.502520509] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598867.956052223] [global_costmap.global_costmap]: start
+[baseline_runner.py-15] [INFO] [1790598868.501878794] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[planner_server-8] [INFO] [1790598869.014649501] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[planner_server-8] [INFO] [1790598869.024285710] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-14] [INFO] [1790598869.141342028] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-14] [INFO] [1790598869.141443222] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-9] [INFO] [1790598869.142775187] [controller_server]: Activating
+[controller_server-9] [INFO] [1790598869.142962623] [local_costmap.local_costmap]: Activating
+[controller_server-9] [INFO] [1790598869.142997896] [local_costmap.local_costmap]: Checking transform
+[controller_server-9] [INFO] [1790598869.143289854] [local_costmap.local_costmap]: start
+[controller_server-9] [INFO] [1790598869.401341743] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-9] [INFO] [1790598869.401765099] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[baseline_runner.py-15] [INFO] [1790598869.502093347] [baseline_runner]: Waiting for bt_navigator lifecycle state active...
+[lifecycle_manager-14] [INFO] [1790598869.520366150] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-14] [INFO] [1790598869.520904127] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-10] [INFO] [1790598869.524194721] [behavior_server]: Activating
+[behavior_server-10] [INFO] [1790598869.524593468] [behavior_server]: Activating spin
+[behavior_server-10] [INFO] [1790598869.529978565] [behavior_server]: Activating backup
+[behavior_server-10] [INFO] [1790598869.536201993] [behavior_server]: Activating drive_on_heading
+[behavior_server-10] [INFO] [1790598869.540467291] [behavior_server]: Activating wait
+[behavior_server-10] [INFO] [1790598869.546017728] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-14] [INFO] [1790598870.022314149] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-14] [INFO] [1790598870.022416668] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-11] [INFO] [1790598870.024310525] [bt_navigator]: Activating
+[bt_navigator-11] [INFO] [1790598871.295637161] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[baseline_runner.py-15] [INFO] [1790598871.435017571] [baseline_runner]: Baseline MEMORY=OFF: scenario goal sent.
+[bt_navigator-11] [INFO] [1790598871.440474134] [bt_navigator]: Begin navigating from current location (2.00, -3.00) to (2.50, -3.00)
+[controller_server-9] [INFO] [1790598871.493340940] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-9] [WARN] [1790598871.493492968] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-9] [WARN] [1790598871.493550939] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[lifecycle_manager-14] [INFO] [1790598871.525666211] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-14] [INFO] [1790598871.525751507] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-12] [INFO] [1790598871.532381509] [waypoint_follower]: Activating
+[waypoint_follower-12] [INFO] [1790598871.549992190] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-14] [INFO] [1790598872.041018166] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-14] [INFO] [1790598872.041114531] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-13] [INFO] [1790598872.047164666] [velocity_smoother]: Activating
+[velocity_smoother-13] [INFO] [1790598872.049340094] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[parameter_bridge-3] [INFO] [1790598872.114034166] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[lifecycle_manager-14] [INFO] [1790598872.188346866] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-14] [INFO] [1790598872.188517704] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-14] [INFO] [1790598872.188603722] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[lifecycle_manager-14] [INFO] [1790598872.388932410] [lifecycle_manager_navigation]: [34m[1mHave not received a heartbeat from map_server.[0m[0m
+[lifecycle_manager-14] [ERROR] [1790598872.389015821] [lifecycle_manager_navigation]: CRITICAL FAILURE: SERVER map_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes.
+[lifecycle_manager-14] [INFO] [1790598872.389101670] [lifecycle_manager_navigation]: [34m[1mTerminating bond timer...[0m[0m
+[lifecycle_manager-14] [INFO] [1790598872.389113939] [lifecycle_manager_navigation]: [34m[1mResetting managed nodes...[0m[0m
+[lifecycle_manager-14] [INFO] [1790598872.389120780] [lifecycle_manager_navigation]: [34m[1mDeactivating velocity_smoother[0m[0m
+[velocity_smoother-13] [INFO] [1790598872.389622285] [velocity_smoother]: Deactivating
+[velocity_smoother-13] [INFO] [1790598872.390187791] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-14] [INFO] [1790598872.524375431] [lifecycle_manager_navigation]: [34m[1mDeactivating waypoint_follower[0m[0m
+[waypoint_follower-12] [INFO] [1790598872.535435321] [waypoint_follower]: Deactivating
+[waypoint_follower-12] [INFO] [1790598872.535527631] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[controller_server-9] [INFO] [1790598872.543762625] [controller_server]: Passing new path to controller.
+[lifecycle_manager-14] [INFO] [1790598872.658714023] [lifecycle_manager_navigation]: [34m[1mDeactivating bt_navigator[0m[0m
+[bt_navigator-11] [INFO] [1790598872.661055660] [bt_navigator]: Deactivating
+[bt_navigator-11] [WARN] [1790598872.661114821] [bt_navigator]: [navigate_to_pose] [ActionServer] Requested to deactivate server but goal is still executing. Should check if action server is running before deactivating.
+[bt_navigator-11] [ERROR] [1790598872.692528494] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[controller_server-9] [INFO] [1790598872.693700712] [controller_server]: Cancellation was successful. Stopping the robot.
+[controller_server-9] [INFO] [1790598872.693753789] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[bt_navigator-11] [WARN] [1790598872.694428768] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-11] [INFO] [1790598872.694770927] [bt_navigator]: Goal canceled
+[bt_navigator-11] [WARN] [1790598872.694799806] [bt_navigator]: [navigate_to_pose] [ActionServer] Stopping the thread per request.
+[bt_navigator-11] [INFO] [1790598872.694930071] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[baseline_runner.py-15] [INFO] [1790598872.726370957] [baseline_runner]: Baseline result saved: ABORTED
+[lifecycle_manager-14] [INFO] [1790598872.836897700] [lifecycle_manager_navigation]: [34m[1mDeactivating behavior_server[0m[0m
+[behavior_server-10] [INFO] [1790598872.838844237] [behavior_server]: Deactivating
+[behavior_server-10] [INFO] [1790598872.846147652] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-14] [INFO] [1790598872.966481345] [lifecycle_manager_navigation]: [34m[1mDeactivating controller_server[0m[0m
+[controller_server-9] [INFO] [1790598872.979583411] [controller_server]: Deactivating
+[controller_server-9] [INFO] [1790598872.979707683] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-9] [INFO] [1790598872.979750148] [local_costmap.local_costmap]: Deactivating
+[controller_server-9] [INFO] [1790598873.144640003] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [baseline_runner.py-15]: process has finished cleanly [pid 104852]
+[lifecycle_manager-14] [INFO] [1790598873.307614751] [lifecycle_manager_navigation]: [34m[1mDeactivating planner_server[0m[0m
+[planner_server-8] [INFO] [1790598873.311349569] [planner_server]: Deactivating
+[planner_server-8] [INFO] [1790598873.311436070] [global_costmap.global_costmap]: Deactivating

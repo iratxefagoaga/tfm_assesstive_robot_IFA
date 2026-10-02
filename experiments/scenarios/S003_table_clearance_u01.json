@@ -1,0 +1,64 @@
+{
+  "scenario_id": "S003_table_clearance_u01",
+  "description": "Ruta alrededor de la mesa para U01 con preferencia de espacio lateral.",
+  "hypothesis": [
+    "H1",
+    "H3"
+  ],
+  "initial_pose": {
+    "x": -4,
+    "y": 0.8,
+    "z": 0.11,
+    "yaw": 0
+  },
+  "goal": {
+    "label": "cocina",
+    "x": 2.5,
+    "y": 0
+  },
+  "user_id": "U01",
+  "location": "salon",
+  "task": "navegacion",
+  "query": "U01 quiere ir del salon a la cocina evitando la mesa y necesita una ruta con espacio lateral.",
+  "obstacle_configuration": "apartment_default_static_table",
+  "obstacle_context_description": "La línea geométrica corta desde el inicio a la meta atraviesa la mesa; la alternativa oeste se fija al sur y oeste de la mesa.",
+  "expected_relevant_memories": [
+    "M002",
+    "M013",
+    "M015"
+  ],
+  "expected_preference": "evitar pasos estrechos y mantener espacio lateral",
+  "expected_strategy": "west",
+  "available_strategies": [
+    "direct",
+    "west",
+    "alternative"
+  ],
+  "strategy_waypoint_offsets": {
+    "direct": [
+      0,
+      0
+    ],
+    "west": [
+      -4.5,
+      -0.7
+    ],
+    "alternative": [
+      -4.5,
+      3
+    ]
+  },
+  "waypoint_geometry": {
+    "west": {
+      "x": -2,
+      "y": -0.7,
+      "derivation": "goal + (-4.5, -0.7); libre en PGM y fuera del footprint estático; pasa al sur-oeste de mesa."
+    },
+    "alternative": {
+      "x": -2,
+      "y": 3,
+      "derivation": "goal + (-4.5, 3.0); ruta norte alternativa, libre en PGM y fuera del footprint estático."
+    }
+  },
+  "validation_basis": "PGM libre y footprint estático libre; validación Nav2 pendiente."
+}

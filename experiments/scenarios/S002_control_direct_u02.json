@@ -1,0 +1,52 @@
+{
+  "scenario_id": "S002_control_direct_u02",
+  "description": "Control de no-intervención: trayecto corto abierto y solicitud U02 de ruta directa.",
+  "hypothesis": [
+    "H1"
+  ],
+  "initial_pose": {
+    "x": 2,
+    "y": -3,
+    "z": 0.11,
+    "yaw": 0
+  },
+  "goal": {
+    "label": "dormitorio",
+    "x": 2.5,
+    "y": -3
+  },
+  "user_id": "U02",
+  "location": "salon",
+  "task": "navegacion",
+  "query": "U02 quiere ir del salon al dormitorio por la ruta mas directa si esta despejada.",
+  "obstacle_configuration": "apartment_default_static",
+  "obstacle_context_description": "Trayecto corto al sur de la cama; no interseca mesa, sofá, armario ni planta.",
+  "expected_relevant_memories": [
+    "M016",
+    "M017",
+    "M021",
+    "M023",
+    "M047"
+  ],
+  "expected_preference": "prefiere rutas directas si hay espacio",
+  "expected_strategy": "direct",
+  "available_strategies": [
+    "direct",
+    "central"
+  ],
+  "strategy_waypoint_offsets": {
+    "direct": [
+      0,
+      0
+    ],
+    "central": [
+      0,
+      0
+    ]
+  },
+  "waypoint_geometry": {
+    "direct": null,
+    "central": null
+  },
+  "validation_basis": "PGM libre y footprint estático libre; validación Nav2 pendiente."
+}

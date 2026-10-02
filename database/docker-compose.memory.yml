@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+
+    environment:
+      POSTGRES_USER: ${MEMORY_DB_USER:?Set MEMORY_DB_USER in .env}
+      POSTGRES_PASSWORD: ${MEMORY_DB_PASSWORD:?Set MEMORY_DB_PASSWORD in .env}
+      POSTGRES_DB: ${MEMORY_DB_NAME:?Set MEMORY_DB_NAME in .env}
+
+    ports:
+      - "${MEMORY_DB_PORT:-5433}:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

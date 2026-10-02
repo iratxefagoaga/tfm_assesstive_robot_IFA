@@ -1,0 +1,16 @@
+query_id,query,expected_memories,relevance_reason
+Q001,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,M001;M003;M007;M009;M013;M015,preferencia y navegación espacial
+Q002,U01 necesita evitar la mesa del salon durante una navegacion.,M001;M002;M007;M009;M015,obstaculo y preferencia de usuario
+Q003,U02 quiere ir del salon al dormitorio por la ruta mas directa si esta despejada.,M016;M017;M021;M023;M047,preferencia por ruta directa
+Q004,U02 necesita acercarse a una mesa y prefiere una aproximacion frontal.,M019;M020;M024,preferencia de aproximacion frontal
+Q005,U03 quiere desplazarse desde el salon evitando pasar cerca de la mesa.,M031;M032;M033;M037;M040;M041;M045,evitar mesa
+Q006,U03 necesita una aproximacion lateral a un objeto.,M034;M039;M042,aproximacion lateral
+Q007,U03 encuentra un obstaculo inesperado y hay que priorizar la seguridad.,M043;M026;M011;M037,respuesta segura ante obstaculo
+Q008,U01 esta en una zona estrecha y necesita reducir la velocidad.,M005;M015,velocidad reducida
+Q009,U02 tiene un obstaculo en la ruta central y acepta un pequeño desvio.,M022;M028,pequeño desvio
+Q010,U01 necesita ayuda para aproximarse a una mesa dejando espacio lateral.,M004;M010;M012,espacio lateral
+Q011,U03 quiere volver al dormitorio evitando la mesa del salon.,M031;M033;M041;M045,retorno evitando mesa
+Q012,U01 quiere ir al dormitorio pero la mesa fue retirada y la ruta central es valida.,M046;M003;M014,excepcion temporal
+Q013,U02 quiere ir al dormitorio y la ruta directa esta despejada.,M016;M017;M021;M023;M047,ruta directa y contexto temporal
+Q014,U03 quiere navegar por el salon y existe un obstaculo que obliga a recalcular.,M043;M037;M041,obstaculo y replanning
+Q015,La experiencia trata de localizar un objeto en un armario y no de navegar.,M050,busqueda de objeto; baja relevancia de navegación

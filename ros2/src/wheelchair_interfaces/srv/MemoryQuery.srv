@@ -1,0 +1,21 @@
+string query
+string user_id
+string location
+string task
+string goal
+int32 k
+---
+bool success
+string message
+
+string[] memory_ids
+string[] summaries
+
+string[] observations
+string[] actions
+string[] outcomes
+string[] preferences
+
+float64[] semantic_scores
+float64[] context_scores
+float64[] final_scores

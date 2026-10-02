@@ -1,0 +1,8 @@
+# Development and tests only.
+pytest>=8,<9
+
+# Run the Python ROS package tests with the installed memory backend.
+colcon-ros
+colcon-package-selection
+colcon-recursive-crawl
+colcon-test-result

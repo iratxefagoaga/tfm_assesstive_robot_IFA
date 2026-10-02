@@ -1,0 +1,23 @@
+[INFO] [launch]: All log files can be found below /home/iratxefagoaga/.ros/log/2026-09-22-17-23-00-783437-DESKTOP-8R9E2KA-873537
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [873561]
+[INFO] [create-2]: process started with pid [873562]
+[INFO] [parameter_bridge-3]: process started with pid [873563]
+[INFO] [robot_state_publisher-4]: process started with pid [873564]
+[INFO] [scan_frame_fixer.py-5]: process started with pid [873565]
+[create-2] [INFO] [1790090582.114240408] [ros_gz_sim]: Requesting list of world names.
+[robot_state_publisher-4] [INFO] [1790090582.129061420] [robot_state_publisher]: Robot initialized
+[parameter_bridge-3] [INFO] [1790090582.288351490] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790090582.296294813] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/cmd_vel (gz.msgs.Twist) -> /cmd_vel (geometry_msgs/msg/Twist)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790090582.302103753] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790090582.306373203] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790090582.319056783] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790090582.325015790] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-3] [INFO] [1790090582.331650727] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/scan (gz.msgs.LaserScan) -> /scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[scan_frame_fixer.py-5] [INFO] [1790090583.026023782] [scan_frame_fixer]: Scan Frame Fixer iniciado
+[create-2] [INFO] [1790090583.589758942] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-2]: process has finished cleanly [pid 873562]
+[INFO] [memory_node-6]: process started with pid [873775]
+[memory_node-6] [INFO] [1790090632.956643610] [memory_node]: Inicializando MemoryNode...
+[memory_node-6] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[memory_node-6] Inicializando MemoryService...

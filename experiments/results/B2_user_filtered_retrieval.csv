@@ -1,0 +1,16 @@
+query_id,query,user_id,relevant_memories,retrieved_memories,similarities,precision_at_5,recall_at_5,ndcg_at_5
+Q001,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,U01,M001;M003;M007;M009;M013;M015,M001;M003;M015;M007;M046,0.750868;0.689587;0.679415;0.676281;0.662939,0.8,0.6666666666666666,0.8687949224876582
+Q002,U01 necesita evitar la mesa del salon durante una navegacion.,U01,M001;M002;M007;M009;M015,M001;M002;M015;M046;M011,0.650430;0.596322;0.584834;0.579046;0.578099,0.6,0.6,0.7227265726449519
+Q003,U02 quiere ir del salon al dormitorio por la ruta mas directa si esta despejada.,U02,M016;M017;M021;M023;M047,M047;M021;M016;M027;M023,0.684469;0.671557;0.662353;0.648508;0.643113,0.8,0.8,0.8539316501572937
+Q004,U02 necesita acercarse a una mesa y prefiere una aproximacion frontal.,U02,M019;M020;M024,M020;M019;M024;M028;M016,0.747151;0.665591;0.659238;0.578802;0.547958,0.6,1.0,1.0
+Q005,U03 quiere desplazarse desde el salon evitando pasar cerca de la mesa.,U03,M031;M032;M033;M037;M040;M041;M045,M031;M045;M032;M033;M041,0.667680;0.647759;0.626365;0.620668;0.609397,1.0,0.7142857142857143,1.0
+Q006,U03 necesita una aproximacion lateral a un objeto.,U03,M034;M039;M042,M042;M034;M039;M035;M040,0.663203;0.636242;0.634281;0.534337;0.531269,0.6,1.0,1.0
+Q007,U03 encuentra un obstaculo inesperado y hay que priorizar la seguridad.,U03,M043;M026;M011;M037,M043;M041;M031;M032;M033,0.689734;0.534889;0.526467;0.503947;0.497813,0.2,0.25,0.3903800499921017
+Q008,U01 esta en una zona estrecha y necesita reducir la velocidad.,U01,M005;M015,M005;M015;M002;M009;M001,0.693689;0.570242;0.517995;0.504681;0.489264,0.4,1.0,1.0
+Q009,U02 tiene un obstaculo en la ruta central y acepta un pequeño desvio.,U02,M022;M028,M022;M017;M026;M027;M028,0.651766;0.586201;0.575934;0.571137;0.556883,0.4,1.0,0.8503449055347546
+Q010,U01 necesita ayuda para aproximarse a una mesa dejando espacio lateral.,U01,M004;M010;M012,M010;M006;M004;M012;M001,0.772007;0.652684;0.633382;0.626717;0.625354,0.6,1.0,0.9060254355346823
+Q011,U03 quiere volver al dormitorio evitando la mesa del salon.,U03,M031;M033;M041;M045,M045;M031;M038;M033;M036,0.727786;0.634671;0.630567;0.605155;0.586011,0.6,0.75,0.8048099750039491
+Q012,U01 quiere ir al dormitorio pero la mesa fue retirada y la ruta central es valida.,U01,M046;M003;M014,M046;M002;M001;M007;M014,0.682424;0.670954;0.670799;0.645000;0.640999,0.4,0.6666666666666666,0.6508205185601091
+Q013,U02 quiere ir al dormitorio y la ruta directa esta despejada.,U02,M016;M017;M021;M023;M047,M047;M021;M027;M016;M023,0.651461;0.642873;0.635391;0.630505;0.624450,0.8,0.8,0.830419897363192
+Q014,U03 quiere navegar por el salon y existe un obstaculo que obliga a recalcular.,U03,M043;M037;M041,M043;M031;M048;M037;M033,0.666505;0.655043;0.653188;0.624907;0.616469,0.4,0.6666666666666666,0.6713860725233041
+Q015,La experiencia trata de localizar un objeto en un armario y no de navegar.,,M050,M050;M048;M049;M046;M001,0.642824;0.585700;0.561965;0.558754;0.558436,0.2,1.0,1.0

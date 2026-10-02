@@ -1,0 +1,25 @@
+string query
+string user_id
+string location
+string task
+string goal
+int32 k
+---
+bool success
+string message
+
+string strategy
+bool avoid_obstacle
+bool prefer_clearance
+
+string source_memory
+string reason
+
+string observation
+string action
+string outcome
+string preference
+
+float64 semantic_score
+float64 context_score
+float64 final_score

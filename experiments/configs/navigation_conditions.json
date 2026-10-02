@@ -1,0 +1,16 @@
+{
+  "experiment_id": "phase4_comparable_navigation",
+  "shared_assets": {
+    "robot": "wheelchair",
+    "world": "wheelchair_gazebo/worlds/apartment.world",
+    "map": "wheelchair_navigation/maps/apartment.yaml",
+    "nav2_parameters": "wheelchair_navigation/config/nav2_params.yaml",
+    "sensors": "default_simulation"
+  },
+  "conditions": {
+    "baseline": {"launch": "baseline_experiment.launch.py", "memory_enabled": false, "timeout_s": 120},
+    "memory_on": {"launch": "memory_on_experiment.launch.py", "memory_enabled": true, "timeout_s": 360}
+  },
+  "results_directory": "experiments/results/phase4",
+  "automated_results_directory": "experiments/results/phase5"
+}

@@ -1,0 +1,2 @@
+timestamp_utc,experiment_id,scenario_id,condition,run_id,initial_x,initial_y,initial_yaw,query,user_id,location,task,goal,memory_ids,semantic_score,context_score,final_score,strategy,waypoint_x,waypoint_y,nav2_result
+2026-09-22T14:52:10.827490+00:00,phase4_comparable_navigation,S001_shared_safe_goal,MEMORY_ON,phase4_acceptance_002,2.0,-3.0,0.0,U01 quiere ir del salon al dormitorio y necesita una ruta con espacio lateral.,U01,salon,navegacion,dormitorio,M001|M046|M015|M007|M009,0.7510414032,1.0000000000,0.7759372629,west,2.500,-3.000,SUCCEEDED
