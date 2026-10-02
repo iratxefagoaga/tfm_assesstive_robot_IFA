@@ -17,8 +17,7 @@
       <diffuse>1 1 1 1</diffuse>
     </light>
 
-    <include>
-      <uri>model://home</uri>
-    </include>
+    <!-- The home model is spawned explicitly by simulation.launch.py.
+         This avoids model:// URI ambiguity with the POSIX /home path. -->
   </world>
 </sdf>
