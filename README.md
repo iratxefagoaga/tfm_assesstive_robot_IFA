@@ -291,6 +291,9 @@ Ver [diseño del contrato](reports/n1_contract_and_logging_design.md).
 ## Testing
 
 Las suites controladas no necesitan la base experimental ni descargar el modelo.
+En este checkout de publicación el venv existente es `.venv`; sustituye
+`.venv-memory` por `.venv` en los comandos de tests si usas ese entorno.
+El launch N1 actual consume `.venv/bin` para el worker de memoria.
 Desde la raíz, con ROS/overlay cargados. El backend y los tests del paquete
 Python usan el venv público; los tests CMake usan Python del sistema.
 requirements-dev.txt incluye el runner colcon para ese venv. En esa suite se
@@ -338,11 +341,23 @@ su normalización queda pendiente para un commit de mantenimiento.
 
 ### PLANNED
 
-Campaña científica; Casa, Mall y Aeropuerto (Airport); métricas pendientes,
-resultados comparativos finales y análisis de tesis.
-Los escenarios existentes y B1–B4 no equivalen a esa campaña terminada.
+HOME y PARK están **RUNTIME_VALIDATED** como validación de ingeniería;
+el fix cinemático está **VALIDATED** (visual 45 mm, colisión 5 mm).
+AIRPORT es exploratorio: percepción dinámica PASS (scan/marking/clearing),
+navegación **NAVIGATION_BLOCKED** tras N0 NAVIGATION_FAILURE.
+Véanse [HOME](docs/experiments/HOME_01.md), [PARK](docs/experiments/PARK_01.md)
+y [AIRPORT](docs/experiments/AIRPORT_01.md).
+
+Campaña científica; validación de navegación de Aeropuerto;
+ground-truth evaluator de cumplimiento; métricas pendientes y resultados
+comparativos finales. Los escenarios N0/N1 definidos no equivalen a una
+campaña terminada ni a resultados de eficacia.
 
 ## Experiment Validity and Available Data
+
+La matriz de diseño HOME/PARK/AIRPORT, con queries candidatas, geometría,
+ground truth independiente y puertas de calibración, está en
+[docs/experiments/SCENARIO_MATRIX.md](docs/experiments/SCENARIO_MATRIX.md).
 
 [experiments/data](experiments/data) contiene seed y queries;
 [experiments/configs](experiments/configs) contiene configuración;

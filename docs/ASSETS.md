@@ -70,3 +70,8 @@ No directories, placeholders or runtime resources were fabricated. Static
 inspection confirmed that the remaining install source directories exist.
 This resolves the identified directory-install blocker; build, tests and
 runtime validation remain for Phase J4.
+
+
+## Scenario assets added after the public candidate
+
+HOME/PARK/AIRPORT SDF worlds/models use local primitive geometry. Their PGM maps are deterministic rasterizations of source collision geometry using the versioned generators. AIRPORT additionally uses a small local COLLADA primitive (`models/airport/meshes/airport_pedestrian.dae`), whose metadata names the TFM deterministic scenario primitive tool; no external pedestrian model is imported. This records the inspected structure, not a new ownership or licensing assertion. Authorship/provenance and the applicable license for these newer scenario assets remain **REVIEW REQUIRED**; no automatic license grant is assigned here. Existing third-party exclusions and unresolved supervisor mesh provenance remain unchanged.

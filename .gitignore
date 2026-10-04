@@ -93,3 +93,22 @@ node_modules/
 
 # Asset attribution must be included in the public candidate
 !/docs/ASSETS.md
+
+# Track the frozen experiment design while keeping older scratch documents ignored.
+!/docs/experiments/
+/docs/experiments/*
+!/docs/experiments/SCENARIO_MATRIX.md
+
+# Publish engineering traceability; other scratch documents remain private.
+!/docs/experiments/HOME_01.md
+!/docs/experiments/PARK_01.md
+!/docs/experiments/AIRPORT_01.md
+!/docs/experiments/home_environment_design.md
+
+# Local diagnostic outputs
+/tmp/
+*.bag
+*.db3
+*.mcap
+core
+core.[0-9]*
