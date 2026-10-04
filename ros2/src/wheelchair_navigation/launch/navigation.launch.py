@@ -6,7 +6,7 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 
-SUPPORTED_ENVIRONMENTS = {"apartment", "home"}
+SUPPORTED_ENVIRONMENTS = {"apartment", "home", "park", "airport"}
 
 
 def _navigation_actions(context, pkg, params_file, required_nodes):
@@ -25,9 +25,17 @@ def _navigation_actions(context, pkg, params_file, required_nodes):
         package="nav2_map_server", executable="map_server", name="map_server",
         output="screen", parameters=[params_file, {"yaml_filename": map_file, "use_sim_time": True}],
     )
+    initial_pose = {
+        "initial_pose": {
+            "x": float(LaunchConfiguration("initial_x").perform(context)),
+            "y": float(LaunchConfiguration("initial_y").perform(context)),
+            "z": 0.0,
+            "yaw": float(LaunchConfiguration("initial_yaw").perform(context)),
+        }
+    }
     amcl = Node(
         package="nav2_amcl", executable="amcl", name="amcl",
-        output="screen", parameters=[params_file],
+        output="screen", parameters=[params_file, initial_pose],
     )
     planner_server = Node(
         package="nav2_planner", executable="planner_server", name="planner_server",
@@ -35,7 +43,10 @@ def _navigation_actions(context, pkg, params_file, required_nodes):
     )
     controller_server = Node(
         package="nav2_controller", executable="controller_server", name="controller_server",
-        output="screen", parameters=[params_file], remappings=[("cmd_vel", "/cmd_vel_nav")],
+        output="screen", parameters=[params_file] + (
+            [os.path.join(pkg, "config", "airport_costmap.yaml")]
+            if environment == "airport" else []
+        ), remappings=[("cmd_vel", "/cmd_vel_nav")],
     )
     behavior_server = Node(
         package="nav2_behaviors", executable="behavior_server", name="behavior_server",
@@ -80,8 +91,11 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "environment",
             default_value="apartment",
-            description="Navigation map: apartment or home",
+            description="Navigation map: apartment, home, park, or airport",
         ),
+        DeclareLaunchArgument("initial_x", default_value="2.0"),
+        DeclareLaunchArgument("initial_y", default_value="-3.0"),
+        DeclareLaunchArgument("initial_yaw", default_value="0.0"),
         OpaqueFunction(
             function=_navigation_actions,
             args=[pkg, params_file, required_nodes],

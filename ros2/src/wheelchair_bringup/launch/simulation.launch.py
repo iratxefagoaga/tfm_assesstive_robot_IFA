@@ -9,7 +9,7 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 
-SUPPORTED_ENVIRONMENTS = {"apartment", "home"}
+SUPPORTED_ENVIRONMENTS = {"apartment", "home", "park", "airport"}
 
 
 def _simulation_actions(context, gazebo_pkg, wheelchair_model):
@@ -43,23 +43,21 @@ def _simulation_actions(context, gazebo_pkg, wheelchair_model):
 
     actions = [gazebo_server, gazebo_gui]
 
-    # Home is loaded from its SDF file instead of model://home.  On Linux,
-    # Gazebo / sdformat can interpret the authority "home" as the POSIX /home
-    # path before consulting the model resource path.  Explicit spawning also
-    # keeps the environment model independent of Fuel / URI resolution.
-    if environment == "home":
-        home_model = os.path.join(gazebo_pkg, "models", "home", "model.sdf")
-        if not os.path.isfile(home_model):
-            raise RuntimeError(f"Home model not found: {home_model}")
+    # Spawn all non-apartment models by installed absolute path.  Besides
+    # avoiding model://home ambiguity on POSIX, this keeps each scenario local.
+    if environment != "apartment":
+        environment_model = os.path.join(gazebo_pkg, "models", environment, "model.sdf")
+        if not os.path.isfile(environment_model):
+            raise RuntimeError(f"Environment model not found: {environment_model}")
         actions.append(
             TimerAction(
                 period=1.0,
                 actions=[Node(
                     package="ros_gz_sim",
                     executable="create",
-                    name="spawn_home",
+                    name=f"spawn_{environment}",
                     output="screen",
-                    arguments=["-name", "home", "-file", home_model],
+                    arguments=["-name", environment, "-file", environment_model],
                 )],
             )
         )
@@ -103,7 +101,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "environment",
             default_value="apartment",
-            description="Simulation environment: apartment or home",
+            description="Simulation environment: apartment, home, park, or airport",
         ),
         DeclareLaunchArgument("gui", default_value="true"),
         DeclareLaunchArgument("initial_x", default_value="2.0"),

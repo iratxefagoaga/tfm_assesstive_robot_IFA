@@ -1,0 +1,6 @@
+# AIRPORT only: StaticLayer must not overwrite dynamic voxel marks.
+# Existing plugins and all numerical parameters remain unchanged.
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      plugins: [static_layer, voxel_layer, inflation_layer]
