@@ -17,12 +17,37 @@
     <link name="wall_south_left"><pose>-6.45 -8.9 1.35 0 0 0</pose><collision name="c"><geometry><box><size>10.9 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>10.9 0.2 2.7</size></box></geometry><material><diffuse>0.92 0.90 0.84 1</diffuse></material></visual></link>
     <link name="wall_south_right"><pose>6.45 -8.9 1.35 0 0 0</pose><collision name="c"><geometry><box><size>10.9 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>10.9 0.2 2.7</size></box></geometry><material><diffuse>0.92 0.90 0.84 1</diffuse></material></visual></link>
 
-    <!-- North sleeping zone: horizontal partition at y=4.0 with three 1.4 m openings. -->
-    <link name="north_partition_1"><pose>-9.5 4 1.35 0 0 0</pose><collision name="c"><geometry><box><size>4.8 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>4.8 0.2 2.7</size></box></geometry><material><diffuse>0.88 0.87 0.82 1</diffuse></material></visual></link>
-    <link name="north_partition_2"><pose>-5.3 4 1.35 0 0 0</pose><collision name="c"><geometry><box><size>2.2 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>2.2 0.2 2.7</size></box></geometry><material><diffuse>0.88 0.87 0.82 1</diffuse></material></visual></link>
-    <link name="north_partition_3"><pose>-1.2 4 1.35 0 0 0</pose><collision name="c"><geometry><box><size>4.6 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>4.6 0.2 2.7</size></box></geometry><material><diffuse>0.88 0.87 0.82 1</diffuse></material></visual></link>
-    <link name="north_partition_4"><pose>3.0 4 1.35 0 0 0</pose><collision name="c"><geometry><box><size>2.4 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>2.4 0.2 2.7</size></box></geometry><material><diffuse>0.88 0.87 0.82 1</diffuse></material></visual></link>
-    <link name="north_partition_5"><pose>8.1 4 1.35 0 0 0</pose><collision name="c"><geometry><box><size>7.6 0.2 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>7.6 0.2 2.7</size></box></geometry><material><diffuse>0.88 0.87 0.82 1</diffuse></material></visual></link>
+    <!-- North sleeping zone.
+         Two 3.0 m accessible openings define the experimental alternatives:
+         WEST (-7 to -4) and CENTRAL (2 to 5).
+         Collision and visual geometry are identical. -->
+
+    <!-- Wall from exterior west boundary to WEST opening. -->
+    <link name="north_partition_west">
+      <pose>-9.45 4.0 1.35 0 0 0</pose>
+      <collision name="c"><geometry><box><size>4.9 0.2 2.7</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>4.9 0.2 2.7</size></box></geometry>
+        <material><diffuse>0.88 0.87 0.82 1</diffuse></material>
+      </visual>
+    </link>
+
+    <!-- Wall separating WEST and CENTRAL openings. -->
+    <link name="north_partition_middle">
+      <pose>-1.0 4.0 1.35 0 0 0</pose>
+      <collision name="c"><geometry><box><size>6.0 0.2 2.7</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>6.0 0.2 2.7</size></box></geometry>
+        <material><diffuse>0.88 0.87 0.82 1</diffuse></material>
+      </visual>
+    </link>
+
+    <!-- Wall from CENTRAL opening to exterior east boundary. -->
+    <link name="north_partition_east">
+      <pose>8.45 4.0 1.35 0 0 0</pose>
+      <collision name="c"><geometry><box><size>6.9 0.2 2.7</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>6.9 0.2 2.7</size></box></geometry>
+        <material><diffuse>0.88 0.87 0.82 1</diffuse></material>
+      </visual>
+    </link>
 
     <!-- Bedroom/bathroom vertical separators. -->
     <link name="bed1_bath_wall"><pose>-4.5 6.45 1.35 0 0 0</pose><collision name="c"><geometry><box><size>0.2 4.9 2.7</size></box></geometry></collision><visual name="v"><geometry><box><size>0.2 4.9 2.7</size></box></geometry><material><diffuse>0.88 0.87 0.82 1</diffuse></material></visual></link>
@@ -36,7 +61,7 @@
     <link name="living_sofa"><pose>7.8 -4.9 0.45 0 0 0</pose><collision name="c"><geometry><box><size>3.2 1.0 0.9</size></box></geometry></collision><visual name="v"><geometry><box><size>3.2 1.0 0.9</size></box></geometry><material><diffuse>0.16 0.32 0.48 1</diffuse></material></visual></link>
     <link name="living_armchair"><pose>10.0 -2.2 0.45 0 0 0</pose><collision name="c"><geometry><box><size>1.0 1.0 0.9</size></box></geometry></collision><visual name="v"><geometry><box><size>1.0 1.0 0.9</size></box></geometry><material><diffuse>0.20 0.38 0.52 1</diffuse></material></visual></link>
     <link name="living_coffee_table"><pose>7.5 -2.8 0.25 0 0 0</pose><collision name="c"><geometry><box><size>1.5 0.8 0.5</size></box></geometry></collision><visual name="v"><geometry><box><size>1.5 0.8 0.5</size></box></geometry><material><diffuse>0.36 0.18 0.08 1</diffuse></material></visual></link>
-    <link name="dining_table"><pose>3.2 0.3 0.38 0 0 0</pose><collision name="c"><geometry><box><size>2.0 1.0 0.76</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 1.0 0.76</size></box></geometry><material><diffuse>0.34 0.16 0.06 1</diffuse></material></visual></link>
+    <link name="dining_table"><pose>0.5 2.5 0.38 0 0 0</pose><collision name="c"><geometry><box><size>2.0 1.0 0.76</size></box></geometry></collision><visual name="v"><geometry><box><size>2.0 1.0 0.76</size></box></geometry><material><diffuse>0.34 0.16 0.06 1</diffuse></material></visual></link>
     <link name="tv_unit"><pose>10.8 -5.2 0.35 0 0 0</pose><collision name="c"><geometry><box><size>0.45 2.4 0.7</size></box></geometry></collision><visual name="v"><geometry><box><size>0.45 2.4 0.7</size></box></geometry><material><diffuse>0.22 0.18 0.14 1</diffuse></material></visual></link>
 
     <!-- Kitchen. -->
