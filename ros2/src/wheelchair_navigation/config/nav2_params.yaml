@@ -115,6 +115,7 @@ controller_server:
       plugin: nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
 
       desired_linear_vel: 0.20
+      regulated_linear_scaling_min_speed: 0.05
 
       lookahead_dist: 0.6
       min_lookahead_dist: 0.3

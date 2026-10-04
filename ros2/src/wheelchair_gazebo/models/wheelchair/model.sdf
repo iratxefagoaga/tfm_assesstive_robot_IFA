@@ -103,7 +103,7 @@
 
         <radius>0.16</radius>
 
-        <length>0.045</length>
+        <length>0.005</length>
 
       </cylinder>
 
@@ -181,7 +181,7 @@
 
         <radius>0.16</radius>
 
-        <length>0.045</length>
+        <length>0.005</length>
 
       </cylinder>
 
@@ -242,7 +242,7 @@
 
   <axis>
 
-    <xyz>0 1 0</xyz>
+    <xyz>0 0 -1</xyz>
 
     <limit>
 
@@ -277,7 +277,7 @@
 
   <axis>
 
-    <xyz>0 1 0</xyz>
+    <xyz>0 0 -1</xyz>
 
     <limit>
 

@@ -65,46 +65,23 @@ public:
     state_ = std::make_shared<Round>();
     state_->deadline = now_() + timeout;
     for (const auto & name : nodes_) state_->pending.insert(name);
-    const std::weak_ptr<Round> weak = state_;
-    for (const auto & name : nodes_) {
-      if (poll() != Status::CHECKING) break;
-      try {
-        cancellations_.push_back(dispatch_(name, [weak, name, now = now_](int id, const std::string & error) {
-          if (auto state = weak.lock()) {
-            std::lock_guard<std::mutex> lock(state->mutex);
-            if (state->status != Status::CHECKING || !state->pending.erase(name)) return;
-            if (now() >= state->deadline) {
-              state->status = Status::DENIED;
-              state->reason = "/" + name + "/get_state: response timeout";
-            } else if (!error.empty() || id != 3) {
-              state->status = Status::DENIED;
-              state->reason = "/" + name + "/get_state: " +
-                (error.empty() ? "state=" + std::to_string(id) + " (expected ACTIVE)" : error);
-            } else if (state->pending.empty()) {
-              state->status = Status::ALLOWED;
-            }
-          }
-        }));
-      } catch (const std::exception & error) {
-        deny("/" + name + "/get_state: " + error.what());
-      }
-    }
+    dispatch_pending();
   }
 
   Status poll()
   {
     if (!state_) return Status::DENIED;
-    Status status;
     {
       std::lock_guard<std::mutex> lock(state_->mutex);
       if (state_->status == Status::CHECKING && now_() >= state_->deadline) {
         state_->status = Status::DENIED;
         state_->reason = "/" + *state_->pending.begin() + "/get_state: response timeout";
       }
-      status = state_->status;
     }
-    if (status != Status::CHECKING) cancel_pending();
-    return status;
+    if (status() == Status::CHECKING) dispatch_pending();
+    const auto current = status();
+    if (current != Status::CHECKING) cancel_pending();
+    return current;
   }
 
   std::string reason() const
@@ -125,11 +102,65 @@ public:
   }
 
 private:
+  Status status() const
+  {
+    if (!state_) return Status::DENIED;
+    std::lock_guard<std::mutex> lock(state_->mutex);
+    return state_->status;
+  }
+
+  void dispatch_pending()
+  {
+    const auto state = state_;
+    if (!state) return;
+    std::vector<std::string> ready_to_dispatch;
+    {
+      std::lock_guard<std::mutex> lock(state->mutex);
+      if (state->status != Status::CHECKING) return;
+      for (const auto & name : state->pending) {
+        if (state->in_flight.insert(name).second) ready_to_dispatch.push_back(name);
+      }
+    }
+    const std::weak_ptr<Round> weak = state_;
+    for (const auto & name : ready_to_dispatch) {
+      try {
+        auto cancel = dispatch_(name, [weak, name, now = now_](int id, const std::string & error) {
+          if (auto state = weak.lock()) {
+            std::lock_guard<std::mutex> lock(state->mutex);
+            state->in_flight.erase(name);
+            if (state->status != Status::CHECKING || !state->pending.count(name)) return;
+            // Service discovery can lag process startup. Keep the node pending
+            // and retry on the next existing BT tick until this round's deadline.
+            if (error == "service unavailable") return;
+            state->pending.erase(name);
+            if (now() >= state->deadline) {
+              state->status = Status::DENIED;
+              state->reason = "/" + name + "/get_state: response timeout";
+            } else if (!error.empty() || id != 3) {
+              state->status = Status::DENIED;
+              state->reason = "/" + name + "/get_state: " +
+                (error.empty() ? "state=" + std::to_string(id) + " (expected ACTIVE)" : error);
+            } else if (state->pending.empty()) {
+              state->status = Status::ALLOWED;
+            }
+          }
+        });
+        if (cancel) cancellations_.push_back(std::move(cancel));
+      } catch (const std::exception & error) {
+        {
+          std::lock_guard<std::mutex> lock(state->mutex);
+          state->in_flight.erase(name);
+        }
+        deny("/" + name + "/get_state: " + error.what());
+      }
+    }
+  }
   struct Round
   {
     std::mutex mutex;
     Status status{Status::CHECKING};
     std::set<std::string> pending;
+    std::set<std::string> in_flight;
     std::string reason;
     Clock::time_point deadline;
   };

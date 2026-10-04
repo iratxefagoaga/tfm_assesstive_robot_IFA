@@ -172,11 +172,17 @@ TEST_F(ReadinessContract, T3TimeoutBlocks)
   EXPECT_EQ(bb->get<std::string>("failure_stage"), "readiness");
   EXPECT_NE(bb->get<std::string>("failure_reason").find("timeout"), std::string::npos);
 }
-TEST_F(ReadinessContract, T4UnavailableBlocks)
+TEST_F(ReadinessContract, T4TransientServiceUnavailableRetriesUntilReady)
 {
-  initial_pass(); unavailable = true;
-  auto nav = action(); blocked(*nav);
-  EXPECT_NE(bb->get<std::string>("failure_reason").find("unavailable"), std::string::npos);
+  unavailable = true;
+  auto nav = action();
+  EXPECT_EQ(nav->onStart(), BT::NodeStatus::RUNNING);
+  EXPECT_EQ(goals, 0u);
+  EXPECT_EQ(bb->get<std::string>("final_goal_nav2_result"), "NOT_SENT");
+  unavailable = false;
+  EXPECT_EQ(finish(*nav), BT::NodeStatus::SUCCESS);
+  EXPECT_EQ(goals, 1u);
+  EXPECT_EQ(calls, 3 * names.size());
 }
 #ifdef G2E_N0
 TEST_F(ReadinessContract, T8N0MemoryFreeEvenOnFailure)

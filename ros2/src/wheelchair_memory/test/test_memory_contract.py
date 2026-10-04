@@ -241,7 +241,10 @@ from types import SimpleNamespace
 from rclpy.executors import SingleThreadedExecutor
 
 backend = types.ModuleType("memory.memory_service")
-backend.MemoryService = lambda: SimpleNamespace(retrieve_memories=lambda **kwargs: [])
+backend.MemoryService = lambda: SimpleNamespace(
+    retrieve_memories=lambda **kwargs: [],
+    engine=SimpleNamespace(dispose=lambda: None),
+)
 sys.modules["memory.memory_service"] = backend
 from wheelchair_memory.memory_node import MemoryNode
 
