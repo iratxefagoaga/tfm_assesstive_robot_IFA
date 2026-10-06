@@ -267,7 +267,7 @@ argumento launch `strategy_waypoint_enabled`. No ajustar timeouts para obtener P
 ## Common Experimental Logging
 
 [N0/N1 usan el mismo helper](ros2/src/wheelchair_assistive_bt/include/wheelchair_assistive_bt/common_experiment_logging.hpp):
-**35 columnas**, header común y una fila final por run iniciado que llega a
+**36 columnas**, con `memory_latency_ms` al final, header común y una fila final por run iniciado que llega a
 finalización, tanto exitoso como fallido. Los IDs deben ser únicos; los ejemplos
 los generan explícitamente y escriben sólo en `/tmp`.
 Un fallo antes de iniciar el orquestador no debe inventar una fila.
@@ -281,8 +281,11 @@ Un fallo antes de iniciar el orquestador no debe inventar una fila.
 - Estados: éxito/fallo de navegación, `NOT_SENT` si no se envió el objetivo y
   `NOT_APPLIED` para waypoint no aplicable según el contrato.
 - Campos de memoria/intervención de N0: `N/A`.
-- `min_clearance_m`, `context_compliance` e `intervention_appropriate`:
-  `N/A`, pendientes de definición/validación en escenarios congelados.
+- `memory_latency_ms`: intervalo monotónico desde el envío de la consulta hasta
+  completar la recomendación; N0 y recomendaciones incompletas conservan `N/A`.
+- `min_clearance_m`, `context_compliance` e `intervention_appropriate` son `N/A`
+  en el logger raw. El evaluador calcula cumplimiento contextual por trayectoria
+  independiente y GT congelado; clearance e intervención siguen sin medirse.
 
 Los errores de escritura se notifican; no se prometen resultados persistidos
 si el destino no es escribible.
@@ -311,6 +314,17 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 ../.venv-memory/bin/colcon test --packages-sele
 colcon test-result --verbose
 ~~~
 
+Los tests de evaluación requieren también ROS y el overlay cargados:
+
+~~~bash
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest scripts/experiments/tests
+~~~
+
+El guard E1 verifica evidencia de ingeniería externa mediante hashes; un clon
+sin esa evidencia no supera el guard. `E1 --execute` solo valida y emite el
+plan; no supervisa ni lanza las 40 ejecuciones. E2/E3 requieren la DB congelada,
+configuración privada, modelo cacheado y permisos READ-ONLY.
+
 Cobertura real: backend de memoria, MemoryQuery/NavigationRecommendation con
 backend controlado, fixtures de fingerprint, resolver/logging N0/N1,
 readiness y lista canónica/lifecycle/shutdown.
@@ -324,7 +338,7 @@ no forma parte del candidato público. Esta documentación no vuelve a ejecutar 
 ### VALIDATED
 
 Monorepo y packaging; runtime Linux; PostgreSQL/pgvector; retrieval y
-recomendación reales; contratos BT; logging de 35 columnas;
+recomendación reales; contratos BT; logging común de 36 columnas (35 en los CSV históricos);
 readiness fail-closed, incluyendo los casos runtime observados.
 Tests/build afectados están documentados en las fases G.
 
@@ -339,7 +353,7 @@ No se presenta como una solución definitiva de Nav2 ni como campaña lista.
 Se conservan finales de línea históricos heterogéneos y whitespace residual;
 su normalización queda pendiente para un commit de mantenimiento.
 
-### PLANNED
+### Scenario engineering validation
 
 HOME y PARK están **RUNTIME_VALIDATED** como validación de ingeniería;
 el fix cinemático está **VALIDATED** (visual 45 mm, colisión 5 mm).
@@ -348,10 +362,13 @@ navegación **NAVIGATION_BLOCKED** tras N0 NAVIGATION_FAILURE.
 Véanse [HOME](docs/experiments/HOME_01.md), [PARK](docs/experiments/PARK_01.md)
 y [AIRPORT](docs/experiments/AIRPORT_01.md).
 
-Campaña científica; validación de navegación de Aeropuerto;
-ground-truth evaluator de cumplimiento; métricas pendientes y resultados
-comparativos finales. Los escenarios N0/N1 definidos no equivalen a una
-campaña terminada ni a resultados de eficacia.
+El diseño E1/E2/E3 y su GT están congelados en
+[freeze_manifest.json](experiments/configs/freeze_manifest.json); el evaluador y
+sus tests están versionados. Las campañas finales y sus informes se conservan
+fuera del repositorio en `tfm-experimental-runs/`; sus resúmenes finales aún no
+se han incorporado a este checkout. AIRPORT sigue fuera de E1 principal.
+El estado histórico de Fase G anterior corresponde a aquella validación,
+no al cierre posterior de campañas HOME/PARK.
 
 ## Experiment Validity and Available Data
 
@@ -368,9 +385,14 @@ Los runs de ingeniería y los logs históricos se mantienen como tales.
 **Infrastructure-invalid attempts are not efficacy results.**
 Un run invalidado por infraestructura, por ejemplo `failure_stage=readiness`,
 se conserva y etiqueta; no cuenta como success/failure científico N0/N1.
-Antes de la campaña deben congelarse retry/exclusion policy, timeouts,
-seed/reset y tratamiento de intentos inválidos, con reglas iguales para N0/N1.
-No hay un número de reintentos final definido por esta documentación.
+La política congelada admite como máximo un retry limpio por fallo de
+infraestructura demostrado y ningún retry por fallo de navegación. Véanse
+[el diseño congelado](docs/experiments/EXPERIMENTAL_DESIGN.md) y
+[la configuración](experiments/configs/evaluation_design.json). El documento
+congelado registra el checkpoint previo a las campañas; sus frases sobre
+ejecución futura y captura pendiente son históricas. La captura actual usa
+`transform.header.stamp` y un timer ROS de 10 Hz, como documenta
+[la validación técnica E1](docs/experiments/E1_RUNTIME_VALIDATION.md).
 
 ## Reproducibility
 
@@ -394,8 +416,8 @@ documentadas en [database.md](docs/memory/database.md).
 
 Los entornos virtuales, `.env`/`.env.memory` y artefactos ROS generados
 permanecen ignorados. No compartir credenciales ni publicar backups de DB.
-La regla preexistente `docs/` también ignora documentación: su tratamiento
-se revisará en la auditoría de publicación, sin cambiar `.gitignore` en Fase H.
+`.gitignore` publica explícitamente las guías técnicas activas y el diseño
+experimental; mantiene ignorados documentos de trabajo privados.
 
 La publicación final y el historial sensible aún requieren auditoría.
 Los PDFs académicos no se consideran redistribuibles automáticamente;
