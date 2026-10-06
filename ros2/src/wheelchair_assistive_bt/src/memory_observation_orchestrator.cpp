@@ -40,6 +40,7 @@ struct Context
   std::chrono::milliseconds nav_ready_timeout{60000};
   std::chrono::milliseconds navigation_timeout{120000};
   std::shared_ptr<NavigationMetrics> metrics;
+  MemoryPipelineLatency memory_latency;
 };
 
 class NodeContext
@@ -96,6 +97,8 @@ public:
   {
     started_ = std::chrono::steady_clock::now();
     sent_ = false; done_ = false; response_.reset(); error_.clear();
+    context_->memory_latency.reset();
+    config_.blackboard->set("memory_latency_ms", std::string("N/A"));
     config_.blackboard->set("memory_query_result", std::string("PENDING"));
     return BT::NodeStatus::RUNNING;
   }
@@ -116,6 +119,7 @@ public:
       request->k = value<int32_t>("k");
       sent_ = true;
       RCLCPP_INFO(context_->node->get_logger(), "Assistive BT N1: QueryMemory -> /memory/query");
+      context_->memory_latency.start();
       context_->memory_query->async_send_request(request, [this](rclcpp::Client<MemoryQuery>::SharedFuture future) {
         try { response_ = future.get(); } catch (const std::exception & error) { error_ = error.what(); }
         done_ = true;
@@ -207,6 +211,8 @@ public:
     config_.blackboard->set("recommendation_context_score", response_->context_score);
     config_.blackboard->set("recommendation_final_score", response_->final_score);
     config_.blackboard->set("recommendation_result", std::string("SUCCEEDED"));
+    context_->memory_latency.finish();
+    config_.blackboard->set("memory_latency_ms", context_->memory_latency.milliseconds());
     return BT::NodeStatus::SUCCESS;
   }
   void onHalted() override {}
@@ -447,6 +453,8 @@ inline ResultRow n1_result_row(
   const auto offsets = blackboard->get<std::string>("strategy_waypoint_offsets");
   if (!offsets.empty()) row["strategy_waypoint_offsets"] = offsets;
   if (blackboard->get<std::string>("recommendation_result") == "SUCCEEDED") {
+    std::string latency;
+    if (blackboard->get("memory_latency_ms", latency)) row["memory_latency_ms"] = latency;
     for (const auto * key : {"source_memory", "retrieved_strategy"}) {
       const auto value = blackboard->get<std::string>(key);
       if (!value.empty()) row[key] = value;

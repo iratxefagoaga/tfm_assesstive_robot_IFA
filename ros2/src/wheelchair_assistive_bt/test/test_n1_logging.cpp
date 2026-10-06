@@ -32,6 +32,7 @@ BT::Blackboard::Ptr base_result()
   bb->set("source_memory", std::string("M001"));
   bb->set("retrieved_strategy", std::string("west"));
   bb->set("recommendation_result", std::string("SUCCEEDED"));
+  bb->set("memory_latency_ms", std::string("125.500"));
   bb->set("strategy_waypoint_enabled", true);
   bb->set("strategy_waypoint_offsets", std::string("west:-0.25:0.0"));
   bb->set("strategy_applied", true);
@@ -128,7 +129,7 @@ TEST_P(N1Outcomes, OneFinalRowWithCorrectMemoryAndFailureState)
   ASSERT_EQ(first.size(), 2u);
   const auto row = n1_result_row(bb, metrics);
   EXPECT_EQ(first[1] + "\n", serialize_common_result(row));
-  EXPECT_EQ(row.size(), 35u);
+  EXPECT_EQ(row.size(), 36u);
   EXPECT_EQ(row.at("condition"), "MEMORY_ON");
   EXPECT_EQ(row.at("success"), stage.empty() ? "true" : "false");
   EXPECT_EQ(row.at("failure_stage"), stage);
@@ -136,6 +137,7 @@ TEST_P(N1Outcomes, OneFinalRowWithCorrectMemoryAndFailureState)
   EXPECT_EQ(row.at("waypoint_nav2_result"), before.at("waypoint_nav2_result"));
   EXPECT_EQ(row.at("memory_ids"), stage == "query_memory" ? "N/A" : "M001|M046");
   EXPECT_EQ(row.at("source_memory"), early ? "N/A" : "M001");
+  EXPECT_EQ(row.at("memory_latency_ms"), early ? "N/A" : "125.500");
   EXPECT_EQ(row.at("retrieved_strategy"), early ? "N/A" : "west");
   EXPECT_EQ(row.at("strategy_applied"), early ? "N/A" : (input.applied ? "true" : "false"));
   EXPECT_EQ(row.at("strategy_waypoint_enabled"), "true");
@@ -165,7 +167,7 @@ INSTANTIATE_TEST_SUITE_P(
     Outcome{"FinalGoalFailure", "navigate_nav2", "ABORTED", true}),
   [](const ::testing::TestParamInfo<Outcome> & info) { return info.param.name; });
 
-TEST_F(N1Logging, ActualN0AndN1RowsHaveIdentical35FieldHeaders)
+TEST_F(N1Logging, ActualN0AndN1RowsHaveIdentical36FieldHeaders)
 {
   NavigationMetrics metrics;
   const auto bb = base_result();
@@ -179,8 +181,69 @@ TEST_F(N1Logging, ActualN0AndN1RowsHaveIdentical35FieldHeaders)
   ASSERT_EQ(n1.size(), 2u);
   EXPECT_EQ(n0[0], n1[0]);
   EXPECT_EQ(n1[0] + "\n", common_result_header());
-  EXPECT_EQ(std::count(n1[0].begin(), n1[0].end(), ','), 34);
-  EXPECT_EQ(common_result_fields().size(), 35u);
+  EXPECT_EQ(std::count(n1[0].begin(), n1[0].end(), ','), 35);
+  EXPECT_EQ(common_result_fields().size(), 36u);
+  EXPECT_EQ(std::count(common_result_fields().begin(), common_result_fields().end(), "memory_latency_ms"), 1);
+  EXPECT_EQ(n0_reference_row(bb, metrics).at("memory_latency_ms"), "N/A");
+}
+
+TEST(MemoryLatency, OnlyCompleteMonotonicPipelineIsMeasured)
+{
+  MemoryPipelineLatency latency;
+  const auto t = MemoryPipelineLatency::Clock::time_point{};
+  EXPECT_EQ(latency.milliseconds(), "N/A");
+  latency.finish(t);
+  EXPECT_EQ(latency.milliseconds(), "N/A");
+  latency.start(t);
+  EXPECT_EQ(latency.milliseconds(), "N/A");  // Query/recommendation failure or timeout.
+  latency.finish(t - std::chrono::milliseconds(1));
+  EXPECT_EQ(latency.milliseconds(), "N/A");
+  latency.finish(t + std::chrono::microseconds(125500));
+  EXPECT_EQ(latency.milliseconds(), "125.500");
+}
+
+TEST(MemoryLatency, FirstDispatchAndFirstCompletionAreNotOverwritten)
+{
+  MemoryPipelineLatency latency;
+  const auto t = MemoryPipelineLatency::Clock::time_point{};
+  latency.start(t);
+  latency.start(t + std::chrono::milliseconds(20));
+  latency.finish(t + std::chrono::milliseconds(100));
+  latency.finish(t + std::chrono::seconds(15));  // Navigation time excluded.
+  EXPECT_EQ(latency.milliseconds(), "100.000");
+  latency.reset();
+  EXPECT_EQ(latency.milliseconds(), "N/A");
+}
+
+TEST_F(N1Logging, QueryStartClearsPreviousPipelineMeasurement)
+{
+  const auto bb = base_result();
+  auto context = bb->get<std::shared_ptr<Context>>("context");
+  const auto t = MemoryPipelineLatency::Clock::time_point{};
+  context->memory_latency.start(t);
+  context->memory_latency.finish(t + std::chrono::milliseconds(100));
+  BT::NodeConfiguration config;
+  config.blackboard = bb;
+  QueryMemory query("query", config);
+  EXPECT_EQ(query.executeTick(), BT::NodeStatus::RUNNING);
+  EXPECT_EQ(bb->get<std::string>("memory_latency_ms"), "N/A");
+  EXPECT_EQ(context->memory_latency.milliseconds(), "N/A");
+  query.haltNode();
+}
+
+TEST_F(N1Logging, LegacyCsvIsRejectedWithoutMutation)
+{
+  auto old = common_result_header();
+  const auto suffix = old.rfind(",memory_latency_ms");
+  ASSERT_NE(suffix, std::string::npos);
+  old.erase(suffix);
+  old += '\n';
+  { std::ofstream stream(path); stream << old; }
+  const auto before = lines(path);
+  std::string error;
+  EXPECT_FALSE(append_common_result(path, n1_result_row(base_result(), NavigationMetrics()), error));
+  EXPECT_EQ(lines(path), before);
+  EXPECT_NE(error.find("schema/header mismatch"), std::string::npos);
 }
 
 TEST_F(N1Logging, MetricsRemainContinuousAcrossBothGoals)

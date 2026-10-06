@@ -257,7 +257,7 @@ TEST_F(ReadinessContract, T9FinalizeAndCsvExactlyOnce)
   std::string line; size_t lines = 0;
   while (std::getline(input, line)) ++lines;
   EXPECT_EQ(lines, 2u);
-  EXPECT_EQ(common_result_fields().size(), 35u);
+  EXPECT_EQ(common_result_fields().size(), 36u);
   EXPECT_EQ(row().at("final_goal_nav2_result"), "NOT_SENT");
   EXPECT_EQ(row().at("failure_stage"), "readiness");
   std::filesystem::remove_all(directory);

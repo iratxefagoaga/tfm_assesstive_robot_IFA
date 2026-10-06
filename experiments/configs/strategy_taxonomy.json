@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "labels": [
+    "west",
+    "central",
+    "alternative",
+    "direct"
+  ],
+  "primary_comparison": "exact equality; no merged labels",
+  "production_rule_order": [
+    {
+      "contains": "ruta oeste",
+      "label": "west"
+    },
+    {
+      "contains": "ruta central",
+      "label": "central"
+    },
+    {
+      "contains_any": [
+        "alternativa",
+        "desvio",
+        "desvío"
+      ],
+      "label": "alternative"
+    },
+    {
+      "otherwise": "direct"
+    }
+  ],
+  "audited_examples": {
+    "M002": "alternative",
+    "M009": "alternative",
+    "M016": "central",
+    "M008": "direct",
+    "M014": "direct",
+    "M037": "alternative",
+    "M041": "central",
+    "M047": "west"
+  },
+  "limitations": [
+    "M002 semantically refers to west but produces alternative.",
+    "M041 contains a negation of central yet the literal parser produces central. No parser fix is authorized.",
+    "M047 old action produces west although explicit current preference is direct; E2 relevance and E3 observable action labels are different constructs.",
+    "Direct is a fallback, so cases C04/C05 are DEFAULT_SENSITIVE and withheld from primary H3 pending review."
+  ],
+  "review": {
+    "approved": true,
+    "reviewer": "HUMAN_APPROVED",
+    "date": "2026-10-05"
+  }
+}

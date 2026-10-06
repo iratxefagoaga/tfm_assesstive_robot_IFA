@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "timestamp": "2026-10-05T13:55:08+02:00",
+  "branch": "scenario-home",
+  "base_head": "596f54c83c343c0a8e40e092478ec21783fd948a",
+  "review": {
+    "approved": true,
+    "reviewer": "HUMAN_APPROVED",
+    "date": "2026-10-05"
+  },
+  "artifacts_sha256": {
+    "experiments/ground_truth/navigation_ground_truth.json": "8e9a1e1b0847215d8435a066479d00c060ca59701d406d1b72102668a802c83f",
+    "experiments/ground_truth/contextual_retrieval.json": "b5b5f57c68d2ae7c2497511ff747cd28a2b305daa4406612dbc65674a7c24d8d",
+    "experiments/ground_truth/episodic_personalization.json": "c11c007b286fe5b2a1672e15c43a4c65242c4ba93020f05aa1fbed6609f4c2ac",
+    "experiments/configs/evaluation_design.json": "e060d7ee16a1c959623527f408122ce997a65ed999800e0acc8b66161a72e09f",
+    "experiments/configs/strategy_taxonomy.json": "86cb7c8cff6b3aca01bd749e2953fdb0da96ad202beb852626d65efcd7e1e24a"
+  },
+  "documentation_sha256": {
+    "docs/experiments/EXPERIMENTAL_DESIGN.md": "18e0e9300c2ea60344adff76e82a7f9c50aea636abd93ce6f9f33174a76742f3"
+  },
+  "db_baseline": {
+    "source": "Previous validated checkpoint; no new DB queries during administrative freeze",
+    "method": "canonical_memory_fingerprint_v2",
+    "row_count": 50,
+    "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+    "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599",
+    "read_only": true,
+    "before_after_unchanged": true
+  },
+  "test_checkpoint": {
+    "source": "Pre-freeze validated checkpoint",
+    "build": "PASS",
+    "passed": 158,
+    "failed": 0,
+    "BT": 70,
+    "backend": 17,
+    "ROS_contract": 17,
+    "experimental": 54
+  },
+  "execution": "NOT_RUN",
+  "post_freeze_validation": {
+    "status": "PASS",
+    "timestamp": "2026-10-05T13:56:22+02:00",
+    "experimental_tests": {
+      "passed": 54,
+      "failed": 0
+    },
+    "python_syntax": "PASS",
+    "JSON": "PASS",
+    "whitespace": "PASS",
+    "git_diff_check": "PASS",
+    "secret_scan": {
+      "status": "PASS",
+      "scope_files": 18,
+      "method": "patterns; no candidate secrets"
+    },
+    "hashes_reverified": true,
+    "guards": "Frozen with complete human approval accepted; DRAFT_REVIEWED and incomplete approval rejected",
+    "campaigns": "NOT_RUN"
+  }
+}

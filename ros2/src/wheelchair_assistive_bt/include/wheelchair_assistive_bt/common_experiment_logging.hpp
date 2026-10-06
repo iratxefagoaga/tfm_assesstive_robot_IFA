@@ -19,7 +19,7 @@
 
 namespace wheelchair_assistive_bt
 {
-inline const std::vector<std::string> & common_result_fields() { static const std::vector<std::string> f{"timestamp_utc","experiment_id","scenario_id","condition","run_id","user_id","location","task","goal_label","initial_x","initial_y","initial_yaw","goal_x","goal_y","goal_yaw","success","navigation_time_s","distance_m","replanning_count","min_clearance_m","memory_ids","source_memory","retrieved_strategy","strategy_waypoint_enabled","strategy_waypoint_offsets","strategy_applied","selected_waypoint_x","selected_waypoint_y","waypoint_nav2_result","final_goal_nav2_result","nav2_result","failure_stage","failure_reason","context_compliance","intervention_appropriate"}; return f; }
+inline const std::vector<std::string> & common_result_fields() { static const std::vector<std::string> f{"timestamp_utc","experiment_id","scenario_id","condition","run_id","user_id","location","task","goal_label","initial_x","initial_y","initial_yaw","goal_x","goal_y","goal_yaw","success","navigation_time_s","distance_m","replanning_count","min_clearance_m","memory_ids","source_memory","retrieved_strategy","strategy_waypoint_enabled","strategy_waypoint_offsets","strategy_applied","selected_waypoint_x","selected_waypoint_y","waypoint_nav2_result","final_goal_nav2_result","nav2_result","failure_stage","failure_reason","context_compliance","intervention_appropriate","memory_latency_ms"}; return f; }
 
 using ResultRow = std::map<std::string, std::string>;
 
@@ -48,6 +48,29 @@ inline std::string metric_number(double value)
   out << std::fixed << std::setprecision(3) << value;
   return out.str();
 }
+
+// Observational pipeline timing only. Timeout timers and navigation are separate.
+class MemoryPipelineLatency
+{
+public:
+  using Clock = std::chrono::steady_clock;
+  void reset() { started_.reset(); stopped_.reset(); }
+  void start(Clock::time_point now = Clock::now())
+  {
+    if (!started_) started_ = now;
+  }
+  void finish(Clock::time_point now = Clock::now())
+  {
+    if (started_ && !stopped_ && now >= *started_) stopped_ = now;
+  }
+  std::string milliseconds() const
+  {
+    return started_ && stopped_ ? metric_number(
+      std::chrono::duration<double, std::milli>(*stopped_ - *started_).count()) : "N/A";
+  }
+private:
+  std::optional<Clock::time_point> started_, stopped_;
+};
 
 class NavigationMetrics
 {

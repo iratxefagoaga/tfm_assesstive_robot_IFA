@@ -112,3 +112,18 @@ node_modules/
 *.mcap
 core
 core.[0-9]*
+
+# Experimental evaluation design documentation
+!/docs/experiments/EXPERIMENTAL_DESIGN.md
+
+# Preserve the existing E1 engineering validation summary.
+!/docs/experiments/E1_RUNTIME_VALIDATION.md
+
+# Keep local database backups and massive execution/capture outputs private.
+*.sql.gz
+*.dump
+*.backup
+/pgdata/
+/experiments/runs/
+/experiments/runtime/outputs/
+/experiments/runtime/captures/

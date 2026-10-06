@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "baseline_commit": "596f54c83c343c0a8e40e092478ec21783fd948a",
+  "review": {
+    "approved": true,
+    "reviewer": "HUMAN_APPROVED",
+    "date": "2026-10-05",
+    "decisions_applied": "human review instructions 2026-10-05",
+    "freeze_required": false
+  },
+  "memory_fingerprint": {
+    "method": "canonical_memory_fingerprint_v2",
+    "row_count": 50,
+    "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+    "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599"
+  },
+  "principal_scenarios": [
+    "home",
+    "park"
+  ],
+  "exploratory_scenarios": [
+    "airport"
+  ],
+  "repetitions_per_condition": 10,
+  "conditions": [
+    "N0",
+    "N1"
+  ],
+  "total_runs": 40,
+  "design": "independent_groups",
+  "randomization_seed": 20261004,
+  "infra_retry_limit": 1,
+  "navigation_retry_limit": 0,
+  "raw_output_root": "/tmp/tfm_evaluation",
+  "memory_latency_ms": {
+    "clock": "steady_clock",
+    "start": "immediately before first QueryMemory async_send_request",
+    "end": "after valid recommendation published to blackboard, immediately before SUCCESS",
+    "N0": "N/A",
+    "CSV": "single appended field; schema 36 preserves original 35 columns; legacy 35-column files remain readable with N/A latency"
+  },
+  "min_clearance_m": "N/A",
+  "intervention_appropriate": "N/A",
+  "seed_review": {
+    "row_count": 50,
+    "sha256": "9b5719a5433cf26fbc0c311c98219adc0e0d7ddb589d86b22f8d7b9a1f101ee4",
+    "source": "experiments/data/memory_seed.csv",
+    "live_db_consulted": false
+  },
+  "statistical_plan": {
+    "E1": "Independent N0/N1 runs; Fisher exact binary primary per scenario, Holm across HOME/PARK; secondary independent Mann-Whitney permutation and Cliff delta.",
+    "E2": "Paired by query_id: recall primary paired sign-flip permutation; precision/MRR paired sign-flip, Hit@3 exact McNemar; Holm secondary family.",
+    "E3": "Paired by case_id: exact McNemar strategy accuracy; secondary binary exact McNemar, latency paired sign-flip; Holm secondary family; primary excludes contaminated/default-sensitive cases pending review.",
+    "effect_CI": "Mean/risk paired difference with deterministic percentile paired bootstrap 95% CI; descriptive for small synthetic case collections, not population generalization."
+  },
+  "evaluation_order_seed": 20261005
+}

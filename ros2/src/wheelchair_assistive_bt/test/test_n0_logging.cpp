@@ -16,7 +16,7 @@ const std::string expected_header =
   "replanning_count,min_clearance_m,memory_ids,source_memory,retrieved_strategy,"
   "strategy_waypoint_enabled,strategy_waypoint_offsets,strategy_applied,selected_waypoint_x,"
   "selected_waypoint_y,waypoint_nav2_result,final_goal_nav2_result,nav2_result,failure_stage,"
-  "failure_reason,context_compliance,intervention_appropriate\n";
+  "failure_reason,context_compliance,intervention_appropriate,memory_latency_ms\n";
 
 BT::Blackboard::Ptr result_blackboard(bool success)
 {
@@ -105,13 +105,13 @@ TEST(N0Logging, ExactSchemaAndMemoryOffFields)
   NavigationMetrics metrics;
   const auto row = n0_result_row(result_blackboard(true), metrics);
   EXPECT_EQ(common_result_header(), expected_header);
-  ASSERT_EQ(row.size(), 35u);
+  ASSERT_EQ(row.size(), 36u);
   EXPECT_EQ(row.at("condition"), "MEMORY_OFF");
   for (const auto * key : {
       "memory_ids", "source_memory", "retrieved_strategy", "strategy_waypoint_enabled",
       "strategy_waypoint_offsets", "strategy_applied", "selected_waypoint_x",
       "selected_waypoint_y", "waypoint_nav2_result", "min_clearance_m",
-      "context_compliance", "intervention_appropriate"})
+      "context_compliance", "intervention_appropriate", "memory_latency_ms"})
   {
     EXPECT_EQ(row.at(key), "N/A") << key;
   }
@@ -184,7 +184,7 @@ TEST_F(LoggingFile, SuccessAndFailureEachWriteExactlyOneCompleteRow)
   }
   const auto csv = read_csv(contents());
   ASSERT_EQ(csv.size(), 3u);  // One header, one success, one failure.
-  for (const auto & row : csv) EXPECT_EQ(row.size(), 35u);
+  for (const auto & row : csv) EXPECT_EQ(row.size(), 36u);
   EXPECT_EQ(csv[1][15], "true");
   EXPECT_EQ(csv[2][15], "false");
   EXPECT_EQ(csv[2][29], "ABORTED");
@@ -219,7 +219,7 @@ TEST_F(LoggingFile, EmptyExistingFileGetsHeaderAndCsvRoundTrips)
   const auto csv = read_csv(contents());
   ASSERT_EQ(csv.size(), 2u);
   EXPECT_EQ(csv[0], common_result_fields());
-  EXPECT_EQ(csv[1].size(), 35u);
+  EXPECT_EQ(csv[1].size(), 36u);
   EXPECT_EQ(csv[1][32], row.at("failure_reason"));
   EXPECT_EQ(csv_escape("plain"), "plain");
   EXPECT_EQ(csv_escape("a,\"b\""), "\"a,\"\"b\"\"\"");

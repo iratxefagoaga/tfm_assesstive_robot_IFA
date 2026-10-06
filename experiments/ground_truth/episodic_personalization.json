@@ -1,0 +1,929 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "baseline_commit": "596f54c83c343c0a8e40e092478ec21783fd948a",
+  "review": {
+    "approved": true,
+    "reviewer": "HUMAN_APPROVED",
+    "date": "2026-10-05",
+    "decisions_applied": "human review instructions 2026-10-05",
+    "freeze_required": false
+  },
+  "memory_fingerprint": {
+    "method": "canonical_memory_fingerprint_v2",
+    "row_count": 50,
+    "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+    "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599"
+  },
+  "cases": [
+    {
+      "case_id": "E3_C01",
+      "query": "Ir al dormitorio evitando la mesa con margen lateral",
+      "context": {
+        "user_id": "U01",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "dormitorio"
+      },
+      "ground_truth_strategy": "west",
+      "rationale": "Prior observation: Paso estrecho junto a la mesa. Action: Ruta oeste evitando la mesa. Outcome: Navegacion correcta. Preference: Prefiere mayor espacio lateral.",
+      "evidence_group_id": "U01_LATERAL_SPACE_WEST_HABIT",
+      "evidence_memory_ids": [
+        "M001",
+        "M002",
+        "M004",
+        "M006",
+        "M007",
+        "M010",
+        "M012",
+        "M013",
+        "M015",
+        "M046"
+      ],
+      "target_preference": "U01 lateral-space/comfortable-access preference and its recorded west habit; lateral approaches and removed-table contrast also reveal this preference.",
+      "target_strategy": "west",
+      "anchor_memory_id": "M001",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C02",
+      "query": "Llegar a cocina cuando la mesa bloquea parte del centro",
+      "context": {
+        "user_id": "U01",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "cocina"
+      },
+      "ground_truth_strategy": "alternative",
+      "rationale": "Prior observation: Ruta central parcialmente bloqueada por la mesa. Action: Ruta alternativa oeste. Outcome: Llegada sin incidencias. Preference: Prefiere evitar pasos estrechos. Observable parser label is alternative because \"ruta oeste\" is not a contiguous substring of \"Ruta alternativa oeste\". Semantic west is not merged into alternative.",
+      "evidence_group_id": "U01_LATERAL_SPACE_WEST_HABIT",
+      "evidence_memory_ids": [
+        "M001",
+        "M002",
+        "M004",
+        "M006",
+        "M007",
+        "M010",
+        "M012",
+        "M013",
+        "M015",
+        "M046"
+      ],
+      "target_preference": "U01 lateral-space/comfortable-access preference and its recorded west habit; lateral approaches and removed-table contrast also reveal this preference.",
+      "target_strategy": "alternative",
+      "anchor_memory_id": "M002",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C03",
+      "query": "Ruta directa pasa cerca de la mesa.",
+      "context": {
+        "user_id": "U01",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "baño"
+      },
+      "ground_truth_strategy": "west",
+      "rationale": "Prior observation: Ruta directa pasa cerca de la mesa. Action: Selecciona ruta oeste. Outcome: Llegada sin colision. Preference: Ruta oeste adecuada para U01.",
+      "evidence_group_id": "U01_LATERAL_SPACE_WEST_HABIT",
+      "evidence_memory_ids": [
+        "M001",
+        "M002",
+        "M004",
+        "M006",
+        "M007",
+        "M010",
+        "M012",
+        "M013",
+        "M015",
+        "M046"
+      ],
+      "target_preference": "U01 lateral-space/comfortable-access preference and its recorded west habit; lateral approaches and removed-table contrast also reveal this preference.",
+      "target_strategy": "west",
+      "anchor_memory_id": "M007",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C04",
+      "query": "Regresar al salon por un recorrido despejado",
+      "context": {
+        "user_id": "U01",
+        "location": "baño",
+        "task": "retorno",
+        "goal": "salon"
+      },
+      "ground_truth_strategy": "direct",
+      "rationale": "Prior observation: Recorrido de vuelta despejado. Action: Ruta directa. Outcome: Retorno correcto. Preference: Acepta ruta directa cuando hay espacio.",
+      "evidence_group_id": "U01_DIRECT_WHEN_SPACIOUS",
+      "evidence_memory_ids": [
+        "M008",
+        "M014"
+      ],
+      "target_preference": "U01 acceptance of direct travel when the passage is sufficiently spacious.",
+      "target_strategy": "direct",
+      "anchor_memory_id": "M008",
+      "flags": [
+        "DEFAULT_SENSITIVE"
+      ],
+      "primary_eligible": false,
+      "eligibility_rationale": "Direct is both an explicit anchor action and parser fallback; withhold from H3 primary evidence until final review resolves source-supported interpretation.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C05",
+      "query": "Ir al dormitorio por una puerta suficientemente ancha",
+      "context": {
+        "user_id": "U01",
+        "location": "baño",
+        "task": "navegacion",
+        "goal": "dormitorio"
+      },
+      "ground_truth_strategy": "direct",
+      "rationale": "Prior observation: Paso junto a la puerta suficientemente ancho. Action: Ruta directa. Outcome: Llegada correcta. Preference: No requiere desvio con paso amplio.",
+      "evidence_group_id": "U01_DIRECT_WHEN_SPACIOUS",
+      "evidence_memory_ids": [
+        "M008",
+        "M014"
+      ],
+      "target_preference": "U01 acceptance of direct travel when the passage is sufficiently spacious.",
+      "target_strategy": "direct",
+      "anchor_memory_id": "M014",
+      "flags": [
+        "DEFAULT_SENSITIVE"
+      ],
+      "primary_eligible": false,
+      "eligibility_rationale": "Direct is both an explicit anchor action and parser fallback; withhold from H3 primary evidence until final review resolves source-supported interpretation.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C06",
+      "query": "Ir al dormitorio por el centro cuando hay espacio",
+      "context": {
+        "user_id": "U02",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "dormitorio"
+      },
+      "ground_truth_strategy": "central",
+      "rationale": "Prior observation: Espacio junto a la mesa suficiente. Action: Ruta central. Outcome: Navegacion correcta. Preference: Prefiere rutas directas si hay espacio.",
+      "evidence_group_id": "U02_DIRECT_WHEN_CLEAR",
+      "evidence_memory_ids": [
+        "M016",
+        "M017",
+        "M021",
+        "M023",
+        "M025",
+        "M027",
+        "M030",
+        "M047"
+      ],
+      "target_preference": "U02 preference for direct/central travel with clear sufficient space; explicit current preference in M047 prevails over its old action.",
+      "target_strategy": "central",
+      "anchor_memory_id": "M016",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C07",
+      "query": "Rodear una silla que bloquea parcialmente la ruta central",
+      "context": {
+        "user_id": "U02",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "dormitorio"
+      },
+      "ground_truth_strategy": "alternative",
+      "rationale": "Prior observation: Silla bloquea parcialmente la ruta central. Action: Pequeño desvio este. Outcome: Navegacion completada. Preference: Acepta pequeños desvios ante obstaculos.",
+      "evidence_group_id": "U02_SMALL_EAST_DETOUR",
+      "evidence_memory_ids": [
+        "M022",
+        "M028"
+      ],
+      "target_preference": "U02 acceptance of a small east detour for a partial central obstruction instead of complex maneuvers.",
+      "target_strategy": "alternative",
+      "anchor_memory_id": "M022",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C08",
+      "query": "Ir a cocina con pequeno desvio cuando la mesa ocupa el centro",
+      "context": {
+        "user_id": "U02",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "cocina"
+      },
+      "ground_truth_strategy": "alternative",
+      "rationale": "Prior observation: Mesa ocupa parte del espacio central. Action: Pequeño desvio este. Outcome: Cocina alcanzada. Preference: Prefiere pequeños desvios a maniobras complejas.",
+      "evidence_group_id": "U02_SMALL_EAST_DETOUR",
+      "evidence_memory_ids": [
+        "M022",
+        "M028"
+      ],
+      "target_preference": "U02 acceptance of a small east detour for a partial central obstruction instead of complex maneuvers.",
+      "target_strategy": "alternative",
+      "anchor_memory_id": "M028",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C09",
+      "query": "Ir al dormitorio evitando pasar cerca de la mesa",
+      "context": {
+        "user_id": "U03",
+        "location": "salon",
+        "task": "navegacion",
+        "goal": "dormitorio"
+      },
+      "ground_truth_strategy": "west",
+      "rationale": "Prior observation: Zona de mesa genera incomodidad. Action: Ruta oeste evitando mesa. Outcome: Navegacion correcta. Preference: Prefiere evitar pasar cerca de la mesa.",
+      "evidence_group_id": "U03_TABLE_DISTANCE_PREFERENCE",
+      "evidence_memory_ids": [
+        "M031",
+        "M032",
+        "M033",
+        "M036",
+        "M037",
+        "M038",
+        "M040",
+        "M041",
+        "M044",
+        "M045",
+        "M048"
+      ],
+      "target_preference": "U03 preference to avoid passage near the table, often via west. Direct-when-far and removed-table contrast reveal the same conditional preference.",
+      "target_strategy": "west",
+      "anchor_memory_id": "M031",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    },
+    {
+      "case_id": "E3_C10",
+      "query": "Volver al salon evitando la zona de la mesa",
+      "context": {
+        "user_id": "U03",
+        "location": "baño",
+        "task": "retorno",
+        "goal": "salon"
+      },
+      "ground_truth_strategy": "west",
+      "rationale": "Prior observation: Ruta directa entra en zona de mesa. Action: Ruta oeste. Outcome: Retorno correcto. Preference: Evitar mesa incluso en retorno.",
+      "evidence_group_id": "U03_TABLE_DISTANCE_PREFERENCE",
+      "evidence_memory_ids": [
+        "M031",
+        "M032",
+        "M033",
+        "M036",
+        "M037",
+        "M038",
+        "M040",
+        "M041",
+        "M044",
+        "M045",
+        "M048"
+      ],
+      "target_preference": "U03 preference to avoid passage near the table, often via west. Direct-when-far and removed-table contrast reveal the same conditional preference.",
+      "target_strategy": "west",
+      "anchor_memory_id": "M038",
+      "flags": [],
+      "primary_eligible": true,
+      "eligibility_rationale": "No residual equivalent preference evidence identified after full same-user group audit; exact label is evaluated without equivalence merging.",
+      "contamination_status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED"
+    }
+  ],
+  "seed_review": {
+    "row_count": 50,
+    "sha256": "9b5719a5433cf26fbc0c311c98219adc0e0d7ddb589d86b22f8d7b9a1f101ee4",
+    "source": "experiments/data/memory_seed.csv",
+    "live_db_consulted": false
+  },
+  "claim": "Availability of personalized evidence improves exact observable strategy accuracy; groups contain episodic and semantic/preference records, not a strict episodic-feature ablation.",
+  "taxonomy_file": "experiments/configs/strategy_taxonomy.json",
+  "conditions": {
+    "P1": "Full contextual ranking -> top3 -> unchanged production recommender.",
+    "P0": "Same contextual ranking; exclude every evidence_memory_id before selecting top3; unchanged production recommender; no DB mutation."
+  },
+  "metrics": {
+    "primary": "strategy_accuracy",
+    "secondary": [
+      "relevant_memory_used",
+      "memory_hit_rate",
+      "latency_ms",
+      "evaluable_coverage"
+    ]
+  },
+  "evidence_groups": [
+    {
+      "evidence_group_id": "U01_LATERAL_SPACE_WEST_HABIT",
+      "user_id": "U01",
+      "target_preference": "U01 lateral-space/comfortable-access preference and its recorded west habit; lateral approaches and removed-table contrast also reveal this preference.",
+      "evidence_memory_ids": [
+        "M001",
+        "M002",
+        "M004",
+        "M006",
+        "M007",
+        "M010",
+        "M012",
+        "M013",
+        "M015",
+        "M046"
+      ],
+      "included_rationales": [
+        {
+          "memory_id": "M001",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Paso estrecho junto a la mesa. Ruta oeste evitando la mesa. Prefiere mayor espacio lateral."
+        },
+        {
+          "memory_id": "M002",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta central parcialmente bloqueada por la mesa. Ruta alternativa oeste. Prefiere evitar pasos estrechos."
+        },
+        {
+          "memory_id": "M004",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Busca un vaso sobre la mesa. Aproximacion por el lado oeste. Prefiere aproximaciones laterales."
+        },
+        {
+          "memory_id": "M006",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Solicita acompañamiento por la tarde. Mantiene distancia lateral amplia. Prefiere espacio lateral."
+        },
+        {
+          "memory_id": "M007",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta directa pasa cerca de la mesa. Selecciona ruta oeste. Ruta oeste adecuada para U01."
+        },
+        {
+          "memory_id": "M010",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Necesita acercarse a la mesa. Aproximacion frontal dejando espacio lateral. Necesita espacio suficiente."
+        },
+        {
+          "memory_id": "M012",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Busca sus gafas en la mesita. Aproximacion por el lado con mayor espacio. Prefiere aproximaciones con margen lateral."
+        },
+        {
+          "memory_id": "M013",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta oeste utilizada con exito anteriormente. Repite ruta oeste. Ruta oeste habitual."
+        },
+        {
+          "memory_id": "M015",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Mesa desplazada y espacio reducido. Ruta oeste y velocidad baja. Combina ruta oeste y velocidad baja."
+        },
+        {
+          "memory_id": "M046",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Prueba antigua con mesa retirada. Ruta central. La preferencia lateral no aplicaba con mesa retirada. Included as conditional contrast revealing the preference, NOT as positive evidence of avoiding a present table."
+        }
+      ],
+      "similar_excluded": [
+        {
+          "memory_id": "M003",
+          "rationale": "Outside target preference: Acceso con espacio para giro amplio. Ruta norte. Se siente comoda con giros amplios. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M005",
+          "rationale": "Outside target preference: Entrada con poco espacio de giro. Reduce velocidad y usa entrada amplia. Prefiere velocidad reducida en zonas estrechas. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M008",
+          "rationale": "Outside target preference: Recorrido de vuelta despejado. Ruta directa. Acepta ruta directa cuando hay espacio. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M009",
+          "rationale": "Outside target preference: Ruta anterior genera un giro cerrado. Evita el giro y toma alternativa. Evitar giros cerrados. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M011",
+          "rationale": "Outside target preference: Obstaculo temporal junto al sofa. Se detiene y espera. Prefiere detenerse ante obstaculos. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M014",
+          "rationale": "Outside target preference: Paso junto a la puerta suficientemente ancho. Ruta directa. No requiere desvio con paso amplio. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M049",
+          "rationale": "Outside target preference: Busca una botella en el frigorifico. Desplazamiento directo. Sin preferencia especial. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        }
+      ],
+      "contamination_audit": {
+        "reviewed_same_user_memory_ids": [
+          "M001",
+          "M002",
+          "M003",
+          "M004",
+          "M005",
+          "M006",
+          "M007",
+          "M008",
+          "M009",
+          "M010",
+          "M011",
+          "M012",
+          "M013",
+          "M014",
+          "M015",
+          "M046",
+          "M049"
+        ],
+        "residual_equivalent_memory_ids": [],
+        "status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED",
+        "limitation": "Content audit of the frozen seed, not empirical evidence of an effect; group boundaries require final human freeze review."
+      }
+    },
+    {
+      "evidence_group_id": "U01_DIRECT_WHEN_SPACIOUS",
+      "user_id": "U01",
+      "target_preference": "U01 acceptance of direct travel when the passage is sufficiently spacious.",
+      "evidence_memory_ids": [
+        "M008",
+        "M014"
+      ],
+      "included_rationales": [
+        {
+          "memory_id": "M008",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Recorrido de vuelta despejado. Ruta directa. Acepta ruta directa cuando hay espacio."
+        },
+        {
+          "memory_id": "M014",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Paso junto a la puerta suficientemente ancho. Ruta directa. No requiere desvio con paso amplio."
+        }
+      ],
+      "similar_excluded": [
+        {
+          "memory_id": "M001",
+          "rationale": "Outside target preference: Paso estrecho junto a la mesa. Ruta oeste evitando la mesa. Prefiere mayor espacio lateral. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M002",
+          "rationale": "Outside target preference: Ruta central parcialmente bloqueada por la mesa. Ruta alternativa oeste. Prefiere evitar pasos estrechos. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M003",
+          "rationale": "Outside target preference: Acceso con espacio para giro amplio. Ruta norte. Se siente comoda con giros amplios. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M004",
+          "rationale": "Outside target preference: Busca un vaso sobre la mesa. Aproximacion por el lado oeste. Prefiere aproximaciones laterales. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M005",
+          "rationale": "Outside target preference: Entrada con poco espacio de giro. Reduce velocidad y usa entrada amplia. Prefiere velocidad reducida en zonas estrechas. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M006",
+          "rationale": "Outside target preference: Solicita acompañamiento por la tarde. Mantiene distancia lateral amplia. Prefiere espacio lateral. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M007",
+          "rationale": "Outside target preference: Ruta directa pasa cerca de la mesa. Selecciona ruta oeste. Ruta oeste adecuada para U01. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M009",
+          "rationale": "Outside target preference: Ruta anterior genera un giro cerrado. Evita el giro y toma alternativa. Evitar giros cerrados. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M010",
+          "rationale": "Outside target preference: Necesita acercarse a la mesa. Aproximacion frontal dejando espacio lateral. Necesita espacio suficiente. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M011",
+          "rationale": "Outside target preference: Obstaculo temporal junto al sofa. Se detiene y espera. Prefiere detenerse ante obstaculos. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M012",
+          "rationale": "Outside target preference: Busca sus gafas en la mesita. Aproximacion por el lado con mayor espacio. Prefiere aproximaciones con margen lateral. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M013",
+          "rationale": "Outside target preference: Ruta oeste utilizada con exito anteriormente. Repite ruta oeste. Ruta oeste habitual. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M015",
+          "rationale": "Outside target preference: Mesa desplazada y espacio reducido. Ruta oeste y velocidad baja. Combina ruta oeste y velocidad baja. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M046",
+          "rationale": "Outside target preference: Prueba antigua con mesa retirada. Ruta central. La preferencia lateral no aplicaba con mesa retirada. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M049",
+          "rationale": "Outside target preference: Busca una botella en el frigorifico. Desplazamiento directo. Sin preferencia especial. Other wide-turn, lateral-space or historical absent-table evidence is not explicit direct-when-spacious preference; a parser default may still output direct (DEFAULT_SENSITIVE).",
+          "reconstructs_target_evidence": false
+        }
+      ],
+      "contamination_audit": {
+        "reviewed_same_user_memory_ids": [
+          "M001",
+          "M002",
+          "M003",
+          "M004",
+          "M005",
+          "M006",
+          "M007",
+          "M008",
+          "M009",
+          "M010",
+          "M011",
+          "M012",
+          "M013",
+          "M014",
+          "M015",
+          "M046",
+          "M049"
+        ],
+        "residual_equivalent_memory_ids": [],
+        "status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED",
+        "limitation": "Content audit of the frozen seed, not empirical evidence of an effect; group boundaries require final human freeze review."
+      }
+    },
+    {
+      "evidence_group_id": "U02_DIRECT_WHEN_CLEAR",
+      "user_id": "U02",
+      "target_preference": "U02 preference for direct/central travel with clear sufficient space; explicit current preference in M047 prevails over its old action.",
+      "evidence_memory_ids": [
+        "M016",
+        "M017",
+        "M021",
+        "M023",
+        "M025",
+        "M027",
+        "M030",
+        "M047"
+      ],
+      "included_rationales": [
+        {
+          "memory_id": "M016",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Espacio junto a la mesa suficiente. Ruta central. Prefiere rutas directas si hay espacio."
+        },
+        {
+          "memory_id": "M017",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta central despejada. Ruta directa. Prefiere minimizar desvios."
+        },
+        {
+          "memory_id": "M021",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta directa libre. Ruta central. Prefiere rutas directas."
+        },
+        {
+          "memory_id": "M023",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Acceso directo con espacio suficiente. Ruta directa. No necesita rutas alternativas despejadas."
+        },
+        {
+          "memory_id": "M025",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Solicita acompañamiento. Ruta central. Prefiere recorridos directos."
+        },
+        {
+          "memory_id": "M027",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Trayecto despejado. Ruta directa. Acepta rutas directas sin obstaculos."
+        },
+        {
+          "memory_id": "M030",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Recorrido directo disponible. Ruta directa. Prefiere minimizar tiempo."
+        },
+        {
+          "memory_id": "M047",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Prueba antigua con ruta oeste. Ruta oeste. Actualmente prefiere ruta directa si esta despejada. Current direct preference governs membership; old west action does not define the present target."
+        }
+      ],
+      "similar_excluded": [
+        {
+          "memory_id": "M018",
+          "rationale": "Outside target preference: Giro hacia salon con espacio suficiente. Giro amplio. Prefiere giros amplios. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M019",
+          "rationale": "Outside target preference: Busca un mando sobre la mesa. Aproximacion frontal. Prefiere aproximaciones frontales. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M020",
+          "rationale": "Outside target preference: Necesita acercarse a la mesa. Aproximacion frontal. Prefiere aproximacion frontal. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M022",
+          "rationale": "Outside target preference: Silla bloquea parcialmente la ruta central. Pequeño desvio este. Acepta pequeños desvios ante obstaculos. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M024",
+          "rationale": "Outside target preference: Busca un libro en la mesita. Aproximacion frontal. Prefiere aproximaciones frontales. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M026",
+          "rationale": "Outside target preference: Obstaculo inesperado cerca del sofa. Detencion y recalculo. Prioriza evitar obstaculos. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M028",
+          "rationale": "Outside target preference: Mesa ocupa parte del espacio central. Pequeño desvio este. Prefiere pequeños desvios a maniobras complejas. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M029",
+          "rationale": "Outside target preference: Puerta permite giro amplio. Giro suave. Prefiere giros suaves. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M050",
+          "rationale": "Outside target preference: Busca una prenda en el armario. Aproximacion al armario. Sin preferencia especial. Speed, turn comfort, stopping, or object identity alone does not establish this target preference.",
+          "reconstructs_target_evidence": false
+        }
+      ],
+      "contamination_audit": {
+        "reviewed_same_user_memory_ids": [
+          "M016",
+          "M017",
+          "M018",
+          "M019",
+          "M020",
+          "M021",
+          "M022",
+          "M023",
+          "M024",
+          "M025",
+          "M026",
+          "M027",
+          "M028",
+          "M029",
+          "M030",
+          "M047",
+          "M050"
+        ],
+        "residual_equivalent_memory_ids": [],
+        "status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED",
+        "limitation": "Content audit of the frozen seed, not empirical evidence of an effect; group boundaries require final human freeze review."
+      }
+    },
+    {
+      "evidence_group_id": "U02_SMALL_EAST_DETOUR",
+      "user_id": "U02",
+      "target_preference": "U02 acceptance of a small east detour for a partial central obstruction instead of complex maneuvers.",
+      "evidence_memory_ids": [
+        "M022",
+        "M028"
+      ],
+      "included_rationales": [
+        {
+          "memory_id": "M022",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Silla bloquea parcialmente la ruta central. Pequeño desvio este. Acepta pequeños desvios ante obstaculos."
+        },
+        {
+          "memory_id": "M028",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Mesa ocupa parte del espacio central. Pequeño desvio este. Prefiere pequeños desvios a maniobras complejas."
+        }
+      ],
+      "similar_excluded": [
+        {
+          "memory_id": "M016",
+          "rationale": "Outside target preference: Espacio junto a la mesa suficiente. Ruta central. Prefiere rutas directas si hay espacio. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M017",
+          "rationale": "Outside target preference: Ruta central despejada. Ruta directa. Prefiere minimizar desvios. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M018",
+          "rationale": "Outside target preference: Giro hacia salon con espacio suficiente. Giro amplio. Prefiere giros amplios. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M019",
+          "rationale": "Outside target preference: Busca un mando sobre la mesa. Aproximacion frontal. Prefiere aproximaciones frontales. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M020",
+          "rationale": "Outside target preference: Necesita acercarse a la mesa. Aproximacion frontal. Prefiere aproximacion frontal. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M021",
+          "rationale": "Outside target preference: Ruta directa libre. Ruta central. Prefiere rutas directas. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M023",
+          "rationale": "Outside target preference: Acceso directo con espacio suficiente. Ruta directa. No necesita rutas alternativas despejadas. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M024",
+          "rationale": "Outside target preference: Busca un libro en la mesita. Aproximacion frontal. Prefiere aproximaciones frontales. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M025",
+          "rationale": "Outside target preference: Solicita acompañamiento. Ruta central. Prefiere recorridos directos. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M026",
+          "rationale": "Outside target preference: Obstaculo inesperado cerca del sofa. Detencion y recalculo. Prioriza evitar obstaculos. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M027",
+          "rationale": "Outside target preference: Trayecto despejado. Ruta directa. Acepta rutas directas sin obstaculos. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M029",
+          "rationale": "Outside target preference: Puerta permite giro amplio. Giro suave. Prefiere giros suaves. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M030",
+          "rationale": "Outside target preference: Recorrido directo disponible. Ruta directa. Prefiere minimizar tiempo. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M047",
+          "rationale": "Outside target preference: Prueba antigua con ruta oeste. Ruta oeste. Actualmente prefiere ruta directa si esta despejada. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M050",
+          "rationale": "Outside target preference: Busca una prenda en el armario. Aproximacion al armario. Sin preferencia especial. Generic safety/stopping, direct-clear preference and wide turns cannot establish the specific small-east-detour preference; same default label is insufficient.",
+          "reconstructs_target_evidence": false
+        }
+      ],
+      "contamination_audit": {
+        "reviewed_same_user_memory_ids": [
+          "M016",
+          "M017",
+          "M018",
+          "M019",
+          "M020",
+          "M021",
+          "M022",
+          "M023",
+          "M024",
+          "M025",
+          "M026",
+          "M027",
+          "M028",
+          "M029",
+          "M030",
+          "M047",
+          "M050"
+        ],
+        "residual_equivalent_memory_ids": [],
+        "status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED",
+        "limitation": "Content audit of the frozen seed, not empirical evidence of an effect; group boundaries require final human freeze review."
+      }
+    },
+    {
+      "evidence_group_id": "U03_TABLE_DISTANCE_PREFERENCE",
+      "user_id": "U03",
+      "target_preference": "U03 preference to avoid passage near the table, often via west. Direct-when-far and removed-table contrast reveal the same conditional preference.",
+      "evidence_memory_ids": [
+        "M031",
+        "M032",
+        "M033",
+        "M036",
+        "M037",
+        "M038",
+        "M040",
+        "M041",
+        "M044",
+        "M045",
+        "M048"
+      ],
+      "included_rationales": [
+        {
+          "memory_id": "M031",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Zona de mesa genera incomodidad. Ruta oeste evitando mesa. Prefiere evitar pasar cerca de la mesa."
+        },
+        {
+          "memory_id": "M032",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta central pasa cerca de mesa. Ruta oeste. Evitar zona de mesa."
+        },
+        {
+          "memory_id": "M033",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta oeste evita mesa. Ruta oeste. Ruta oeste mas confortable."
+        },
+        {
+          "memory_id": "M036",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Solicita acompañamiento evitando mesa. Ruta oeste. Evitar mesa durante acompañamiento."
+        },
+        {
+          "memory_id": "M037",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta directa pasa junto a mesa. Ruta alternativa. Prefiere rutas que pasan lejos de mesa."
+        },
+        {
+          "memory_id": "M038",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta directa entra en zona de mesa. Ruta oeste. Evitar mesa incluso en retorno."
+        },
+        {
+          "memory_id": "M040",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Mesa movida y paso oeste despejado. Mantiene ruta oeste. Ruta oeste sigue siendo preferida."
+        },
+        {
+          "memory_id": "M041",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Ruta central previa genera incomodidad. Evita ruta central. Evitar rutas centrales cercanas a mesa."
+        },
+        {
+          "memory_id": "M044",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Pasillo despejado y lejos de mesa. Ruta directa. Acepta ruta directa si no pasa cerca de mesa. Conditional acceptance of direct travel far from the table supports the same distance preference despite a different output label."
+        },
+        {
+          "memory_id": "M045",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Quiere volver evitando mesa. Ruta oeste. Ruta oeste preferida para evitar mesa."
+        },
+        {
+          "memory_id": "M048",
+          "rationale": "Substantially equivalent evidence of this group's target preference: Prueba antigua sin mesa. Ruta central. Preferencia de evitar mesa no era relevante. Included as conditional contrast revealing the preference, NOT as positive evidence of avoiding a present table."
+        }
+      ],
+      "similar_excluded": [
+        {
+          "memory_id": "M034",
+          "rationale": "Outside target preference: Busca objeto sobre mesa. Aproximacion lenta desde oeste. Prefiere aproximaciones lentas y laterales. Object approach/slow turns/temporary stopping concern a different task or safety response, not passage far from the table.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M035",
+          "rationale": "Outside target preference: Salida directa con espacio reducido. Reduce velocidad y amplia giro. Prefiere velocidad reducida en espacios estrechos. Object approach/slow turns/temporary stopping concern a different task or safety response, not passage far from the table.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M039",
+          "rationale": "Outside target preference: Busca un libro junto a la cama. Aproximacion lateral izquierda. Prefiere aproximaciones laterales. Object approach/slow turns/temporary stopping concern a different task or safety response, not passage far from the table.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M042",
+          "rationale": "Outside target preference: Solicita ayuda para acercarse. Aproximacion lateral izquierda. Prefiere aproximacion lateral. Object approach/slow turns/temporary stopping concern a different task or safety response, not passage far from the table.",
+          "reconstructs_target_evidence": false
+        },
+        {
+          "memory_id": "M043",
+          "rationale": "Outside target preference: Obstaculo temporal bloquea ruta oeste. Detencion y recalculo seguro. Prioriza seguridad. Object approach/slow turns/temporary stopping concern a different task or safety response, not passage far from the table.",
+          "reconstructs_target_evidence": false
+        }
+      ],
+      "contamination_audit": {
+        "reviewed_same_user_memory_ids": [
+          "M031",
+          "M032",
+          "M033",
+          "M034",
+          "M035",
+          "M036",
+          "M037",
+          "M038",
+          "M039",
+          "M040",
+          "M041",
+          "M042",
+          "M043",
+          "M044",
+          "M045",
+          "M048"
+        ],
+        "residual_equivalent_memory_ids": [],
+        "status": "NO_RESIDUAL_EQUIVALENT_EVIDENCE_IDENTIFIED",
+        "limitation": "Content audit of the frozen seed, not empirical evidence of an effect; group boundaries require final human freeze review."
+      }
+    }
+  ]
+}

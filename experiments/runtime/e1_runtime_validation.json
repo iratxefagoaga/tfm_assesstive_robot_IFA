@@ -1,0 +1,31 @@
+{
+  "status": "E1_RUNTIME_MEASUREMENT_VALIDATED",
+  "date": "2026-10-05",
+  "purpose": "ENGINEERING_RUNTIME_VALIDATION",
+  "included_in_e1_campaign": false,
+  "included_in_h1_analysis": false,
+  "base_head": "596f54c83c343c0a8e40e092478ec21783fd948a",
+  "capture_sha256": "dfebe0c4bd9deb251a164123ee398f10a1fdfc9b64b2a176d7554a6395a01d10",
+  "scientific_sha256": {
+    "experiments/ground_truth/navigation_ground_truth.json": "8e9a1e1b0847215d8435a066479d00c060ca59701d406d1b72102668a802c83f",
+    "experiments/ground_truth/contextual_retrieval.json": "b5b5f57c68d2ae7c2497511ff747cd28a2b305daa4406612dbc65674a7c24d8d",
+    "experiments/ground_truth/episodic_personalization.json": "c11c007b286fe5b2a1672e15c43a4c65242c4ba93020f05aa1fbed6609f4c2ac",
+    "experiments/configs/evaluation_design.json": "e060d7ee16a1c959623527f408122ce997a65ed999800e0acc8b66161a72e09f",
+    "experiments/configs/strategy_taxonomy.json": "86cb7c8cff6b3aca01bd749e2953fdb0da96ad202beb852626d65efcd7e1e24a"
+  },
+  "diagnostic_directory": "/home/iratxefagoaga/tfm-runtime-validation/20261005T152200_e1_capture_diagnostic",
+  "cause": "Latest TF timestamp can be 1 ms ahead of the previously sampled clock due to callback ordering; this is not TF unavailability.",
+  "fix": "10 Hz ROS timer with actual latest TF timestamps; no upper comparison against an older clock snapshot; stale/error and monotonic guards retained.",
+  "runs": {
+    "N0": {
+      "directory": "/home/iratxefagoaga/tfm-runtime-validation/20261005T154747_e1_capture_race_postfix_validation/N0",
+      "validation_sha256": "10909b54530d51986b153de4b009f6f652c6e2476530ac97531fd1dee13ec446"
+    },
+    "N1": {
+      "directory": "/home/iratxefagoaga/tfm-runtime-validation/20261005T185514_e1_n1_global_recovery_revalidation/N1",
+      "validation_sha256": "ef1957d84e58c7e7d258fc4b447702bb431f0c02e1bf6ee04183f5427a84ac72"
+    }
+  },
+  "timestamp": "2026-10-05T18:57:55+02:00",
+  "recovery_evidence": "/home/iratxefagoaga/tfm-host-diagnostics/20261005T185321_global_wsl_recovery"
+}
