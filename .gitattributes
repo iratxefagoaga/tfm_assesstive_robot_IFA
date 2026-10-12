@@ -1,0 +1,3 @@
+
+# Preserve certified final-result bytes and hashes across Git clients.
+/experiments/results/final/** -text

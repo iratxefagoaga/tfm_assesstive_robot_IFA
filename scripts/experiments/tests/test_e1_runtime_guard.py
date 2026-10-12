@@ -66,3 +66,15 @@ def test_guard_rejects_incomplete_or_mutated_evidence(evidence, mutation):
         put(path, state)
     with pytest.raises(ValueError):
         runner.require_e1_runtime_validation(path)
+
+def test_relocated_evidence_preserves_certificate_and_rejects_mutation(evidence):
+    import shutil
+    path, state, root = evidence
+    relocated = root/'relocated'
+    relocated.mkdir()
+    for condition in ['N0', 'N1']:
+        shutil.move(str(root/condition), str(relocated/condition))
+    assert runner.require_e1_runtime_validation(path, evidence_root=relocated) == state
+    (relocated/'N1/raw.json').write_text('changed')
+    with pytest.raises(ValueError):
+        runner.require_e1_runtime_validation(path, evidence_root=relocated)

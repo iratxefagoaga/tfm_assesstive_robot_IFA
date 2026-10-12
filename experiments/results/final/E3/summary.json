@@ -1,0 +1,42 @@
+[
+  {
+    "P0": {
+      "evaluable_cases": 8,
+      "primary_cases_withheld": 2,
+      "evaluable_coverage": {
+        "n": 10,
+        "count": 10,
+        "percentage": 100.0
+      },
+      "strategy_accuracy": 0.0,
+      "relevant_memory_used_rate": 0.0,
+      "memory_hit_rate": 0.0,
+      "latency_ms": {
+        "n": 10,
+        "mean": 1013.8065765998363,
+        "std": 889.5205223953036,
+        "median": 726.7877179997413,
+        "IQR": 125.41540925008121
+      }
+    },
+    "P1": {
+      "evaluable_cases": 8,
+      "primary_cases_withheld": 2,
+      "evaluable_coverage": {
+        "n": 10,
+        "count": 10,
+        "percentage": 100.0
+      },
+      "strategy_accuracy": 1.0,
+      "relevant_memory_used_rate": 1.0,
+      "memory_hit_rate": 1.0,
+      "latency_ms": {
+        "n": 10,
+        "mean": 697.0126106999487,
+        "std": 139.2131981309648,
+        "median": 670.5177789999652,
+        "IQR": 99.49825699982284
+      }
+    }
+  }
+]

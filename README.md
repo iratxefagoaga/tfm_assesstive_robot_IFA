@@ -17,7 +17,7 @@ utiliza memoria?
 - **N0 / MEMORY_OFF:** navegación sin intervención de memoria.
 - **N1 / MEMORY_ON:** navegación con recuperación y recomendación contextual.
 
-La comparación científica final está pendiente. Las validaciones de ingeniería
+E1/E2/E3 están cerrados para el diseño congelado: [resultados definitivos](experiments/results/final/README.md). Las validaciones de ingeniería
 y los resultados de retrieval disponibles no demuestran todavía esa mejora.
 
 ## Architecture
@@ -42,7 +42,7 @@ database/                 Esquema SQL y compose separado de memoria
 experiments/
   data/                   Seed y queries de retrieval
   configs/                Configuración experimental existente
-  scenarios/              Escenarios existentes; no campaña final
+  scenarios/              Escenarios y diseño congelado
   scripts/                Ejecución/análisis
   results/                B1–B4 y evidencia histórica
 docs/memory/              Documentación de memoria
@@ -365,8 +365,9 @@ y [AIRPORT](docs/experiments/AIRPORT_01.md).
 El diseño E1/E2/E3 y su GT están congelados en
 [freeze_manifest.json](experiments/configs/freeze_manifest.json); el evaluador y
 sus tests están versionados. Las campañas finales y sus informes se conservan
-fuera del repositorio en `tfm-experimental-runs/`; sus resúmenes finales aún no
-se han incorporado a este checkout. AIRPORT sigue fuera de E1 principal.
+fuera del repositorio en `tfm-experimental-runs/`; la selección final está en
+[results/final](experiments/results/final/README.md), con CSV, figuras y hashes.
+Guía de cierre: [CLOSEOUT](docs/experiments/CLOSEOUT.md). AIRPORT sigue fuera de E1 principal.
 El estado histórico de Fase G anterior corresponde a aquella validación,
 no al cierre posterior de campañas HOME/PARK.
 
@@ -435,7 +436,7 @@ original no está documentada. Se conserva sin cambios para reproducibilidad
 y queda explícitamente excluida de la concesión Apache-2.0 del proyecto.
 Haber recibido la malla no acredita por sí mismo derechos de redistribución.
 
-## Clean publication candidate status
+## Historical clean publication candidate status
 
 Este directorio es un candidato seleccionado con licencia Apache-2.0 para el
 código y assets propios. La validación de ingeniería del candidato limpio pasó:
@@ -451,8 +452,8 @@ de Apache-2.0 y la exclusión explícita de silla.stl de ese alcance.
 El directorio models/ y las referencias a SDF, STL y PGM ya están presentes.
 El build está validado. Los dos intentos de simulación bloquearon la navegación
 al fallar readiness por la limitación intermitente Nav2/lifecycle/discovery.
-La navegación integrada exitosa y la licencia/procedencia de silla.stl
-siguen pendientes.
+En aquel checkpoint la navegación integrada seguía pendiente; las campañas
+posteriores se describen arriba. La licencia/procedencia de silla.stl sigue pendiente.
 En J3g se eliminaron tres entradas de instalación sin recursos ni consumidores
 runtime: los directorios correspondientes estaban vacíos en el origen y Git no
 los conserva. Las fuentes de instalación restantes existen y el build pasó. Véase [docs/ASSETS.md](docs/ASSETS.md).
@@ -462,6 +463,6 @@ package.xml en este candidato; sólo se conservaron sus tests de plantilla
 Apache aprobados. Esta fase no reconstruye su metadata.
 El candidato contiene siete paquetes completos, construidos correctamente.
 
-El build y los tests del candidato están validados; la campaña científica sigue
-pendiente. No se cambiaron algoritmos ni contratos para ocultar fallos.
+El build y los tests estaban validados en este checkpoint histórico;
+las campañas posteriores están cerradas y enlazadas arriba. No se cambiaron algoritmos ni contratos para ocultar fallos.
 La limitación Nav2 indicada en Project Status permanece sin cambios.

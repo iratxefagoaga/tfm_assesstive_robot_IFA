@@ -1,0 +1,2 @@
+# Optional descriptive figure generation; separate from ROS/backend runtime.
+matplotlib>=3.8,<4

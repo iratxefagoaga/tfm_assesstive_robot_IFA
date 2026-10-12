@@ -1,0 +1,155 @@
+[
+  {
+    "design": "paired",
+    "matched_by": "case_id",
+    "conditions": [
+      "P0",
+      "P1"
+    ],
+    "primary": "strategy_accuracy",
+    "cases_total": 10,
+    "metrics": {
+      "strategy_accuracy": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 8,
+        "effect_second_minus_first": 1.0,
+        "paired_bootstrap_95_CI": [
+          1.0,
+          1.0
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "exact_McNemar",
+        "gains": 8,
+        "losses": 0,
+        "p": 0.0078125,
+        "pairs_missing_or_ineligible": 2,
+        "descriptives": {
+          "P0": {
+            "n": 8,
+            "count": 0,
+            "percentage": 0.0
+          },
+          "P1": {
+            "n": 8,
+            "count": 8,
+            "percentage": 100.0
+          }
+        }
+      },
+      "relevant_memory_used": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 10,
+        "effect_second_minus_first": 1.0,
+        "paired_bootstrap_95_CI": [
+          1.0,
+          1.0
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "exact_McNemar",
+        "gains": 10,
+        "losses": 0,
+        "p": 0.001953125,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "P0": {
+            "n": 10,
+            "count": 0,
+            "percentage": 0.0
+          },
+          "P1": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          }
+        },
+        "secondary_Holm_p": 0.0078125
+      },
+      "memory_hit": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 10,
+        "effect_second_minus_first": 1.0,
+        "paired_bootstrap_95_CI": [
+          1.0,
+          1.0
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "exact_McNemar",
+        "gains": 10,
+        "losses": 0,
+        "p": 0.001953125,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "P0": {
+            "n": 10,
+            "count": 0,
+            "percentage": 0.0
+          },
+          "P1": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          }
+        },
+        "secondary_Holm_p": 0.0078125
+      },
+      "latency_ms": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 10,
+        "effect_second_minus_first": -316.79396589988755,
+        "paired_bootstrap_95_CI": [
+          -821.1911467349228,
+          -25.799934269889583
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "paired_sign_flip_permutation",
+        "p": 0.044921875,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "P0": {
+            "n": 10,
+            "mean": 1013.8065765998363,
+            "std": 889.5205223953036,
+            "median": 726.7877179997413,
+            "IQR": 125.41540925008121
+          },
+          "P1": {
+            "n": 10,
+            "mean": 697.0126106999487,
+            "std": 139.2131981309648,
+            "median": 670.5177789999652,
+            "IQR": 99.49825699982284
+          }
+        },
+        "secondary_Holm_p": 0.08984375
+      },
+      "evaluable_coverage": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 10,
+        "effect_second_minus_first": 0.0,
+        "paired_bootstrap_95_CI": [
+          0.0,
+          0.0
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "exact_McNemar",
+        "gains": 0,
+        "losses": 0,
+        "p": 1.0,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "P0": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "P1": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          }
+        },
+        "secondary_Holm_p": 1.0
+      }
+    }
+  }
+]

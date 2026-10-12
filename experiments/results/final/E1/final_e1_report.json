@@ -1,0 +1,1503 @@
+{
+  "timestamp": "2026-10-06T09:38:18+02:00",
+  "status": "E1_ACQUISITION_AND_FROZEN_ANALYSIS_CLOSED",
+  "acquisition": {
+    "timestamp": "2026-10-06T09:35:56+02:00",
+    "status": "ACQUISITION_CLOSED",
+    "valid_experimental_slots": 40,
+    "physical_attempts": 46,
+    "cell_counts": {
+      "home_N0": 10,
+      "home_N1": 10,
+      "park_N0": 10,
+      "park_N1": 10
+    },
+    "navigation_outcomes": {
+      "ABORTED": 6,
+      "SUCCEEDED": 34
+    },
+    "invalid_measurement_attempts": 3,
+    "infrastructure_failure_attempts": 3,
+    "measurement_replacements": [
+      2,
+      28,
+      40
+    ],
+    "infrastructure_retry_slots": [
+      2,
+      13,
+      23
+    ],
+    "selected_attempts": {
+      "1": 1,
+      "2": 3,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 2,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 1,
+      "23": 2,
+      "24": 1,
+      "25": 1,
+      "26": 1,
+      "27": 1,
+      "28": 2,
+      "29": 1,
+      "30": 1,
+      "31": 1,
+      "32": 1,
+      "33": 1,
+      "34": 1,
+      "35": 1,
+      "36": 1,
+      "37": 1,
+      "38": 1,
+      "39": 1,
+      "40": 2
+    },
+    "trace": [
+      {
+        "slot": 1,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_01/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "5354262194f3bc43d5b17ac4f28d9fb2e6cb96b60daa15580a98497fbaa7dc7b",
+          "trajectory.jsonl": "80cac326a2bf72ffa9033a09f2a232eb6fc390f717f9aa24c547666a0e9d239a",
+          "runtime.log": "d1cf9555e0af1c96dbddc439f3e009611d02b6366a65c19b0f30464a83d92591"
+        }
+      },
+      {
+        "slot": 2,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_02/attempt_1",
+        "classification": "INVALID_MEASUREMENT_CAPTURE",
+        "included_in_h1_analysis": false,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 1,
+        "raw_hashes": {
+          "result.csv": "50be14349ff03bbafae44c00e532d152628a2ec4b69880c4b79b875a61ab7200",
+          "trajectory.jsonl": "bf6d0e61d5c7dec86bd1b8e9474673a0c91aaa84287b874fc332d43eae1c4005",
+          "runtime.log": "0fc5343f15067267013283178bc577e7a75d570741992e01a6f9c594c56f7b27"
+        }
+      },
+      {
+        "slot": 2,
+        "physical_attempt": 2,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_02/attempt_2",
+        "classification": "INFRASTRUCTURE_FAILURE",
+        "included_in_h1_analysis": false,
+        "navigation_result": "NOT_SENT",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "162aefac78b5251a1304dedf9a5abbb5c3d62d4812216cf252b94d6844f59e0c",
+          "trajectory.jsonl": "d0dc7218ee3ded51d247926c1e114f8a4949dc135605d7660df3fcd3872a29fd",
+          "runtime.log": "5d46144e64da7742edaffccdedd2176c25aa08e9398bd35a2edca972f9dce41d"
+        }
+      },
+      {
+        "slot": 2,
+        "physical_attempt": 3,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_02/attempt_3",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "e1ee349b66d81615367d18995280dfa70d645da4d8c1b38ae821c97ba1241164",
+          "trajectory.jsonl": "462d07da68bbac0126a58a2a1fc26b6a546bc04d72f89c3e4899da884de6ae2c",
+          "runtime.log": "e4e5aba88e0e8d5dc57fac616697dc8e28e8ed29d3077c15e09e068f180f600a"
+        }
+      },
+      {
+        "slot": 3,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_03/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "1e37d26417018462175cacc8db9b07a09873c3e416ec836b3ed8a4c819e7e3c8",
+          "trajectory.jsonl": "1000d56a849d65c628943560f18c07809d09b61c8c8587a9e2a16ca67aaadd6e",
+          "runtime.log": "5bbf7b54ad819c1657bc238076335c6b5d7262f4d66ce6b756f22d82d3e40699"
+        }
+      },
+      {
+        "slot": 4,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_04/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "bc866d604c5301b769db019d895c1d41a8822796c729cfb083ba523084398b28",
+          "trajectory.jsonl": "1f78f5bd0d51fc6a9293617c5952f602804ccccc05e27bf116751f730b109e90",
+          "runtime.log": "7bc6466d356d2f11f1ac19e5685f555ab6c39f07ef0efa8b5ce2da8244f8638e"
+        }
+      },
+      {
+        "slot": 5,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_05/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "428d4a15983cafb204750f243051f9bcc874e0ff49e21a9cf5b4c39ff6bea4db",
+          "trajectory.jsonl": "e9733545de15e769c316711ef62a777df6955423dfc80d4d2cdd699c2fa262f1",
+          "runtime.log": "2633592c72d7baef6d4b64ae99baf57f8a6ffff5c06157150e315322c3b79d55"
+        }
+      },
+      {
+        "slot": 6,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_06/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "f12267c78c0d76994b12e0a350e7ba7eefae6be4b14c1d273f5067372236f3ab",
+          "trajectory.jsonl": "952f579d590da94b2a3eb127261d32be7d290ebe1a58f2ef256271a50ee3cc2e",
+          "runtime.log": "e2b6a2f3b9eaaee6fca205afb038c5cc076aa3d9eeb6cb042fb42cf2d903e809"
+        }
+      },
+      {
+        "slot": 7,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_07/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "23b9af55984018a1ed8d41225df652871a04a51f3f7496435cf4f9de4da42875",
+          "trajectory.jsonl": "984a0f0e48d71ce16aa89e91377ed8c209a9ca3f2770826ce04b1288f87df8fb",
+          "runtime.log": "5e7a613c86c37a1adf1d90b69cd90b82f52cb6aa7c502c228a509d40c9bd3ea5"
+        }
+      },
+      {
+        "slot": 8,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_08/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "ABORTED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "54e51e94084388d5ac6851f428dea5db298e85303f0d771be33ad68df56bff42",
+          "trajectory.jsonl": "d5c9e6060880b04879210359832726944b5fb14646bc7ac69099e26a9e8a8e4c",
+          "runtime.log": "7580fcb903e1076b21054009a201c68afb2be882406fd475d5723df4d2609355"
+        }
+      },
+      {
+        "slot": 9,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_09/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "bd96610a23ca36e701613ba95afad5a3a48d9971c3eed02d0534827e7c3ca73d",
+          "trajectory.jsonl": "4e9deda392ea05f7bdc02eea64c558fff5499ecf209e3bb0a61f09085d680fd6",
+          "runtime.log": "d40f9172f685868cfebc3426ee0216d150c9cdf55c17b68c564a2e2dae1809bb"
+        }
+      },
+      {
+        "slot": 10,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_10/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "dc07d8a06c6a7be4dba54c72d25466e0bf9ee35bc8b86931a8e3de5bc56e13d6",
+          "trajectory.jsonl": "2ba01785edd4856a10602fb01432dc2dd5a93c535d0dc113720881f7f2bb93d2",
+          "runtime.log": "95b4dc5d22e2c99ec38ff34906fd544be28682e35dcbd15b8deae62cd6ccecd1"
+        }
+      },
+      {
+        "slot": 11,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_11/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "c785d865c47166881ee25c485d3f0b1479c3bed9b723a52dd4149b23e96ea019",
+          "trajectory.jsonl": "aaa67b40e104ed37e20205cef4c8c20c6ac9b8e0a4c8f97783b727a6d58acd51",
+          "runtime.log": "e0fadcbbc0a490b0b1c054061e2f69e15f85457507e58b14da29337cdbe1f605"
+        }
+      },
+      {
+        "slot": 12,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_12/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "ee54f4b303204b4e6e5e5348d32ef95db445e68a61c95eb5073e942fa0af3e56",
+          "trajectory.jsonl": "d217fcc3c64f64eaa536c521405b94845e01d1960952eb2f8a636bc35ed63909",
+          "runtime.log": "2138f6090ffa8110205b896b4eba0b19732d7ddfbe58638daa9ca8911ba48728"
+        }
+      },
+      {
+        "slot": 13,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_13/attempt_1",
+        "classification": "INFRASTRUCTURE_FAILURE",
+        "included_in_h1_analysis": false,
+        "navigation_result": "NO_FINALIZED_ROW",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "trajectory.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "runtime.log": "96365bc25be973629b52ffe071f741eb79d01c8db3c7e57c395e1bd6ac5923c8"
+        }
+      },
+      {
+        "slot": 13,
+        "physical_attempt": 2,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_13/attempt_2",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "0623cf4a65324890d4f0a87c02a3af7f5732c2212b795bf9ae44528e5cbf9850",
+          "trajectory.jsonl": "344d1b0408b270c027be1c4d9f27c203d8c29befbe3e214bc7d1f4e6a4d1f74e",
+          "runtime.log": "0977c1812808d370494384da802fda29e0b4b30ed906c027652df495ed3f2c3d"
+        }
+      },
+      {
+        "slot": 14,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_14/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "27cf43b354ace30d37c1d2f4aae9f5b15976b203cf875a77e7690139aa1ff66e",
+          "trajectory.jsonl": "f1d965407ad9137e1fed0611c1f5ebe9fa444f5f742976372ad97e770d75f59f",
+          "runtime.log": "8852e0491b433c503f6500173608e80170b35eafba57d596083b829cb043c8a5"
+        }
+      },
+      {
+        "slot": 15,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_15/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "8ae086223553ecde7611727cf3ce2be7033d3565239ff3c39b678510fca33f98",
+          "trajectory.jsonl": "5e96308688ea8ebf6f6a4a2fbeecc6f75f5739ac699b7cb85883b79eb37d0456",
+          "runtime.log": "3b90570516a57a4af995020da5bc27f6b5214987631296690e3ecd2c5cd1f2b0"
+        }
+      },
+      {
+        "slot": 16,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_16/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "b400d9de1052ee67d5f7148bfd138d3db0130052c29393f95aa1773289ca9abe",
+          "trajectory.jsonl": "643260b0c5304cf5662d8862fe049ad103d9eb2506fb35e3e1c8fe58efb06374",
+          "runtime.log": "168ccefe95c9cf8a7a090667562b953935f81245f5c948a1ad7e80e79cc02f08"
+        }
+      },
+      {
+        "slot": 17,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_17/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "ABORTED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "4ac3fd6da6c620889ad4426e48c77537882c671cb4e769fb2c9ee197262470cf",
+          "trajectory.jsonl": "c2a595c6e9422cf4f9b4683fb356fa55172834c87d5f56cf712b78a9e05f8fe4",
+          "runtime.log": "df0645cb80c3c27078c214a0eb8fdd7531c11a4016aae94a321792eb0328a8b3"
+        }
+      },
+      {
+        "slot": 18,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_18/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "ABORTED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "6291ad8ece40ef88a1aa6355a28246ec964e85cfe52149638dcbb0ad5b209c72",
+          "trajectory.jsonl": "d2681494b3ce3a24f40fd86ea168443b10428453168ada1eb391c2f7ef9171bb",
+          "runtime.log": "82a727ce48892cfee9cf695a28f1901068a7e5281f78f0297347a417a2b7b20b"
+        }
+      },
+      {
+        "slot": 19,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_19/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "d9a0f19679b1d6837de70711e607891e638823189c58fb21b08d6531b5e245a1",
+          "trajectory.jsonl": "a48c67faf0e9f733b2825eff047e196514161ff6e79f06b3a67bd7eb06cb9d52",
+          "runtime.log": "02ce3d9c4da6e0329d233ac12d20dc780503438657a3ef1f163169daa7cdbd32"
+        }
+      },
+      {
+        "slot": 20,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_20/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "2a02cf1e403f5a7eece3cdedffb5c50099ad8c7ac518ae724138aaac46952fa9",
+          "trajectory.jsonl": "ed273f309514f9ba1bf3c11c291149a3f9fea32590900b6c818ff7ffbd64300f",
+          "runtime.log": "67eb35286b5d573ad11f9da7ffc7a3fef63a7adc58b68f2cc91da93d1f5fe7d8"
+        }
+      },
+      {
+        "slot": 21,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_21/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "ABORTED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "008690561cc8c4b388fc0c4a7e563495659e6b59b1fc8ef765439f6bb53172dc",
+          "trajectory.jsonl": "b0ad3324c8f82b3491c6654d97fc9be47af7963d28faae76af3c911d5471dda9",
+          "runtime.log": "8587a33bd1eef32cd43f68c9353b63bd98ccb859b0700a7c5c0ff31cf5d941fe"
+        }
+      },
+      {
+        "slot": 22,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_22/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "ddcb52666bb40f16ee402e4c9f6bf8528c97b99e3bef09934f8e47812c5e7b5f",
+          "trajectory.jsonl": "8a983e7bddef5d7c4437fc65ceb8be14c855ea6d82b356372dcbaab1684f75d0",
+          "runtime.log": "86765ccef53b83a11c5bd2191badd16768cfec08a93394f26239ba8432e18dc8"
+        }
+      },
+      {
+        "slot": 23,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_23/attempt_1",
+        "classification": "INFRASTRUCTURE_FAILURE",
+        "included_in_h1_analysis": false,
+        "navigation_result": "NO_FINALIZED_ROW",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "trajectory.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "runtime.log": "80164eafbd3403c591a98115e9a2dc298bc57c472f1d937b091f215f90ff93c9"
+        }
+      },
+      {
+        "slot": 23,
+        "physical_attempt": 2,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_23/attempt_2",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "54251737d1a36b86b122d0e97e36a73f67fcdeec11531b9eb7eb05903501a845",
+          "trajectory.jsonl": "dd88afeffcf999d0566116ae903652aef2a99f0257cf14c8031a3f5501dce828",
+          "runtime.log": "ee6addae8426924539357a644a1337ff723783c213ffefcf5f9ba509d07f65c1"
+        }
+      },
+      {
+        "slot": 24,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_24/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "26caf4d0efcc7a76148095eb0dac21ca7bce9ca0ab040733692e3f0bc4d3b7d6",
+          "trajectory.jsonl": "715f1140f5576e4deeb0c1b17d0691ebff4c457b330ef7e07ac4b78136ee6452",
+          "runtime.log": "3da701f9713e4fd2e6d28301f5e027003380c434d6e08b53e35383d4b9c88c8f"
+        }
+      },
+      {
+        "slot": 25,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_25/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "81e488b816762a4cef7711bcf981e00e59ae2a91f962027c7ec5a6405e0be0a3",
+          "trajectory.jsonl": "6f3ef07898a0aaffb6b14740abf491c3f00727466d076fab11df5d9f8d5ef6de",
+          "runtime.log": "66402d7484e8e37e35ffe9eb5e01b58dd495ac4a594643e597dbfbd900311dc7"
+        }
+      },
+      {
+        "slot": 26,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_26/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "06106e4d49a434ec400aaaa5ded41271f096aa3cdcd695179b9b1d8d98ac2e73",
+          "trajectory.jsonl": "535dade167b7b0ce3dc8b67efa8c294ad3c3c05617f5140ef34da83a9a5b8775",
+          "runtime.log": "386109223611fe5082356dda90634a201e3d39f24d481549c27967cdfeb6c70d"
+        }
+      },
+      {
+        "slot": 27,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_27/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "257f6589c29361888efc73bea46c0202c7d61c385d8293c279a42ec25ca190cc",
+          "trajectory.jsonl": "236498379ba03e617c5227ac64e0944a7271857b4528af9fb8af6e8e4cac942c",
+          "runtime.log": "29f71862efa0c84150b813548b9566acf4bbcb1637b6f0a97e3a6283dc284303"
+        }
+      },
+      {
+        "slot": 28,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_28/attempt_1",
+        "classification": "INVALID_MEASUREMENT_CAPTURE",
+        "included_in_h1_analysis": false,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 1,
+        "raw_hashes": {
+          "result.csv": "3e5b4913acb5f5b18b2d25ce025e662d4d8b3f3b4078d733452f593094fc7a7c",
+          "trajectory.jsonl": "574f452f05b0f0401db1ed3cf726d8e94bd595779ebf040c6dfd7210c7e32534",
+          "runtime.log": "1137339668702ec79058f9354182980542fbd4b242dde3bafeb7381af441577a"
+        }
+      },
+      {
+        "slot": 28,
+        "physical_attempt": 2,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_28/attempt_2",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "ABORTED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "66fb0ca658c41062ff335545b87610f82da4321cc465133683f531e3ccf48435",
+          "trajectory.jsonl": "241a0c4c83e00ade1dc30951df897be682583fd565bafc5878dc05ff884eec55",
+          "runtime.log": "8987bed714710f84aceb1ada20372d1f4e7958c39988da3ed8501c210265b2c4"
+        }
+      },
+      {
+        "slot": 29,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_29/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "c39a65dd5b524c32dbe2b9cc602cc143595fcf28b2bf0e3839a65c90940b496c",
+          "trajectory.jsonl": "5486247810c811662a9b429e01fb23449a9bb1d4e119b0b7958e5b4008f6942b",
+          "runtime.log": "62b43673fe60f0b84d5b746b7897bcc8b4b0664a2adf22a36b827015de1145d3"
+        }
+      },
+      {
+        "slot": 30,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_30/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "2ecca6cb17bab75e3cb60f84a670019bf01ce508b72160e46a2662013913b452",
+          "trajectory.jsonl": "4b15e54a1c6a7b5245d5051b5705cebb09fcb164b56061bb2421344bcce478d5",
+          "runtime.log": "2cd92441ee3b9202451c8aeaff2e37e9b27b5a49addccf9993d988632c34fc95"
+        }
+      },
+      {
+        "slot": 31,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_31/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "afa94f9a7688cd07f5502bfd90db414d15ec69ebccb73c577fe1e5426ece7a81",
+          "trajectory.jsonl": "2ff6f1234edb56d05b812a8a8ce69835338f97899bdebd596f0a28274496922d",
+          "runtime.log": "7c7f949e33bf9083b869a482c23d2adb925f486e576fdc344bd2156431c410b5"
+        }
+      },
+      {
+        "slot": 32,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_32/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "46e302454049efaf3587799c3215edea01a095e3de1671d439d46ef480ed05c5",
+          "trajectory.jsonl": "7981faabe2564a02b508341809d261738305b3bad34f5656fbed31a1d205be7c",
+          "runtime.log": "9740267855b4650e9eba2eabb7b2ba6d388125ebf9aec3766c58ec261af8fca3"
+        }
+      },
+      {
+        "slot": 33,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_33/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "9b6ab4093dccdce55836d0bae5d7733307260683e621c292ba74bf46ce2bad97",
+          "trajectory.jsonl": "cf26583b7d90b4781fca2611e0b5b9e404bfc3ece84c4d6740a3915880b70a3f",
+          "runtime.log": "8a080f490c774480037e746498e46dd5b948e6e95b3b177fddcd188a2d804dc2"
+        }
+      },
+      {
+        "slot": 34,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_34/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "f5682c54dff80861c39fa29795411ed899a121bb5cca6385679193ed4deecf71",
+          "trajectory.jsonl": "e965b64f13f2fb969458b0b3b83cb55a245e645d43ba1054961ce108b91fb5ae",
+          "runtime.log": "d6c12e229dc94b5dfaac495b1cbeb7d7c344a498280c001ea472349e6f29196f"
+        }
+      },
+      {
+        "slot": 35,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_35/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "ABORTED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "b9aadb5725872d66e9533abf7dfca2941786294170a339c0228eeba0ef87e8d0",
+          "trajectory.jsonl": "a694613845601e526a9cace48c17dd76c8695660144729dd87f5b6ca9be1f9c7",
+          "runtime.log": "871de67c5e7b2c441034d2ab019b90ef4ecf93f08cce33c7d229d7c0658dda99"
+        }
+      },
+      {
+        "slot": 36,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_36/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "375dc257c885c2734073cc9cf03df0a9c0c7e93f45a2bac8de80b0e4703105ac",
+          "trajectory.jsonl": "ee0ce420b48bb2de07f477b40c4b0faa4f237c6868a6236209d9f3c4dae3d597",
+          "runtime.log": "7fcbd8c2111c35a33ff6c2e3736ccc1f79d2541fb23a505c76399c9db76128e7"
+        }
+      },
+      {
+        "slot": 37,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_37/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "ba7f58613c8dc6039df623af0d733699fb55577710a2f3063f8ff41dd23e2e29",
+          "trajectory.jsonl": "91e47f7527321e8b4351dbdbbf2f39f7c8aad5492d6a84568583ae0cc0baf7d3",
+          "runtime.log": "8d4f70687902530786b82f30a1d8e12b2a0c12116dd032e8cc165646546f8f11"
+        }
+      },
+      {
+        "slot": 38,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_38/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "c544715a41a2f01587233ffaa9784f7c4f6710b64c32fde9308a4fca7d9c1972",
+          "trajectory.jsonl": "8a0defe6e0992b3386b170bd8fdc2c65d01689e4769fc4ffc2d6b161503eee0c",
+          "runtime.log": "0c44fdf63d6cdb524d8a1a01abbace184ed86cc842d82eb937c8259ab7459b93"
+        }
+      },
+      {
+        "slot": 39,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_39/attempt_1",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "645fa26f9cafc6287a2ae6c7eadf53ef19ef5c0e0a579b1992efd8029373e7b8",
+          "trajectory.jsonl": "83a360192b7353c993f4a6aa8275f3c56829aebbc0552aa5b5c7192bc4dfefc4",
+          "runtime.log": "47f32922ace5f4e0744041949d688a0141a0320357280eb46111152a2d1c35e6"
+        }
+      },
+      {
+        "slot": 40,
+        "physical_attempt": 1,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_40/attempt_1",
+        "classification": "INVALID_MEASUREMENT_CAPTURE",
+        "included_in_h1_analysis": false,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 5,
+        "raw_hashes": {
+          "result.csv": "0b5692a2638372d37ed857864dcadcda9f2072118e84ba80f9feadda3a15aab5",
+          "trajectory.jsonl": "93b1afb335d488166d5c3ab82dd449ff5929eec700205d616cae97a6d1465c2d",
+          "runtime.log": "aa635fdc882ef24133df13f3b27b8ef1e8aa02d3dae916f3e14d5e8887c557f7"
+        }
+      },
+      {
+        "slot": 40,
+        "physical_attempt": 2,
+        "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_40/attempt_2",
+        "classification": "VALID_EXPERIMENTAL_OBSERVATION",
+        "included_in_h1_analysis": true,
+        "navigation_result": "SUCCEEDED",
+        "capture_error_rows": 0,
+        "raw_hashes": {
+          "result.csv": "728bab61b42900cd39c6b303f1b79c47f4b2a8a3166ea67952c6f83835701472",
+          "trajectory.jsonl": "49c7381c1b1eda281636b4e0b124a5ad933dc7c66466281c81c345edbd328ad5",
+          "runtime.log": "101923e520425da6c42809e4e6c487a3471be55ba3b9cc42f82439cdbc364a09"
+        }
+      }
+    ],
+    "capture_integrity": {
+      "tf_error_rows": 0,
+      "max_gap_s": 0.5600000000000005,
+      "max_segment_m": 0.6937641146838286,
+      "replay": "40_BYTE_IDENTICAL",
+      "csv_columns": 36,
+      "unique_run_ids": 40
+    },
+    "db": {
+      "timestamp": "2026-10-06T09:35:56+02:00",
+      "count": 50,
+      "default_transaction_read_only": "on",
+      "transaction_read_only": "on",
+      "fingerprint": {
+        "method": "canonical_memory_fingerprint_v2",
+        "row_count": 50,
+        "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+        "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599"
+      }
+    },
+    "frozen_hashes": {
+      "experiments/ground_truth/navigation_ground_truth.json": "8e9a1e1b0847215d8435a066479d00c060ca59701d406d1b72102668a802c83f",
+      "experiments/ground_truth/contextual_retrieval.json": "b5b5f57c68d2ae7c2497511ff747cd28a2b305daa4406612dbc65674a7c24d8d",
+      "experiments/ground_truth/episodic_personalization.json": "c11c007b286fe5b2a1672e15c43a4c65242c4ba93020f05aa1fbed6609f4c2ac",
+      "experiments/configs/evaluation_design.json": "e060d7ee16a1c959623527f408122ce997a65ed999800e0acc8b66161a72e09f",
+      "experiments/configs/strategy_taxonomy.json": "86cb7c8cff6b3aca01bd749e2953fdb0da96ad202beb852626d65efcd7e1e24a"
+    },
+    "guard": "PASS",
+    "source_hashes_unchanged": true,
+    "inferential_analysis_started": false
+  },
+  "primary": {
+    "home": {
+      "N0": {
+        "n_total": 10,
+        "n_evaluable": 10,
+        "compliant": 0,
+        "non_compliant": 10,
+        "NA": 0,
+        "coverage_percent": 100.0,
+        "compliance_percent": 0.0
+      },
+      "N1": {
+        "n_total": 10,
+        "n_evaluable": 10,
+        "compliant": 10,
+        "non_compliant": 0,
+        "NA": 0,
+        "coverage_percent": 100.0,
+        "compliance_percent": 100.0
+      },
+      "absolute_difference_percentage_points": 100.0,
+      "test": {
+        "p": 1.082508822446903e-05,
+        "risk_difference_N1_minus_N0": 1.0,
+        "primary_Holm_p": 2.165017644893806e-05
+      }
+    },
+    "park": {
+      "N0": {
+        "n_total": 10,
+        "n_evaluable": 10,
+        "compliant": 0,
+        "non_compliant": 10,
+        "NA": 0,
+        "coverage_percent": 100.0,
+        "compliance_percent": 0.0
+      },
+      "N1": {
+        "n_total": 10,
+        "n_evaluable": 4,
+        "compliant": 4,
+        "non_compliant": 0,
+        "NA": 6,
+        "coverage_percent": 40.0,
+        "compliance_percent": 100.0
+      },
+      "absolute_difference_percentage_points": 100.0,
+      "test": {
+        "p": 0.000999000999000999,
+        "risk_difference_N1_minus_N0": 1.0,
+        "primary_Holm_p": 0.000999000999000999
+      }
+    },
+    "aggregate": {
+      "N0": {
+        "n_total": 20,
+        "n_evaluable": 20,
+        "compliant": 0,
+        "non_compliant": 20,
+        "NA": 0,
+        "coverage_percent": 100.0,
+        "compliance_percent": 0.0
+      },
+      "N1": {
+        "n_total": 20,
+        "n_evaluable": 14,
+        "compliant": 14,
+        "non_compliant": 0,
+        "NA": 6,
+        "coverage_percent": 70.0,
+        "compliance_percent": 100.0
+      },
+      "absolute_difference_percentage_points": 100.0,
+      "test": {
+        "method": "Fisher exact, two-sided, requested pooled aggregate",
+        "p": 7.184033766567926e-10,
+        "risk_difference_N1_minus_N0": 1.0,
+        "correction": "Pooled aggregate nominal p; frozen HOME/PARK Holm family remains unchanged"
+      }
+    }
+  },
+  "secondary": {
+    "home": {
+      "descriptives": {
+        "N0": {
+          "success": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 19.618000000000002,
+            "std": 2.4585470415583996,
+            "median": 18.85,
+            "IQR": 0.7107500000000009
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 2.6685,
+            "std": 0.019033596028543334,
+            "median": 2.6715,
+            "IQR": 0.024500000000000632
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 18.7,
+            "std": 2.6267851073127395,
+            "median": 18.0,
+            "IQR": 0.0
+          },
+          "memory_latency_ms": {
+            "n": 0,
+            "mean": null,
+            "std": null,
+            "median": null,
+            "IQR": null
+          }
+        },
+        "N1": {
+          "success": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 46.0439,
+            "std": 2.2020640040148187,
+            "median": 45.81,
+            "IQR": 3.969999999999999
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 6.212,
+            "std": 0.039468693641641905,
+            "median": 6.2044999999999995,
+            "IQR": 0.06175000000000086
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 45.1,
+            "std": 2.282785822435191,
+            "median": 44.5,
+            "IQR": 4.0
+          },
+          "memory_latency_ms": {
+            "n": 10,
+            "mean": 795.0814,
+            "std": 753.0980284640831,
+            "median": 339.5305,
+            "IQR": 1254.24025
+          }
+        }
+      },
+      "comparisons": {
+        "navigation_time_s": {
+          "U": 100.0,
+          "p": 0.0002,
+          "cliffs_delta_N1_minus_N0": 1.0,
+          "secondary_Holm_p": 0.0008
+        },
+        "distance_m": {
+          "U": 100.0,
+          "p": 0.0002,
+          "cliffs_delta_N1_minus_N0": 1.0,
+          "secondary_Holm_p": 0.0008
+        },
+        "replanning_count": {
+          "U": 100.0,
+          "p": 0.0002,
+          "cliffs_delta_N1_minus_N0": 1.0,
+          "secondary_Holm_p": 0.0008
+        }
+      },
+      "navigation_success": {
+        "p": 1.0,
+        "risk_difference_N1_minus_N0": 0.0,
+        "secondary_Holm_p": 1.0
+      },
+      "comparison_population": "Continuous inferential comparisons use successful navigation only, as frozen evaluator specifies; descriptives retain every valid navigation outcome"
+    },
+    "park": {
+      "descriptives": {
+        "N0": {
+          "success": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 4.9797,
+            "std": 0.3958566098419419,
+            "median": 4.8295,
+            "IQR": 0.20425000000000004
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 0.7383,
+            "std": 0.0013374935098492597,
+            "median": 0.7384999999999999,
+            "IQR": 0.0017500000000000293
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 4.2,
+            "std": 0.4216370213557839,
+            "median": 4.0,
+            "IQR": 0.0
+          },
+          "memory_latency_ms": {
+            "n": 0,
+            "mean": null,
+            "std": null,
+            "median": null,
+            "IQR": null
+          }
+        },
+        "N1": {
+          "success": {
+            "n": 10,
+            "count": 4,
+            "percentage": 40.0
+          },
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 52.4222,
+            "std": 27.587293124834765,
+            "median": 54.1395,
+            "IQR": 45.28150000000001
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 2.4737,
+            "std": 1.0499208488685654,
+            "median": 2.84,
+            "IQR": 1.0627499999999999
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 44.3,
+            "std": 20.325408291648714,
+            "median": 52.5,
+            "IQR": 28.0
+          },
+          "memory_latency_ms": {
+            "n": 10,
+            "mean": 595.6314,
+            "std": 766.8740744801731,
+            "median": 290.0745,
+            "IQR": 475.05925
+          }
+        }
+      },
+      "comparisons": {
+        "navigation_time_s": {
+          "U": 40.0,
+          "p": 0.001998001998001998,
+          "cliffs_delta_N1_minus_N0": 1.0,
+          "secondary_Holm_p": 0.007992007992007992
+        },
+        "distance_m": {
+          "U": 40.0,
+          "p": 0.001998001998001998,
+          "cliffs_delta_N1_minus_N0": 1.0,
+          "secondary_Holm_p": 0.007992007992007992
+        },
+        "replanning_count": {
+          "U": 40.0,
+          "p": 0.001998001998001998,
+          "cliffs_delta_N1_minus_N0": 1.0,
+          "secondary_Holm_p": 0.007992007992007992
+        }
+      },
+      "navigation_success": {
+        "p": 0.010835913312693499,
+        "risk_difference_N1_minus_N0": -0.6,
+        "secondary_Holm_p": 0.010835913312693499
+      },
+      "comparison_population": "Continuous inferential comparisons use successful navigation only, as frozen evaluator specifies; descriptives retain every valid navigation outcome"
+    }
+  },
+  "N1_memory": {
+    "home": {
+      "n": 10,
+      "retrieved_memories": {
+        "M001|M046|M002": 10
+      },
+      "source_memories": {
+        "M001": 10
+      },
+      "retrieved_strategy": {
+        "west": 10
+      },
+      "strategy_applied": {
+        "true": 10
+      },
+      "memory_latency_ms": {
+        "n": 10,
+        "mean": 795.0814,
+        "std": 753.0980284640831,
+        "median": 339.5305,
+        "IQR": 1254.24025
+      },
+      "missingness": {
+        "memory_ids": 0,
+        "source_memory": 0,
+        "retrieved_strategy": 0,
+        "strategy_applied": 0,
+        "memory_latency_ms": 0
+      }
+    },
+    "park": {
+      "n": 10,
+      "retrieved_memories": {
+        "M013|M015|M007": 10
+      },
+      "source_memories": {
+        "M013": 10
+      },
+      "retrieved_strategy": {
+        "west": 10
+      },
+      "strategy_applied": {
+        "true": 10
+      },
+      "memory_latency_ms": {
+        "n": 10,
+        "mean": 595.6314,
+        "std": 766.8740744801731,
+        "median": 290.0745,
+        "IQR": 475.05925
+      },
+      "missingness": {
+        "memory_ids": 0,
+        "source_memory": 0,
+        "retrieved_strategy": 0,
+        "strategy_applied": 0,
+        "memory_latency_ms": 0
+      }
+    },
+    "aggregate": {
+      "n": 20,
+      "retrieved_memories": {
+        "M001|M046|M002": 10,
+        "M013|M015|M007": 10
+      },
+      "source_memories": {
+        "M001": 10,
+        "M013": 10
+      },
+      "retrieved_strategy": {
+        "west": 20
+      },
+      "strategy_applied": {
+        "true": 20
+      },
+      "memory_latency_ms": {
+        "n": 20,
+        "mean": 695.3564,
+        "std": 746.7887001857317,
+        "median": 290.0745,
+        "IQR": 690.2605
+      },
+      "missingness": {
+        "memory_ids": 0,
+        "source_memory": 0,
+        "retrieved_strategy": 0,
+        "strategy_applied": 0,
+        "memory_latency_ms": 0
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "slot": 1,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 173.963
+    },
+    {
+      "slot": 3,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 1959.94
+    },
+    {
+      "slot": 8,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 2659.747
+    },
+    {
+      "slot": 9,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 478.563
+    },
+    {
+      "slot": 13,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 219.77
+    },
+    {
+      "slot": 15,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 399.463
+    },
+    {
+      "slot": 17,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 859.705
+    },
+    {
+      "slot": 18,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 280.325
+    },
+    {
+      "slot": 20,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 199.925
+    },
+    {
+      "slot": 21,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 719.64
+    },
+    {
+      "slot": 23,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 219.82
+    },
+    {
+      "slot": 24,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 279.598
+    },
+    {
+      "slot": 28,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 159.731
+    },
+    {
+      "slot": 29,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 179.107
+    },
+    {
+      "slot": 35,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 119.747
+    },
+    {
+      "slot": 36,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 199.147
+    },
+    {
+      "slot": 37,
+      "source_memory": "M013",
+      "retrieved_memories": "M013|M015|M007",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M013: Repite ruta oeste. Preferencia: Ruta oeste habitual.",
+      "waypoint_offsets": "west:-2.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 299.824
+    },
+    {
+      "slot": 38,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 1638.414
+    },
+    {
+      "slot": 39,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 980.849
+    },
+    {
+      "slot": 40,
+      "source_memory": "M001",
+      "retrieved_memories": "M001|M046|M002",
+      "recommended_strategy": "west",
+      "recommendation_reason": "Memoria M001: Ruta oeste evitando la mesa. Preferencia: Prefiere mayor espacio lateral.",
+      "waypoint_offsets": "west:-4.0:0.0",
+      "strategy_applied": "true",
+      "memory_latency_ms": 1879.85
+    }
+  ],
+  "excluded_attempts": [
+    {
+      "slot": 2,
+      "physical_attempt": 1,
+      "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_02/attempt_1",
+      "classification": "INVALID_MEASUREMENT_CAPTURE",
+      "included_in_h1_analysis": false,
+      "navigation_result": "SUCCEEDED",
+      "capture_error_rows": 1,
+      "raw_hashes": {
+        "result.csv": "50be14349ff03bbafae44c00e532d152628a2ec4b69880c4b79b875a61ab7200",
+        "trajectory.jsonl": "bf6d0e61d5c7dec86bd1b8e9474673a0c91aaa84287b874fc332d43eae1c4005",
+        "runtime.log": "0fc5343f15067267013283178bc577e7a75d570741992e01a6f9c594c56f7b27"
+      }
+    },
+    {
+      "slot": 2,
+      "physical_attempt": 2,
+      "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_02/attempt_2",
+      "classification": "INFRASTRUCTURE_FAILURE",
+      "included_in_h1_analysis": false,
+      "navigation_result": "NOT_SENT",
+      "capture_error_rows": 0,
+      "raw_hashes": {
+        "result.csv": "162aefac78b5251a1304dedf9a5abbb5c3d62d4812216cf252b94d6844f59e0c",
+        "trajectory.jsonl": "d0dc7218ee3ded51d247926c1e114f8a4949dc135605d7660df3fcd3872a29fd",
+        "runtime.log": "5d46144e64da7742edaffccdedd2176c25aa08e9398bd35a2edca972f9dce41d"
+      }
+    },
+    {
+      "slot": 13,
+      "physical_attempt": 1,
+      "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_13/attempt_1",
+      "classification": "INFRASTRUCTURE_FAILURE",
+      "included_in_h1_analysis": false,
+      "navigation_result": "NO_FINALIZED_ROW",
+      "capture_error_rows": 0,
+      "raw_hashes": {
+        "trajectory.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtime.log": "96365bc25be973629b52ffe071f741eb79d01c8db3c7e57c395e1bd6ac5923c8"
+      }
+    },
+    {
+      "slot": 23,
+      "physical_attempt": 1,
+      "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_23/attempt_1",
+      "classification": "INFRASTRUCTURE_FAILURE",
+      "included_in_h1_analysis": false,
+      "navigation_result": "NO_FINALIZED_ROW",
+      "capture_error_rows": 0,
+      "raw_hashes": {
+        "trajectory.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtime.log": "80164eafbd3403c591a98115e9a2dc298bc57c472f1d937b091f215f90ff93c9"
+      }
+    },
+    {
+      "slot": 28,
+      "physical_attempt": 1,
+      "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_28/attempt_1",
+      "classification": "INVALID_MEASUREMENT_CAPTURE",
+      "included_in_h1_analysis": false,
+      "navigation_result": "SUCCEEDED",
+      "capture_error_rows": 1,
+      "raw_hashes": {
+        "result.csv": "3e5b4913acb5f5b18b2d25ce025e662d4d8b3f3b4078d733452f593094fc7a7c",
+        "trajectory.jsonl": "574f452f05b0f0401db1ed3cf726d8e94bd595779ebf040c6dfd7210c7e32534",
+        "runtime.log": "1137339668702ec79058f9354182980542fbd4b242dde3bafeb7381af441577a"
+      }
+    },
+    {
+      "slot": 40,
+      "physical_attempt": 1,
+      "directory": "/home/iratxefagoaga/tfm-experimental-runs/20261005T153539_e1_frozen_campaign/raw/job_40/attempt_1",
+      "classification": "INVALID_MEASUREMENT_CAPTURE",
+      "included_in_h1_analysis": false,
+      "navigation_result": "SUCCEEDED",
+      "capture_error_rows": 5,
+      "raw_hashes": {
+        "result.csv": "0b5692a2638372d37ed857864dcadcda9f2072118e84ba80f9feadda3a15aab5",
+        "trajectory.jsonl": "93b1afb335d488166d5c3ab82dd449ff5929eec700205d616cae97a6d1465c2d",
+        "runtime.log": "aa635fdc882ef24133df13f3b27b8ef1e8aa02d3dae916f3e14d5e8887c557f7"
+      }
+    }
+  ],
+  "infrastructure": {
+    "excluded_before_goal_slots": [
+      2,
+      13,
+      23
+    ],
+    "WSL_incidents_preserved": "Prior technical N1 interruptions and job14 offline-validation transport loss retained separately; no navigation repeated for job14",
+    "automatic_launch_cleanup_escalations": [
+      {
+        "slot": 1,
+        "attempt": 1,
+        "launch_automatic_escalation": true,
+        "SIGKILL_in_launch_log": true
+      },
+      {
+        "slot": 2,
+        "attempt": 3,
+        "launch_automatic_escalation": true,
+        "SIGKILL_in_launch_log": true
+      },
+      {
+        "slot": 5,
+        "attempt": 1,
+        "launch_automatic_escalation": true,
+        "SIGKILL_in_launch_log": false
+      },
+      {
+        "slot": 23,
+        "attempt": 1,
+        "launch_automatic_escalation": true,
+        "SIGKILL_in_launch_log": true
+      },
+      {
+        "slot": 30,
+        "attempt": 1,
+        "launch_automatic_escalation": true,
+        "SIGKILL_in_launch_log": true
+      },
+      {
+        "slot": 37,
+        "attempt": 1,
+        "launch_automatic_escalation": true,
+        "SIGKILL_in_launch_log": true
+      }
+    ],
+    "manual_SIGKILL_used": false
+  },
+  "statistical_provenance": {
+    "frozen_evaluator_invocations": 1,
+    "command": "python -m scripts.experiments.run_evaluation analyze --input processed/final_selected_observations.json --output processed/frozen_final_analysis.json",
+    "return_code": 0,
+    "design": "independent_groups",
+    "primary": "Fisher exact two-sided; Holm across HOME/PARK only",
+    "primary_effect_size": "Risk difference N1 minus N0",
+    "secondary": "Frozen Mann-Whitney permutation 9999 resamples, seed 20261004; Cliff delta; Fisher navigation success; within-scenario Holm secondary family",
+    "aggregate": "Requested pooled Fisher exact only; no extra secondary aggregate tests",
+    "post_hoc_tests": false,
+    "outlier_exclusion": false
+  },
+  "db_postcheck": {
+    "timestamp": "2026-10-06T09:38:17+02:00",
+    "count": 50,
+    "default_transaction_read_only": "on",
+    "transaction_read_only": "on",
+    "fingerprint": {
+      "method": "canonical_memory_fingerprint_v2",
+      "row_count": 50,
+      "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+      "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599"
+    }
+  },
+  "frozen_hashes": {
+    "experiments/ground_truth/navigation_ground_truth.json": "8e9a1e1b0847215d8435a066479d00c060ca59701d406d1b72102668a802c83f",
+    "experiments/ground_truth/contextual_retrieval.json": "b5b5f57c68d2ae7c2497511ff747cd28a2b305daa4406612dbc65674a7c24d8d",
+    "experiments/ground_truth/episodic_personalization.json": "c11c007b286fe5b2a1672e15c43a4c65242c4ba93020f05aa1fbed6609f4c2ac",
+    "experiments/configs/evaluation_design.json": "e060d7ee16a1c959623527f408122ce997a65ed999800e0acc8b66161a72e09f",
+    "experiments/configs/strategy_taxonomy.json": "86cb7c8cff6b3aca01bd749e2953fdb0da96ad202beb852626d65efcd7e1e24a"
+  },
+  "certificate_guard": "PASS",
+  "source_unchanged": true,
+  "secret_scan": "PASS_ALL_CAMPAIGN_ARTIFACTS",
+  "whitespace": "PASS",
+  "git": {
+    "branch": "scenario-home",
+    "head": "596f54c83c343c0a8e40e092478ec21783fd948a",
+    "status": " M .gitignore\n M ros2/src/wheelchair_assistive_bt/include/wheelchair_assistive_bt/common_experiment_logging.hpp\n M ros2/src/wheelchair_assistive_bt/src/memory_observation_orchestrator.cpp\n M ros2/src/wheelchair_assistive_bt/test/readiness_contract_cases.hpp\n M ros2/src/wheelchair_assistive_bt/test/test_n0_logging.cpp\n M ros2/src/wheelchair_assistive_bt/test/test_n1_logging.cpp\n?? docs/experiments/EXPERIMENTAL_DESIGN.md\n?? experiments/configs/evaluation_design.json\n?? experiments/configs/freeze_manifest.json\n?? experiments/configs/strategy_taxonomy.json\n?? experiments/ground_truth/contextual_retrieval.json\n?? experiments/ground_truth/episodic_personalization.json\n?? experiments/ground_truth/navigation_ground_truth.json\n?? experiments/runtime/e1_runtime_validation.json\n?? scripts/experiments/capture_trajectory.py\n?? scripts/experiments/evaluate_navigation.py\n?? scripts/experiments/evaluation_core.py\n?? scripts/experiments/run_evaluation.py\n?? scripts/experiments/tests/test_capture_trajectory.py\n?? scripts/experiments/tests/test_e1_runtime_guard.py\n?? scripts/experiments/tests/test_evaluation.py\n",
+    "index_empty": true
+  },
+  "confirmation": {
+    "no_code_design_capture_threshold_production_changes": true,
+    "no_E2_E3_AIRPORT": true,
+    "no_stage_commit_push_merge_reset_clean": true
+  },
+  "blockers": [],
+  "next_step": "HUMAN_INTERPRETATION_E1_AND_FINAL_H1_H2_H3_SYNTHESIS"
+}

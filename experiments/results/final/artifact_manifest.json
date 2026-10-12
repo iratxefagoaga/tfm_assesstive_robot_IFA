@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "created": "2026-10-12",
+  "source_campaigns": [
+    "20261005T153539_e1_frozen_campaign",
+    "20261005T143507_e2e3_frozen"
+  ],
+  "scientific_sha256": {
+    "experiments/ground_truth/navigation_ground_truth.json": "8e9a1e1b0847215d8435a066479d00c060ca59701d406d1b72102668a802c83f",
+    "experiments/ground_truth/contextual_retrieval.json": "b5b5f57c68d2ae7c2497511ff747cd28a2b305daa4406612dbc65674a7c24d8d",
+    "experiments/ground_truth/episodic_personalization.json": "c11c007b286fe5b2a1672e15c43a4c65242c4ba93020f05aa1fbed6609f4c2ac",
+    "experiments/configs/evaluation_design.json": "e060d7ee16a1c959623527f408122ce997a65ed999800e0acc8b66161a72e09f",
+    "experiments/configs/strategy_taxonomy.json": "86cb7c8cff6b3aca01bd749e2953fdb0da96ad202beb852626d65efcd7e1e24a"
+  },
+  "files_sha256": {
+    "E1/final_e1_report.json": "87a77e42cc744179213ac939a5aaa418c448539126aeec06c288b39872e0c3c4",
+    "E1/FINAL_E1_REPORT.md": "ac1fe2c190cac42bdbb7771cb61690f5706713b1421062b9522984e29524c40f",
+    "E1/final_selected_observations.json": "3720d5d87434192e1c963c04a0467a8275169a19fa8b5a98fa485fa73afe5cea",
+    "E1/frozen_final_analysis.json": "c9b57c2d0548c27543db05f5d5ec651b55d15dddbd98beb81ff43d6a1048280c",
+    "E1_success_and_coverage.pdf": "3ccfb0779219ab6ce3ffb64de60d4247d537bc236fe387d63f9bab5aec4acbeb",
+    "E1_success_and_coverage.png": "90c3bff6eba87598c91430ada52c091eafe8dd3055c2d5db78a3756009dcaea5",
+    "E2/db_fingerprints.json": "970c506f1356dcce448bcecfe0dc0a2962eb7849e8a642dcdafb1a6cc3234f80",
+    "E2/manifest.json": "51dd45984fb480e2f759b70f87e9ceda5476a7f3a0140851405fb27361076852",
+    "E2/metrics.csv": "a062a3e83a3cfb19632b19dc04691c38211ab4c534afcb2e6637f24446ef4ab3",
+    "E2/paired_analysis.json": "04dc143268a3ae37dd789cf46b3e11cca5fdf4e3bc9747459fc6cf3b88980498",
+    "E2/summary.json": "b09c72c38d087f83a46d292e450d9879be9d5d434a68e7363db42d9c035b5828",
+    "E2_E3_primary.pdf": "6d25e14a5c437c4855e329f363d8cea7a2125e6c65cfe238bcc9de91321e5e86",
+    "E2_E3_primary.png": "6d432dbeff27c0c7f06c32e646c66498f8285675610e15efd3da7bae39a33797",
+    "E3/db_fingerprints.json": "970c506f1356dcce448bcecfe0dc0a2962eb7849e8a642dcdafb1a6cc3234f80",
+    "E3/manifest.json": "cdd37f415dbc00a7b8e37edea6bdaeaaf760ebfb3b3209ef99c6833395992f1d",
+    "E3/metrics.csv": "dd61f9d7db2a34bdc02f9daf2f718fde345f882511642c73bc83fa1f88e9a820",
+    "E3/paired_analysis.json": "aca995aa6c7334b7ec05f4f07188d39178f1403ebe6df4c79ff37a6709d873b9",
+    "E3/summary.json": "6fc0e885830b901704441e975dd1089bcf2eadea32c7676dab896df361d8beb1",
+    "navigation_summary.csv": "a4a2c29a5b3908461018df2d601877b6aa64084630383d02ef57e31673d9e925",
+    "README.md": "bb76c63a665804f2c389acc253bbe5e4bd11117954e06f94f6330a1c1a7db9bd"
+  }
+}

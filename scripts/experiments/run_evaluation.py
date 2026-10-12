@@ -84,7 +84,7 @@ def execute_retrieval(kind, dataset, out):
     write_new(out/'processed'/'paired_analysis.json',[analyze_paired(rows,kind)])
 
 
-def require_e1_runtime_validation(path=None):
+def require_e1_runtime_validation(path=None, evidence_root=None):
     """Gate E1 on preserved, excluded engineering evidence and source identity."""
     path = Path(path) if path is not None else ROOT/'experiments/runtime/e1_runtime_validation.json'
     try:
@@ -104,7 +104,7 @@ def require_e1_runtime_validation(path=None):
                 raise ValueError('Scientific freeze mutation')
         for condition in ['N0', 'N1']:
             run = state['runs'][condition]
-            directory = Path(run['directory'])
+            directory = Path(evidence_root)/condition if evidence_root is not None else Path(run['directory'])
             validation = directory/'validation.json'
             if hashlib.sha256(validation.read_bytes()).hexdigest() != run['validation_sha256']:
                 raise ValueError('Runtime validation record changed')
@@ -183,6 +183,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('experiment', choices=['E1','E2','E3','analyze'])
     parser.add_argument('--execute',action='store_true')
+    parser.add_argument('--runtime-evidence-root',type=Path,help='Relocated unchanged certified N0/ and N1/ files')
     parser.add_argument('--synthetic',action='store_true',help='Analyze an exclusively synthetic fixture dataset')
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--input',type=Path)
@@ -200,7 +201,7 @@ def main():
     if args.experiment=='E1':
         if args.execute:
             try:
-                require_e1_runtime_validation()
+                require_e1_runtime_validation(evidence_root=args.runtime_evidence_root)
             except ValueError as error:
                 parser.error(str(error))
         # Existing E1 branch emits its campaign plan; it never launches processes.

@@ -1,0 +1,5 @@
+scenario,condition,n,success,compliance_evaluable,compliant,compliance_NA,mean_time_s,mean_distance_m
+home,N0,10,10,10,0,0,19.618000000000002,2.6685
+home,N1,10,10,10,10,0,46.0439,6.212
+park,N0,10,10,10,0,0,4.979699999999999,0.7383
+park,N1,10,4,4,4,6,52.4222,2.4737

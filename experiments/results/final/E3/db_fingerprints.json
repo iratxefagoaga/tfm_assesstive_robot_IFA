@@ -1,0 +1,16 @@
+[
+  {
+    "before": {
+      "method": "canonical_memory_fingerprint_v2",
+      "row_count": 50,
+      "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+      "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599"
+    },
+    "after": {
+      "method": "canonical_memory_fingerprint_v2",
+      "row_count": 50,
+      "logical_sha256": "46ea5969b3047c1eb3bc526bb08fbb11b8ddac6f77f18a97e362fcdba9e97898",
+      "embeddings_sha256": "8f9bf33815930952e3a7ee169d1edb4c7027d5cb5c77c173a3b1a16bb7af2599"
+    }
+  }
+]

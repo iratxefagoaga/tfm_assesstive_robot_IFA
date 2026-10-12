@@ -1,0 +1,239 @@
+[
+  {
+    "synthetic": false,
+    "analysis": {
+      "home": {
+        "N0": {
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 19.618000000000002,
+            "std": 2.4585470415583996,
+            "median": 18.85,
+            "IQR": 0.7107500000000009
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 2.6685,
+            "std": 0.019033596028543334,
+            "median": 2.6715,
+            "IQR": 0.024500000000000632
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 18.7,
+            "std": 2.6267851073127395,
+            "median": 18.0,
+            "IQR": 0.0
+          },
+          "memory_latency_ms": {
+            "n": 0,
+            "mean": null,
+            "std": null,
+            "median": null,
+            "IQR": null
+          },
+          "success": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "context_compliance": {
+            "n": 10,
+            "count": 0,
+            "percentage": 0.0
+          },
+          "attempts_excluded": 0
+        },
+        "N1": {
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 46.0439,
+            "std": 2.2020640040148187,
+            "median": 45.81,
+            "IQR": 3.969999999999999
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 6.212,
+            "std": 0.039468693641641905,
+            "median": 6.2044999999999995,
+            "IQR": 0.06175000000000086
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 45.1,
+            "std": 2.282785822435191,
+            "median": 44.5,
+            "IQR": 4.0
+          },
+          "memory_latency_ms": {
+            "n": 10,
+            "mean": 795.0814,
+            "std": 753.0980284640831,
+            "median": 339.5305,
+            "IQR": 1254.24025
+          },
+          "success": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "context_compliance": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "attempts_excluded": 0
+        },
+        "comparisons": {
+          "navigation_time_s": {
+            "U": 100.0,
+            "p": 0.0002,
+            "cliffs_delta_N1_minus_N0": 1.0,
+            "secondary_Holm_p": 0.0008
+          },
+          "distance_m": {
+            "U": 100.0,
+            "p": 0.0002,
+            "cliffs_delta_N1_minus_N0": 1.0,
+            "secondary_Holm_p": 0.0008
+          },
+          "replanning_count": {
+            "U": 100.0,
+            "p": 0.0002,
+            "cliffs_delta_N1_minus_N0": 1.0,
+            "secondary_Holm_p": 0.0008
+          }
+        },
+        "binary_comparisons": {
+          "success": {
+            "p": 1.0,
+            "risk_difference_N1_minus_N0": 0.0,
+            "secondary_Holm_p": 1.0
+          },
+          "context_compliance": {
+            "p": 1.082508822446903e-05,
+            "risk_difference_N1_minus_N0": 1.0,
+            "primary_Holm_p": 2.165017644893806e-05
+          }
+        }
+      },
+      "park": {
+        "N0": {
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 4.9797,
+            "std": 0.3958566098419419,
+            "median": 4.8295,
+            "IQR": 0.20425000000000004
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 0.7383,
+            "std": 0.0013374935098492597,
+            "median": 0.7384999999999999,
+            "IQR": 0.0017500000000000293
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 4.2,
+            "std": 0.4216370213557839,
+            "median": 4.0,
+            "IQR": 0.0
+          },
+          "memory_latency_ms": {
+            "n": 0,
+            "mean": null,
+            "std": null,
+            "median": null,
+            "IQR": null
+          },
+          "success": {
+            "n": 10,
+            "count": 10,
+            "percentage": 100.0
+          },
+          "context_compliance": {
+            "n": 10,
+            "count": 0,
+            "percentage": 0.0
+          },
+          "attempts_excluded": 0
+        },
+        "N1": {
+          "navigation_time_s": {
+            "n": 10,
+            "mean": 52.4222,
+            "std": 27.587293124834765,
+            "median": 54.1395,
+            "IQR": 45.28150000000001
+          },
+          "distance_m": {
+            "n": 10,
+            "mean": 2.4737,
+            "std": 1.0499208488685654,
+            "median": 2.84,
+            "IQR": 1.0627499999999999
+          },
+          "replanning_count": {
+            "n": 10,
+            "mean": 44.3,
+            "std": 20.325408291648714,
+            "median": 52.5,
+            "IQR": 28.0
+          },
+          "memory_latency_ms": {
+            "n": 10,
+            "mean": 595.6314,
+            "std": 766.8740744801731,
+            "median": 290.0745,
+            "IQR": 475.05925
+          },
+          "success": {
+            "n": 10,
+            "count": 4,
+            "percentage": 40.0
+          },
+          "context_compliance": {
+            "n": 4,
+            "count": 4,
+            "percentage": 100.0
+          },
+          "attempts_excluded": 0
+        },
+        "comparisons": {
+          "navigation_time_s": {
+            "U": 40.0,
+            "p": 0.001998001998001998,
+            "cliffs_delta_N1_minus_N0": 1.0,
+            "secondary_Holm_p": 0.007992007992007992
+          },
+          "distance_m": {
+            "U": 40.0,
+            "p": 0.001998001998001998,
+            "cliffs_delta_N1_minus_N0": 1.0,
+            "secondary_Holm_p": 0.007992007992007992
+          },
+          "replanning_count": {
+            "U": 40.0,
+            "p": 0.001998001998001998,
+            "cliffs_delta_N1_minus_N0": 1.0,
+            "secondary_Holm_p": 0.007992007992007992
+          }
+        },
+        "binary_comparisons": {
+          "success": {
+            "p": 0.010835913312693499,
+            "risk_difference_N1_minus_N0": -0.6,
+            "secondary_Holm_p": 0.010835913312693499
+          },
+          "context_compliance": {
+            "p": 0.000999000999000999,
+            "risk_difference_N1_minus_N0": 1.0,
+            "primary_Holm_p": 0.000999000999000999
+          }
+        }
+      }
+    }
+  }
+]

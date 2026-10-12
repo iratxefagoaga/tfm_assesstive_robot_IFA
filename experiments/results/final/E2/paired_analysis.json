@@ -1,0 +1,131 @@
+[
+  {
+    "design": "paired",
+    "matched_by": "query_id",
+    "conditions": [
+      "R0",
+      "R1"
+    ],
+    "primary": "recall_at_3",
+    "cases_total": 20,
+    "metrics": {
+      "recall_at_3": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 20,
+        "effect_second_minus_first": 0.10069444444444445,
+        "paired_bootstrap_95_CI": [
+          0.03125,
+          0.175
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "paired_sign_flip_permutation",
+        "p": 0.014,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "R0": {
+            "n": 20,
+            "mean": 0.47444444444444445,
+            "std": 0.27786928317378656,
+            "median": 0.4375,
+            "IQR": 0.21666666666666667
+          },
+          "R1": {
+            "n": 20,
+            "mean": 0.5751388888888889,
+            "std": 0.30332716801780185,
+            "median": 0.5,
+            "IQR": 0.5125
+          }
+        }
+      },
+      "precision_at_3": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 20,
+        "effect_second_minus_first": 0.11666666666666667,
+        "paired_bootstrap_95_CI": [
+          0.01666666666666667,
+          0.21666666666666665
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "paired_sign_flip_permutation",
+        "p": 0.0662,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "R0": {
+            "n": 20,
+            "mean": 0.5333333333333333,
+            "std": 0.27359422722270776,
+            "median": 0.5,
+            "IQR": 0.3333333333333333
+          },
+          "R1": {
+            "n": 20,
+            "mean": 0.65,
+            "std": 0.2530515515054161,
+            "median": 0.6666666666666666,
+            "IQR": 0.4166666666666667
+          }
+        },
+        "secondary_Holm_p": 0.1986
+      },
+      "reciprocal_rank": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 20,
+        "effect_second_minus_first": 0.09583333333333334,
+        "paired_bootstrap_95_CI": [
+          0.0,
+          0.20833333333333334
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "paired_sign_flip_permutation",
+        "p": 0.242,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "R0": {
+            "n": 20,
+            "mean": 0.9041666666666667,
+            "std": 0.23767114486074073,
+            "median": 1.0,
+            "IQR": 0.0
+          },
+          "R1": {
+            "n": 20,
+            "mean": 1.0,
+            "std": 0.0,
+            "median": 1.0,
+            "IQR": 0.0
+          }
+        },
+        "secondary_Holm_p": 0.484
+      },
+      "hit_at_3": {
+        "inferential_test_status": "EVALUATED",
+        "n_pairs": 20,
+        "effect_second_minus_first": 0.05,
+        "paired_bootstrap_95_CI": [
+          0.0,
+          0.15
+        ],
+        "CI_scope": "Empirical case collection; small-sample descriptive uncertainty.",
+        "test": "exact_McNemar",
+        "gains": 1,
+        "losses": 0,
+        "p": 1.0,
+        "pairs_missing_or_ineligible": 0,
+        "descriptives": {
+          "R0": {
+            "n": 20,
+            "count": 19,
+            "percentage": 95.0
+          },
+          "R1": {
+            "n": 20,
+            "count": 20,
+            "percentage": 100.0
+          }
+        },
+        "secondary_Holm_p": 1.0
+      }
+    }
+  }
+]

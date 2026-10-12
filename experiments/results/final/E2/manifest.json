@@ -1,0 +1,7 @@
+[
+  {
+    "ground_truth_sha256": "b5b5f57c68d2ae7c2497511ff747cd28a2b305daa4406612dbc65674a7c24d8d",
+    "baseline_commit": "596f54c83c343c0a8e40e092478ec21783fd948a",
+    "experiment": "E2"
+  }
+]
