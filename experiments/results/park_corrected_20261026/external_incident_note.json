@@ -1,0 +1,9 @@
+{
+  "reported_by": "author in conversation",
+  "event": "internet outage during this work",
+  "exact_start_end": "not independently recorded",
+  "runtime": "local ROS, Gazebo, PostgreSQL, cached model with offline flags",
+  "affected_external_operation": "GitHub access failed and later recovered",
+  "causal_assignment_to_local_scan_or_lifecycle_faults": "NOT_ESTABLISHED",
+  "exclusions_or_replacement_trials_due_to_report": 0
+}

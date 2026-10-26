@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-26",
+  "status": "CORRECTED_SIMULATION_PROFILE_WITH_MEASURED_LIMITATIONS",
+  "scope": "PARK_GAZEBO_SIMULATION_CANONICAL_MISSION",
+  "production_fix_adopted": true,
+  "hardware_validation": "NOT_APPLICABLE_SIMULATION_ONLY",
+  "release": "/home/iratxefagoaga/workspace/tfm/ros2/production/park_sim/release-20261026-r1",
+  "entrypoint": "/home/iratxefagoaga/workspace/tfm/ros2/production/park_sim/run.py",
+  "qualification": "OPERATIONAL_ACCEPTANCE_PASSED",
+  "packaged_N1_smoke": "PASSED",
+  "offline_CLI_checks": 5,
+  "unit_tests": 29,
+  "scientific_E1_park_N1": "UNCHANGED: 4/10 action successes",
+  "report": "REPORT_PRODUCTION_CLOSURE_20261026.md",
+  "post_correction_campaign": {
+    "N0": {
+      "attempts": 10,
+      "accepted": 8,
+      "action_successes": 9,
+      "rate": 0.8,
+      "wilson_95": [
+        0.49016247153664183,
+        0.9433178485456247
+      ]
+    },
+    "N1": {
+      "attempts": 10,
+      "accepted": 6,
+      "action_successes": 8,
+      "rate": 0.6,
+      "wilson_95": [
+        0.31267376973365824,
+        0.8318196702937638
+      ]
+    }
+  },
+  "previous_closure": "superseded as a reliability claim by prospective repeated campaign; historical qualification preserved",
+  "failure_explanation": "REPORT_FAILURE_EXPLANATION_20261026.md",
+  "publication_scope": "code and reviewed numeric summaries; raw evidence archived privately"
+}

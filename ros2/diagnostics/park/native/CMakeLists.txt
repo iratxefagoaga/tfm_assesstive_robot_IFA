@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22)
+project(park_managed_bridge LANGUAGES CXX)
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(ros_gz_bridge REQUIRED)
+add_executable(park_bridge managed_bridge.cpp)
+target_compile_features(park_bridge PRIVATE cxx_std_17)
+ament_target_dependencies(park_bridge rclcpp ros_gz_bridge)
