@@ -1,40 +1,34 @@
 {
   "date": "2026-10-26",
-  "status": "CORRECTED_SIMULATION_PROFILE_WITH_MEASURED_LIMITATIONS",
-  "scope": "PARK_GAZEBO_SIMULATION_CANONICAL_MISSION",
-  "production_fix_adopted": true,
-  "hardware_validation": "NOT_APPLICABLE_SIMULATION_ONLY",
-  "release": "/home/iratxefagoaga/workspace/tfm/ros2/production/park_sim/release-20261026-r1",
-  "entrypoint": "/home/iratxefagoaga/workspace/tfm/ros2/production/park_sim/run.py",
-  "qualification": "OPERATIONAL_ACCEPTANCE_PASSED",
-  "packaged_N1_smoke": "PASSED",
-  "offline_CLI_checks": 5,
-  "unit_tests": 29,
-  "scientific_E1_park_N1": "UNCHANGED: 4/10 action successes",
-  "report": "REPORT_PRODUCTION_CLOSURE_20261026.md",
-  "post_correction_campaign": {
-    "N0": {
-      "attempts": 10,
-      "accepted": 8,
-      "action_successes": 9,
-      "rate": 0.8,
-      "wilson_95": [
-        0.49016247153664183,
-        0.9433178485456247
-      ]
-    },
-    "N1": {
-      "attempts": 10,
-      "accepted": 6,
-      "action_successes": 8,
-      "rate": 0.6,
-      "wilson_95": [
-        0.31267376973365824,
-        0.8318196702937638
-      ]
-    }
+  "status": "PARK_R2_OPERATIONAL_ACCEPTANCE_AND_20_RUNS_PASSED",
+  "scope": "PARK_01_GAZEBO_SIMULATION_ONLY",
+  "release": "release-20261026-r2",
+  "N0": {
+    "attempts": 10,
+    "accepted": 10,
+    "action_successes": 10,
+    "rate": 1.0,
+    "wilson_95": [
+      0.7224672001371107,
+      0.9999999999999999
+    ]
   },
-  "previous_closure": "superseded as a reliability claim by prospective repeated campaign; historical qualification preserved",
-  "failure_explanation": "REPORT_FAILURE_EXPLANATION_20261026.md",
-  "publication_scope": "code and reviewed numeric summaries; raw evidence archived privately"
+  "N1": {
+    "attempts": 10,
+    "accepted": 10,
+    "action_successes": 10,
+    "rate": 1.0,
+    "wilson_95": [
+      0.7224672001371107,
+      0.9999999999999999
+    ]
+  },
+  "all_run_decisions_recomputed_from_raw": true,
+  "DB_fingerprints_verified": 20,
+  "max_position_error_m": 0.15066510899966545,
+  "physical_hardware_validated": false,
+  "remaining_limitations": "Single canonical mission, same local installation; original failure root causes not all uniquely isolated. Twenty successes are not a guarantee of future success or efficacy.",
+  "previous_release": "release-20261026-r1; 8/10 N0 and 6/10 N1 retained separately",
+  "raw_evidence_public": false,
+  "report": "REPORT_PARK_R2_20261026.md"
 }
