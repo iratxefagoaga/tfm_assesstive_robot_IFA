@@ -1,0 +1,22 @@
+{
+  "N0": {
+    "attempts": 10,
+    "accepted": 8,
+    "action_successes": 9,
+    "rate": 0.8,
+    "wilson_95": [
+      0.49016247153664183,
+      0.9433178485456247
+    ]
+  },
+  "N1": {
+    "attempts": 10,
+    "accepted": 6,
+    "action_successes": 8,
+    "rate": 0.6,
+    "wilson_95": [
+      0.31267376973365824,
+      0.8318196702937638
+    ]
+  }
+}

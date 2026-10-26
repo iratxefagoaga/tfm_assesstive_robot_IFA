@@ -1,3 +1,13 @@
+## PARK: versión corregida posterior a la campaña original
+
+El punto de entrada operativo para PARK_01 simulado es
+[producción PARK](ros2/production/park_sim/README.md). Incluye LiDAR adicional,
+control de frescura, cancelación Nav2, cierre de puentes y aceptación con pose
+Gazebo independiente. Su validación se documenta en
+[el informe](ros2/diagnostics/park/REPORT_PRODUCTION_CLOSURE_20261026.md).
+Los lanzadores y resultados E1 originales permanecen congelados. Los ensayos
+posteriores se identifican separadamente y no reescriben esa evidencia.
+
 # Optimización de la Asistencia Robótica mediante Sistemas de Memoria de Largo Plazo Basados en RAG Multimodal y Bases de Datos Vectoriales
 
 TFM sobre memoria personalizada y contextual de largo plazo para navegación

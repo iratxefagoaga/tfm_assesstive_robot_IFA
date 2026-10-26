@@ -1,0 +1,60 @@
+{
+  "campaign": "PARK_CORRECTED_20261026",
+  "kind": "PROSPECTIVE_POST_CORRECTION_REPLICATION",
+  "seed": 20261026,
+  "order": [
+    "memory",
+    "memory",
+    "memory",
+    "direct",
+    "memory",
+    "memory",
+    "memory",
+    "memory",
+    "memory",
+    "direct",
+    "direct",
+    "direct",
+    "direct",
+    "direct",
+    "direct",
+    "memory",
+    "memory",
+    "direct",
+    "direct",
+    "direct"
+  ],
+  "planned_per_condition": 10,
+  "retries": 0,
+  "case": "PARK_01",
+  "start": [
+    0,
+    -9,
+    0
+  ],
+  "waypoint_N1": [
+    -1,
+    -9,
+    0
+  ],
+  "goal": [
+    1,
+    -9,
+    0
+  ],
+  "primary_outcome": "successful applicable Nav2 goals AND independent Gazebo arrival and settled pose <=0.25 m/0.25 rad; recent pose <=2 s; clean shutdown",
+  "denominator": "all scheduled attempts; no replacement or silent exclusion; interrupted campaign reported incomplete",
+  "secondary_outcome": "original Nav2 action success alone, reported separately",
+  "same_corrected_profile_for_N0_N1": true,
+  "no_fault_injection": true,
+  "stop_rule": "stop on process residues or changed DB fingerprint; preserve every failure",
+  "release_manifest_sha256": "52c3330004003f77ee962f3ac9d1c7c4d332f6909fbd546c98016424c3eadb5d",
+  "entrypoint_sha256": "93e23787e010a7467d9787728a303ccd7807cc983a56dd873ba97ce41c6a2a5f",
+  "runner_sha256": "aff4a21322b6aff9ffe00f72cfbe79d00f4b324d4b8a479d3aa5a93a02e4bd06",
+  "frozen_E1": "unchanged, separate historical campaign",
+  "limitations": [
+    "single canonical mission and static environment",
+    "same local machine, no independent replication",
+    "post hoc correction after original E1; no causal attribution to a single change"
+  ]
+}

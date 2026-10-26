@@ -1,0 +1,25 @@
+{
+  "status": "FAILURE_MECHANISMS_EXPLAINED_WITH_BOUNDED_ROOT_CAUSE",
+  "production_globally_closed": false,
+  "N1_failures": {
+    "02": "estimated error 0.1461m plus localisation bias 0.1323m; actual 0.2758m",
+    "17": "estimated error 0.1473m plus localisation bias 0.1607m; actual 0.3024m",
+    "07_and_09": "scan_stale causes deliberate Nav2 cancellation; source-stage explanation reproduced separately"
+  },
+  "pipeline_reproduction_max_wall_gap_s": {
+    "gazebo:/navigation_scan": 1.1324657719997049,
+    "gazebo:/scan": 1.1664296319995628,
+    "ros:/clock": 0.4540113279999787,
+    "ros:/navigation_scan": 1.1659176649991423,
+    "ros:/scan": 1.2118648599989683,
+    "ros:/scan_fixed": 0.1917078610003955
+  },
+  "upstream_location": "common native Gazebo lidar delivery path before ROS bridge/filter",
+  "not_established": "specific rendering/OS-scheduling/Gazebo-transport root cause; causal explanation of all six original E1 aborts",
+  "N0_failures": {
+    "10": "lifecycle activation service failed before readiness; no goal",
+    "18": "arrival achieved at 0.1708m; Gazebo failed shutdown SIGINT/SIGTERM and launch automatically escalated; acceptance correctly rejected"
+  },
+  "internet": "no demonstrated link to local scan gap; runtime local and offline",
+  "rate_campaign": "20 fixed attempts; unchanged by diagnostic reproduction"
+}

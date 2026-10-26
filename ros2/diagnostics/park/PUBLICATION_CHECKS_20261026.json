@@ -1,0 +1,17 @@
+{
+  "status": "PASSED",
+  "delivery_files": 325,
+  "delivery_bytes": 35260159,
+  "evidence_manifests_verified": [
+    160,
+    44
+  ],
+  "secret_pattern_hits": 0,
+  "runtime_residues": [],
+  "running_containers": 0,
+  "checks": [
+    ".............................\n----------------------------------------------------------------------\nRan 29 tests in 0.010s\n\nOK\n",
+    "PASS: 20 final artifacts and frozen scientific inputs unchanged\n",
+    "PASS: PARK simulation release integrity; no processes or DB started\n"
+  ]
+}
