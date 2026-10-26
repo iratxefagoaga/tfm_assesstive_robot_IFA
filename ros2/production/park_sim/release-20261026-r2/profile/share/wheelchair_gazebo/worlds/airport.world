@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="default">
+    <gravity>0 0 -9.81</gravity><physics name="physics" type="ode"/>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"><render_engine>ogre2</render_engine></plugin>
+    <light name="sun" type="directional"><pose>0 0 20 0 0 0</pose><direction>-0.5 0.5 -1</direction><diffuse>1 1 1 1</diffuse></light>
+    <!--
+      Local actor crosses the west bypass after a 20 s sim-time delay and repeats
+      every 12 s. Gazebo actors are non-colliding; GPU-LiDAR detection and Nav2
+      obstacle-layer response still require runtime calibration.
+    -->
+    <actor name="airport_crossing_actor">
+      <pose>-5 -2 0 0 0 0</pose>
+      <skin><filename>model://airport/meshes/airport_pedestrian.dae</filename><scale>1</scale></skin>
+      <animation name="walk"><filename>model://airport/meshes/airport_pedestrian.dae</filename></animation>
+      <script><loop>true</loop><delay_start>20</delay_start><auto_start>true</auto_start>
+        <trajectory id="0" type="walk" tension="1">
+          <waypoint><time>0</time><pose>0 0 0 0 0 0</pose></waypoint>
+          <waypoint><time>6</time><pose>0 4 0 0 0 0</pose></waypoint>
+          <waypoint><time>12</time><pose>0 0 0 0 0 0</pose></waypoint>
+        </trajectory>
+      </script>
+    </actor>
+  </world>
+</sdf>

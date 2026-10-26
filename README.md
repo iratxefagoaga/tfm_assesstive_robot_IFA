@@ -1,3 +1,14 @@
+## PARK: revisión operativa R2
+
+La entrada activa está en [producción PARK](ros2/production/park_sim/README.md).
+La revisión R2 elimina sensores de renderizado sin uso en navegación y reserva
+más margen de llegada frente al sesgo de localización. La campaña nueva obtuvo
+10/10 aceptaciones N0 y 10/10 N1, con poses Gazebo independientes y cierres limpios.
+Es evidencia local de PARK_01, no garantía de éxito futuro ni eficacia general.
+[Informe y límites](ros2/diagnostics/park/REPORT_PARK_R2_20261026.md).
+R1 y E1 original se conservan por separado. Las secciones siguientes describen
+sus estados históricos cuando no se refieran expresamente a R2.
+
 ## PARK: versión corregida posterior a la campaña original
 
 El punto de entrada operativo para PARK_01 simulado es

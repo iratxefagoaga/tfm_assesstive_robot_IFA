@@ -1,0 +1,40 @@
+[
+  {
+    "case": "N0_normal",
+    "decision": {
+      "accepted": true,
+      "reasons": [],
+      "position_error_m": 0.07508185874486116,
+      "yaw_error_rad": 0.07623436643134716,
+      "physical_hardware_validated": false
+    }
+  },
+  {
+    "case": "N1_normal",
+    "decision": {
+      "accepted": true,
+      "reasons": [],
+      "position_error_m": 0.03828701127893462,
+      "yaw_error_rad": 0.04606410009035658,
+      "physical_hardware_validated": false
+    }
+  },
+  {
+    "case": "N1_scan_loss",
+    "expected_failure_verified": true,
+    "cancellation_complete": true,
+    "cleanup_ok": true,
+    "no_success": true,
+    "events": [
+      {
+        "event": "SCAN_BRIDGE_PAUSED",
+        "pid": 130613,
+        "wall_monotonic": 19317.881827538
+      },
+      {
+        "event": "SCAN_BRIDGE_RESUMED",
+        "wall_monotonic": 19319.499360269
+      }
+    ]
+  }
+]

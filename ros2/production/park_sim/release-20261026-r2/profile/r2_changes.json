@@ -1,0 +1,23 @@
+{
+  "hypothesis": "remove unused camera at 30Hz and original high lidar at 15Hz to reduce common rendering workload; keep low lidar at 15Hz/720 rays",
+  "removed_sensors": [
+    {
+      "link": "lidar_link",
+      "name": "lidar",
+      "type": "gpu_lidar",
+      "topic": "/scan",
+      "rate_hz": "15"
+    },
+    {
+      "link": "camera_link",
+      "name": "camera",
+      "type": "camera",
+      "topic": "/camera/image_raw",
+      "rate_hz": "30"
+    }
+  ],
+  "collisions_and_maps_unchanged": true,
+  "base_profile_manifest_sha256": "52c3330004003f77ee962f3ac9d1c7c4d332f6909fbd546c98016424c3eadb5d",
+  "readiness_sensor_navigation_shutdown_timeouts": "unchanged",
+  "status": "CANDIDATE_NOT_ACCEPTED"
+}

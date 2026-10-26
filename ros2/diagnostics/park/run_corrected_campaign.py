@@ -12,6 +12,7 @@ def main():
     p.add_argument('--entrypoint', type=Path, required=True)
     p.add_argument('--code-root', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--campaign-id', default='PARK_CORRECTED_20261026')
     a = p.parse_args()
     a.output.mkdir(parents=True, exist_ok=False)
     release = a.entrypoint.parent / json.loads((a.entrypoint.parent/'current.json').read_text())['release']
@@ -19,7 +20,7 @@ def main():
     order = ['direct']*10 + ['memory']*10
     random.Random(20261026).shuffle(order)
     protocol = {
-        'campaign': 'PARK_CORRECTED_20261026', 'kind': 'PROSPECTIVE_POST_CORRECTION_REPLICATION',
+        'campaign': a.campaign_id, 'kind': 'PROSPECTIVE_POST_CORRECTION_REPLICATION',
         'seed': 20261026, 'order': order, 'planned_per_condition': 10, 'retries': 0,
         'case': 'PARK_01', 'start': [0, -9, 0], 'waypoint_N1': [-1, -9, 0], 'goal': [1, -9, 0],
         'primary_outcome': 'successful applicable Nav2 goals AND independent Gazebo arrival and settled pose <=0.25 m/0.25 rad; recent pose <=2 s; clean shutdown',

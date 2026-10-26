@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="airport">
+    <static>true</static>
+    <link name="floor"><pose>0 0 -0.05 0 0 0</pose><collision name="c"><geometry><box><size>30 22 0.1</size></box></geometry></collision><visual name="v"><geometry><box><size>30 22 0.1</size></box></geometry><material><diffuse>0.72 0.72 0.70 1</diffuse></material></visual></link>
+    <link name="boundary_north"><pose>0 10.85 1.5 0 0 0</pose><collision name="c"><geometry><box><size>30 0.3 3</size></box></geometry></collision><visual name="v"><geometry><box><size>30 0.3 3</size></box></geometry></visual></link>
+    <link name="boundary_south"><pose>0 -10.85 1.5 0 0 0</pose><collision name="c"><geometry><box><size>30 0.3 3</size></box></geometry></collision><visual name="v"><geometry><box><size>30 0.3 3</size></box></geometry></visual></link>
+    <link name="boundary_west"><pose>-14.85 0 1.5 0 0 0</pose><collision name="c"><geometry><box><size>0.3 22 3</size></box></geometry></collision><visual name="v"><geometry><box><size>0.3 22 3</size></box></geometry></visual></link>
+    <link name="boundary_east"><pose>14.85 0 1.5 0 0 0</pose><collision name="c"><geometry><box><size>0.3 22 3</size></box></geometry></collision><visual name="v"><geometry><box><size>0.3 22 3</size></box></geometry></visual></link>
+    <!-- Terminal island blocks the centre line and leaves west/east bypasses. -->
+    <link name="security_island"><pose>1.0 0 0.55 0 0 0</pose><collision name="c"><geometry><box><size>6 8 1.1</size></box></geometry></collision><visual name="v"><geometry><box><size>6 8 1.1</size></box></geometry><material><diffuse>0.40 0.44 0.48 1</diffuse></material></visual></link>
+    <link name="checkin_counter_west"><pose>-9.0 1.0 0.50 0 0 0</pose><collision name="c"><geometry><box><size>3 4 1.0</size></box></geometry></collision><visual name="v"><geometry><box><size>3 4 1.0</size></box></geometry><material><diffuse>0.36 0.39 0.43 1</diffuse></material></visual></link>
+    <link name="checkin_counter_east"><pose>9.0 5.0 0.50 0 0 0</pose><collision name="c"><geometry><box><size>3 3 1.0</size></box></geometry></collision><visual name="v"><geometry><box><size>3 3 1.0</size></box></geometry><material><diffuse>0.36 0.39 0.43 1</diffuse></material></visual></link>
+    <link name="pillar_west"><pose>-11.5 6.0 1.2 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.30</radius><length>2.4</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.30</radius><length>2.4</length></cylinder></geometry><material><diffuse>0.56 0.56 0.60 1</diffuse></material></visual></link>
+    <link name="pillar_east"><pose>11.5 -5.0 1.2 0 0 0</pose><collision name="c"><geometry><cylinder><radius>0.30</radius><length>2.4</length></cylinder></geometry></collision><visual name="v"><geometry><cylinder><radius>0.30</radius><length>2.4</length></cylinder></geometry><material><diffuse>0.56 0.56 0.60 1</diffuse></material></visual></link>
+  </model>
+</sdf>

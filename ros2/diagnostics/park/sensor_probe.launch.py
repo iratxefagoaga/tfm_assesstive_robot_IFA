@@ -18,13 +18,14 @@ def generate_launch_description():
     observer=ExecuteProcess(cmd=['/usr/bin/python3',str(Path(__file__).with_name('sensor_observer.py')),
                                 '--output',os.environ['PARK_SENSOR_OUTPUT'],'--topic',topic],output='screen')
     model=os.environ['PARK_SENSOR_MODEL']
+    managed=os.environ.get('PARK_PROBE_MANAGED_BRIDGE')=='1'
     # Reuse installed simulator/spawn actions byte-for-byte; only model path varies.
     return LaunchDescription([
         *[DeclareLaunchArgument(k,default_value=v) for k,v in [('environment','park'),('gui','false'),('initial_x','0.0'),('initial_y','-9.0'),('initial_z','0.11'),('initial_yaw','0.0')]],
         SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH',str(gazebo/'models')),
         RegisterEventHandler(OnProcessExit(target_action=observer,on_exit=[EmitEvent(event=Shutdown(reason='Static sensor probe complete'))])),
         OpaqueFunction(function=source._simulation_actions,args=[str(gazebo),model]),
-        IncludeLaunchDescription(PythonLaunchDescriptionSource(str(bringup/'launch/bridge.launch.py'))),
+        IncludeLaunchDescription(PythonLaunchDescriptionSource(str(Path(__file__).with_name('managed_bridge.launch.py') if managed else bringup/'launch/bridge.launch.py'))),
         observer,
-        *([Node(package='ros_gz_bridge',executable='parameter_bridge',arguments=[topic+'@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan'],output='screen')] if topic!='/scan' else []),
+        *([ExecuteProcess(cmd=[str(Path(__file__).with_name('park_bridge')),'--bridge-kind=navigation_scan'],output='screen') if managed else Node(package='ros_gz_bridge',executable='parameter_bridge',arguments=[topic+'@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan'],output='screen')] if topic!='/scan' else []),
     ])

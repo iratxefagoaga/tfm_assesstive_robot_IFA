@@ -1,0 +1,61 @@
+{
+  "status": "ISOLATED_DIAGNOSTIC_OVERLAY",
+  "physical_mount_measured": false,
+  "additional_sensor_not_existing_hardware_claim": true,
+  "candidate_sha256": "1ebb01be2a8789e637a14bf758ed80b886d9d10171debdf3babe4729950c131d",
+  "extra_sha256": {
+    "share/wheelchair_gazebo/models/wheelchair/model.sdf": "1ebb01be2a8789e637a14bf758ed80b886d9d10171debdf3babe4729950c131d",
+    "share/wheelchair_description/urdf/base.xacro": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "share/wheelchair_description/urdf/gazebo.xacro": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "share/wheelchair_description/urdf/joints.xacro": "12d02671f22824057f7b916324a7fe1d6f9a92eb95750ec4d1b01ec70ffae517",
+    "share/wheelchair_description/urdf/links.xacro": "bd9967c9669c12d26c462d592dedc36ed4b93382c71aba34c2df9593c6a21b4e",
+    "share/wheelchair_description/urdf/materials.xacro": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "share/wheelchair_description/urdf/sensors.xacro": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "share/wheelchair_description/urdf/wheelchair.urdf.xacro": "569bafc6c0641ae37298613c3d193babcb6f6f5e6e2fefcd089f8ac7fb473a2b",
+    "share/wheelchair_description/urdf/wheels.xacro": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "share/wheelchair_navigation/config/nav2_params.yaml": "931bbd0d7f7de5b2d540283cf5e9516978243789eb501fc13dd1064a1cffd445",
+    "share/wheelchair_navigation/config/required_nav2_nodes.txt": "3ceb9a204ca8282f47f7f8b6ff5cdb3ced7e543aa46c87facafe418716990a16",
+    "share/wheelchair_navigation/config/airport_costmap.yaml": "46f1fcdcb3659c0afee6eea37f24143f9089f594c065ff34f84bd1f7870652e1"
+  },
+  "pose_model_m": [
+    0.33,
+    0,
+    0.08
+  ],
+  "pose_base_link_m": [
+    0.33,
+    0,
+    -0.12
+  ],
+  "original_sensor_retained": false,
+  "collision_geometry_unchanged": true,
+  "assumptions": [
+    "generic sensor, not a validated commercial product",
+    "flat simulated floor; 6.5cm enclosure ground clearance",
+    "physical mounting and terrain suitability require verification"
+  ],
+  "static_test_required": "filtered external returns >=100 and >=90% endpoints within 0.15m of original occupied map cells",
+  "goal_tolerances": {
+    "xy_m": 0.05,
+    "yaw_rad": 0.1,
+    "reason": "Observed 0.132-0.161m localisation bias exceeded the previous 0.10m budget; reserve 0.20m of the unchanged 0.25m independent position acceptance, without a guarantee of a bound on future bias"
+  },
+  "removed_inactive_navigation_sensors": [
+    {
+      "link": "lidar_link",
+      "name": "lidar",
+      "type": "gpu_lidar",
+      "topic": "/scan",
+      "rate_hz": "15"
+    },
+    {
+      "link": "camera_link",
+      "name": "camera",
+      "type": "camera",
+      "topic": "/camera/image_raw",
+      "rate_hz": "30"
+    }
+  ],
+  "scope": "GAZEBO_SIMULATION_ONLY",
+  "sensor_validation": "/tmp/park_r2_static_20261026_01/summary.json"
+}

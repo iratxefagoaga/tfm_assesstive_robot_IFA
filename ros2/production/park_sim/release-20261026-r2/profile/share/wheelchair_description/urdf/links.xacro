@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="base_link"/>
+
+  <link name="left_wheel"/>
+  <link name="right_wheel"/>
+
+  <link name="caster_left"/>
+  <link name="caster_right"/>
+
+  <link name="imu_link"/>
+  <link name="lidar_link"/>
+  <link name="camera_link"/>
+
+</robot>
